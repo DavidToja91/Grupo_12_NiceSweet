@@ -1,46 +1,52 @@
-/* Card */
-.card {
-    background-color: white;
-    margin-bottom: 20px;
-    border: 1px solid #00000059;
-    width: 90%;
-    max-width: 350px;
-  }
+.container{
+  margin-top: 110px !important;
+  margin-bottom: 3rem!important;
+}
 
-  
-  .card .card-content {border-top: 1px solid #ebebeb;}
-  
-  .card .card-content .name-product {
-    text-align: center;
-    margin: 7px 0;
-  }
-  
-  .card .card-content .product-inf {
-    display: flex;
-    height: 40px;
-    justify-content: space-evenly;
-  }
-  
-  .card .card-content .product-inf p:nth-child(1) {flex-grow: 0.3;}
-  
-  .card .card-content .product-inf p:nth-child(2) {
-    color: #39b54a;
-    font-size: 14px;
-  }
-  
-  .card .card-content .product-inf p .precio-centrado {text-align: center;}
-  
-  .section-1,
-  .section-2 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-    align-items: stretch;
-  }
-  
-  .section-1 .ext,
-  .section-2 .ext {display: none;}
-  
-  .section-1 .ext2,
-  .section-2 .ext2 {display: none;}
+
+
+.card{
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 20px;
+  transition: transform .3s;
+}
+
+.card:hover{
+  transform: translateY(-15px)
+}
+
+.text1{
+  font-size: 13px;
+  color: #cbcbcb;
+}
+
+.info{
+  line-height: 17px;
+}
+
+.star{
+  color: #fbc02d;
+}
+
+/* card 1 */
+.cost span{
+  color: #fb3531;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.shoe{
+  background: #dc3545;
+}
+
+.shoe:hover{
+  opacity: .8;
+}
+
+.cursor{
+  cursor: pointer;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
