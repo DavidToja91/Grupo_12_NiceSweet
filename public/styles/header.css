@@ -5,7 +5,7 @@ header {
     top: 0;
     z-index: 999;
 }
-.main-header {
+.mainHeader {
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -21,39 +21,39 @@ header {
     z-index: 999;
 }
 
-.main-header .navigation-bar {
+.mainHeader .navigation-bar {
     display: none;
 }
 
-.main-header .user-icons-desktop {
+.mainHeader .user-icons-desktop {
      display: none;
 }
 
-.main-header .burguer-menu-icon{
+.mainHeader .burguer-menu-icon{
     font-size: 24px;
     order: 0; 
 }
 
-.main-header .logo {
+.mainHeader .logo {
     height: 55px;
     width: 222px;
     order: 1;
 }  
 
-.main-header .logo img {
+.mainHeader .logo img {
     width: 100%;
 }
 
-.main-header .search-icon {
+.mainHeader .search-icon {
     font-size: 24px;
     order: 2;
 }
 
-.main-header .search-icon i{
+.mainHeader .search-icon i{
     cursor: pointer;
 }
 
-.main-header .search-form-desktop {
+.mainHeader .search-form-desktop {
     display: none;
 }
 
@@ -99,27 +99,27 @@ header {
 /* Finaliza botón y barra de búsqueda mobile */
 
 /* Botón y menú desplegable mobile */
-.main-header .navigation-bar {
+.mainHeader .navigation-bar {
     order: 4;
     padding: 15px;
     width: 100%;
 }
 
-.main-header .navigation-bar ul.menu li {
+.mainHeader .navigation-bar ul.menu li {
     padding: 10px 0;
 }
 
-.main-header .navigation-bar .user-icons-mobile {
+.mainHeader .navigation-bar .user-icons-mobile {
     display: flex;
     justify-content: flex-end;
 }
 
-.main-header .navigation-bar .user-icons-mobile i{
+.mainHeader .navigation-bar .user-icons-mobile i{
     font-size: 24px;
     margin-left: 10px;
 }
 
-.main-header .navigation-bar#navigation-bar-desktop {
+.mainHeader .navigation-bar#navigation-bar-desktop {
     display: none;
 }
 
@@ -171,22 +171,22 @@ header {
 /* Escritorio */
 @media screen and (min-width: 992px) {
 
-    .main-header {
+    .mainHeader {
         height: 100px;
         padding: 10px 30px;
     }
 
-    .main-header {
+    .mainHeader {
         flex-wrap: nowrap;
     }
 
-    .main-header .navigation-bar {
+    .mainHeader .navigation-bar {
         display: inherit;
         order: 1;
         width: 40%;
     }
 
-    .main-header .navigation-bar .menu {
+    .mainHeader .navigation-bar .menu {
         display: flex;
         align-items: center;
         flex-grow: 1;
@@ -194,52 +194,52 @@ header {
     }
 
         
-    .main-header .navigation-bar#navigation-bar-desktop {
+    .mainHeader .navigation-bar#navigation-bar-desktop {
         display:inherit;
     }
 
     
-    .main-header .navigation-bar#navigation-bar-mobile {
+    .mainHeader .navigation-bar#navigation-bar-mobile {
         display: none;
     }
 
-   .main-header .burguer-menu-icon{
+   .mainHeader .burguer-menu-icon{
         display: none;
     }    
 
-   .main-header .logo {
+   .mainHeader .logo {
         height: 68px;
         width: 262px;
         order: 0;
     }
     
-    .main-header .search-icon {
+    .mainHeader .search-icon {
         display: none;
     }
 
     
-    .main-header .search-form-desktop {
+    .mainHeader .search-form-desktop {
         display: inherit;
         order: 3;
     }
     
-    .main-header .navigation-bar .user-icons-mobile {
+    .mainHeader .navigation-bar .user-icons-mobile {
         display: none;
     }
     
-    .main-header .logo {
+    .mainHeader .logo {
         height: 68px;
         width: 262px;
         order: 0;
     }
 
-    .main-header .user-icons-desktop {
+    .mainHeader .user-icons-desktop {
         display: flex;
         font-size: 24px;
         order: 4;
     }
 
-    .main-header .user-icons-desktop i {
+    .mainHeader .user-icons-desktop i {
         margin-left: 10px;
     }
 

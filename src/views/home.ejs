@@ -7,7 +7,7 @@
     <!-- Font awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/styles/style.css">    <title>Nice Sweet</title>
     <!-- Javascript -->
@@ -17,7 +17,7 @@
 </head>
 <body>
     <header >
-      <div class="main-header">
+      <div class="mainHeader">
       
       
       <div class="logo">
@@ -169,107 +169,251 @@
     <!-- Inicio de productos -->
     <h5 class="mg-10 tit">Ofertas del Mes</h5>
         <!-- Conteiner de todos los productos -->
-        <div class="container mb-5 mt-5">
-          <div class="row">
-              <!-- card1 -->
-              <div class="col-md-4">
-                  <div class="card mt-3">
-                        <div class="product-1 align-items-center p-2 text-center">
-                          <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
-                             <h5>SHOE</h5>
-  
-                          <!-- card info -->
-                          <div class="mt-3 info">
-                               <span class="text1 d-block"> Lorem ipsum dolor sit amet.</span>
-                               <span class="text1">Lorem, ipsum dolor.</span>
-                          </div>
-                           <div class="cost mt-3 text-dark">
-                              <span>$69.99</span>
-                              <div class="star mt-3 align-items-center">
-                                  <i class="fa fa-star"></i>                                    
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                          </div>
-                          <!-- card info end -->
-                      </div>
-                          <!-- button for cards -->
-                      <div class="p-3 shoe text-center text-white mt-3 cursor">
-                          <span class="text-uppercase">Agregar al carrito</span>
-                      </div>
-                  </div>
-              </div>
-              <!-- Termina card1 -->
-  
-              <!-- card2 -->
-              <div class="col-md-4">
-                  <div class="card mt-3">
-                        <div class="product-1 align-items-center p-2 text-center">
-                          <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
-                             <h5>CHOCO</h5>
-  
-                          <!-- card info -->
-                          <div class="mt-3 info">
-                               <span class="text1 d-block"> Lorem ipsum dolor sit amet.</span>
-                               <span class="text1">Lorem, ipsum dolor.</span>
-                          </div>
-                           <div class="cost mt-3 text-dark">
-                              <span>$69.99</span>
-                              <div class="star mt-3 align-items-center">
-                                  <i class="fa fa-star"></i>                                    
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                          </div>
-                          <!-- card info end -->
-                      </div>
-                          <!-- button for cards -->
-                      <div class="p-3 shoe text-center text-white mt-3 cursor">
-                          <span class="text-uppercase">Agregar al carrito</span>
-                      </div>
-                  </div>
-              </div>
-              <!-- Termina card2 -->
-  
-                  <!-- card3 -->
-              <div class="col-md-4">
-                  <div class="card mt-3">
-                        <div class="product-1 align-items-center p-2 text-center">
-                          <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
-                             <h5>SHOE</h5>
-  
-                          <!-- card info -->
-                          <div class="mt-3 info">
-                               <span class="text1 d-block"> Lorem ipsum dolor sit amet.</span>
-                               <span class="text1">Lorem, ipsum dolor.</span>
-                          </div>
-                           <div class="cost mt-3 text-dark">
-                              <span>$69.99</span>
-                              <div class="star mt-3 align-items-center">
-                                  <i class="fa fa-star"></i>                                    
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                                  <i class="fa fa-star"></i>
-                              </div>
-                          </div>
-                          <!-- card info end -->
-                      </div>
-                          <!-- button for cards -->
-                      <div class="p-3 shoe text-center text-white mt-3 cursor">
-                          <span class="text-uppercase">Agregar al carrito</span>
-                      </div>
-                  </div>
-              </div>
-              <!-- Termina card3 -->
-          </div>
-      </div>
-      <!-- container cards -->
-    
+    <div class="container-card">
+        <div class="row">
+            <!-- card2 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card1 -->
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card2 -->
+            <!-- card3 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card4 -->
+                        <!-- card3 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card5 -->
+                        <!-- card3 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card5 -->
+            <!-- card6 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card6 -->
+            <!-- card7 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card7 -->
+            <!-- card8 -->
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="product">
+                        <img src="/images/alfajor byn.jpg" alt="" class="rounded" width="160">
+                        <h5>Product</h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"> Lorem ipsum dolor sit amet.</span> 
+                             <span class="text1">Lorem, ipsum dolor.</span>
+                        </div>
+                         <div class="cost">
+                            <span>$69.99</span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <!-- card info end -->
+                    </div>
+                        <!-- button for cards -->
+                    <div class="button-card cursor shoe">
+                        <span class="text-uppercase">Agregar al carrito</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Termina card8 -->
+        </div>
+    </div>
+    <!-- container cards -->
 </main>
 <footer>
   <div class="footer-cont">
