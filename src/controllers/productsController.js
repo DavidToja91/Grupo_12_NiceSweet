@@ -1,3 +1,5 @@
+let productsDB = require('../data/productsDB')
+
 module.exports = {
     'list': (req, res) => {
         res.render('products/list');

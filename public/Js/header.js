@@ -1,3 +1,4 @@
+
 /* Capturo los elementos del DOM */
 let navBar = document.getElementById("navigation-bar-mobile");
 let searchBar = document.getElementById("search");

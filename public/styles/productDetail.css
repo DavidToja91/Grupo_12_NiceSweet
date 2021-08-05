@@ -136,59 +136,13 @@ header .option-menu{
   height: 27px;
   }
 
-/* HEADER */
-/* header{
-    background-color: lightblue;
-    height: 60px;
-}
-
-.header-top{
-    display: flex;
-    justify-content: space-between;
-} */
-
-/* Estilos del menú de navegación*/
- /* .topnav {
-    overflow: hidden;
-    background-color : lightblue;
-    position: relative;
-  } */
-   
-  /* Oculta los links dentro del menu de navegación */
-  /* .topnav #myLinks {
-    display: none;
-  }  */
+ /* BODY */
+    body{
+    max-width: 1897px;
+    overflow-x: hidden !important;
+    background-color: #ebebeb;
+  }
   
-  /* Estilos a los links del menú de navegación */
-  /* .topnav a {
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }  */
-  
-  /* Estilos a la hamburguesa*/
-  /* .topnav a.icon {
-    background: white;
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }  */
-  
-  /* Agrega color gris al fondo cuando clickeás */
-  /* .topnav a:hover { 
-    background-color : grey; 
-     color:white;
-  }  */
-  
-  /* Estilos del menú desplegable  */
-  /* .active {
-    background-color: lightblue;
-    color: white;
-  } */
 
 
 /* MAIN */
@@ -200,6 +154,11 @@ h4{
     font-size: 18px;
     text-align: center;
 }
+#titulo-chocolates{
+    font-size: 20px;
+    /* margin : 15px 10px; */
+    padding: 10px
+  }
 
 .section1{
   display: flex;
@@ -213,17 +172,12 @@ h4{
   justify-content: center;
 }
 
+h5 ,
 p {
   text-align: center;
 }
 
-h6{
-    margin-left: 8px;
-    margin-top: 5px;
-    text-align: left;
-}
-
-
+/* BOTÓN DE COMPRA */
 
 .boton{
     text-align: center;
@@ -244,8 +198,10 @@ h6{
 }
 .agregar-al-carrito{
     padding : 10px;
-    color: black;
-    background-color: var(--color-naranja);
+    color: white;
+    background-color: #f4511e;
+    /* border-radius: 20px; */
+    border: 1px solid #f4511e;
     margin-top : 10px;
 
 }
@@ -254,108 +210,238 @@ p{
 }
 
 
-/* FOOTER */
-footer #footer-text{
-  font-size: 16px;
+/*SECTION 2 */
+
+ #ofertas-productos{
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+  font-size: 25px;
 }
-.footer-cont{
-  text-align: center;
-  background-color: #cac1c18a;
-  height: 180px;
-  padding: 25px 0 50px;
-  border-top: 1px solid #cac1c1;
-  border-bottom: 1px solid #cac1c1;
-  margin-bottom: 20px;
-  }
-  
-  footer .footer-sus{
-    display: flex;
-    margin-bottom: 3px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  footer .redes{
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  footer .redes i{
-    background-color: white;
-    width: 40px;
-    padding: 7px;
-    font-size: 24px;
-    margin-right: 10px;
-    border-radius: 18px;
-  }
-  
-  /* Term-Footer */
-  footer .term{
+
+.card-contenedora{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+.hilera{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
-    margin-bottom: 10px;
+    width: fit-content;
+    margin: 0 auto;
   }
-  
-  footer .term p{
-    display: inline-block;
-    font-size: 13px;
+
+
+
+.producto1 h5{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tarjeta{
+    border: none;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px grey;
     text-align: center;
+    width: 275px;
+    margin: 0 4px;
+    margin-bottom: 5px
   }
+
+.texto-peso{
+  font-size: 13px;
+  color: #cbcbcb;
+  display: block;
+}
+
+.info{
+  line-height: 17px;
+  /* margin-bottom: 15px; */
+}
+
+
+
+/* card 1 */
+.texto-precio span{
+  color: tomato;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+ .shoe{
+  background: #f4511e;
+}
+
+.shoe:hover{
+  opacity: 0.9;
+}
+
+.cursor{
+  cursor: pointer; 
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+} 
+
+
+
+
+/* SECTION 2 */
+
+ /* #ofertas-productos{
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+  text-align: left;
+  font-size: 25px;
+}
+.card{
+   height: 90%; 
+  margin: 10px;
+  padding: 5px
   
-  .topnav input[type=email],
-  .topnav input[type=text] {
-  float: center;
-  padding: 6px;
-  border: none;
-  margin-right: 5px;
-  font-size: 17px;
-  }
+}
+.card-img-top{
+width: 100%; 
+  height: 100%; 
+  padding: 5px;
+  object-fit: cover;
+  object-position: center center;
+}
+.card-title{
+  font-size: 14px;
+}
+
+.boton-comprar{
+  text-align: center;
+  padding: 10px 3px 10px
   
-  footer .button {
-    border-radius: 4px;
+}
+.boton2{
+  border-radius: 4px;
     background-color: #f4511e;
     border: none;
     color: #FFFFFF;
     text-align: center;
     font-size: 21px;
     width: 100px;
-    transition: all 0.5s;
-    cursor: pointer;
     margin: 5px;
     height: 35px;
-  }
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
+} */
+/* TERMINA SECTION 2 */
+
+
+
+/* FOOTER */
+.footer-cont {
+  text-align: center;
+  background-color: #cac1c18a;
+  height: 180px;
+  /* padding: 25px 0 50px; */
+  border-top: 1px solid #cac1c1;
+  border-bottom: 1px solid #cac1c1;
+  margin-bottom: 20px;
+}
+
+footer .footer-sus {
+  display: flex;
+  margin-bottom: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .redes {
+  display: flex;
+  justify-content: center;
+}
+
+footer .redes i {
+  background-color: white;
+  width: 40px;
+  padding: 7px;
+  font-size: 24px;
+  margin-right: 10px;
+  border-radius: 18px;
+}
+
+/* Term-Footer */
+footer .term {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .term p {
+  display: inline-block;
+  font-size: 13px;
+  text-align: center;
+}
+
+.topnav input[type=email],
+.topnav input[type=text] {
+  float: center;
+  padding: 6px;
+  border: none;
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+footer .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 21px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 35px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {padding-right: 25px;}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}  
 
 
   /* MEDIA QUERIES */
+
+  @media screen and (min-width: 576px){
+    
+     
+    } 
+    
   /* TABLET */
+
   @media (min-width: 768px) {
+    
     .burger-menu{
       display: none;
     }
@@ -381,6 +467,10 @@ footer #footer-text{
     }
     main .section1 #imagen{
       max-width: 70%;
+    }
+    main #titulo-chocolates{
+      font-size: 25px;
+      margin : 15px 10px
     }
 .footer-cont p{
   font-size: 20px;
@@ -435,3 +525,10 @@ footer .term p{
       font-size: 29px;
     }
   }
+
+
+
+  
+  
+    
+    
