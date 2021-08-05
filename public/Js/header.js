@@ -1,3 +1,4 @@
+
 /* Capturo los elementos del DOM */
 let navBar = document.getElementById("navigation-bar-mobile");
 let searchBar = document.getElementById("search");
@@ -39,8 +40,8 @@ function dropSubCategoryMenu (id) {
 
  if(window.scrollY >= 100){
      console.log(window.scrollY )
-    document.querySelector(".mainHeader").classList.add("header-opacity")
+    document.querySelector(".main-header").classList.add("header-opacity")
 }else {
-    document.querySelector(".mainHeader").classList.remove("header-opacity")
+    document.querySelector(".main-header").classList.remove("header-opacity")
      
 }
