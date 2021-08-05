@@ -138,9 +138,11 @@ header .option-menu{
 
  /* BODY */
     body{
-    max-width: 1446px;
+    max-width: 1897px;
     overflow-x: hidden !important;
-  } 
+    background-color: #ebebeb;
+  }
+  
 
 
 /* MAIN */
@@ -209,6 +211,7 @@ p{
 
 
 /*SECTION 2 */
+
  #ofertas-productos{
   font-weight: bold;
   padding: 10px;
@@ -217,34 +220,41 @@ p{
   font-size: 25px;
 }
 
-.container-card{
+.card-contenedora{
   width: 100%;
-}
-.row{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  margin: 0 auto;
+  justify-content:center;
 }
-.product h5{
+.hilera{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+
+
+.producto1 h5{
   margin: 0;
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: 500;
 }
 
-.card{
-  border: 1px solid lightgray;
-  background-color: white;
-  border-radius: 20px;
-  
-}
+.tarjeta{
+    border: none;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px grey;
+    text-align: center;
+    width: 275px;
+    margin: 0 4px;
+    margin-bottom: 5px
+  }
 
-
-
-.text1{
+.texto-peso{
   font-size: 13px;
   color: #cbcbcb;
   display: block;
@@ -252,19 +262,19 @@ p{
 
 .info{
   line-height: 17px;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 
 
 /* card 1 */
-.cost span{
+.texto-precio span{
   color: tomato;
   font-weight: bold;
   font-size: 20px;
 }
 
-.shoe{
+ .shoe{
   background: #f4511e;
 }
 
@@ -273,10 +283,10 @@ p{
 }
 
 .cursor{
-  cursor: pointer;
+  cursor: pointer; 
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-}
+} 
 
 
 
@@ -423,18 +433,15 @@ footer .button {
 
   /* MEDIA QUERIES */
 
-  @media (min-width: 576px){
-    .container {
-      max-width: 540px;
-      }
-    }
+  @media screen and (min-width: 576px){
+    
+     
+    } 
     
   /* TABLET */
 
   @media (min-width: 768px) {
-    .container{
-      max-width: 720px;
-      }
+    
     .burger-menu{
       display: none;
     }
@@ -517,9 +524,6 @@ footer .term p{
     main .section1 .parrafo p{
       font-size: 29px;
     }
-    .container{
-      max-width: 960px;
-      }
   }
 
 
