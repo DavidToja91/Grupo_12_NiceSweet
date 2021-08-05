@@ -39,8 +39,8 @@ function dropSubCategoryMenu (id) {
 
  if(window.scrollY >= 100){
      console.log(window.scrollY )
-    document.querySelector(".main-header").classList.add("header-opacity")
+    document.querySelector(".mainHeader").classList.add("header-opacity")
 }else {
-    document.querySelector(".main-header").classList.remove("header-opacity")
+    document.querySelector(".mainHeader").classList.remove("header-opacity")
      
 }

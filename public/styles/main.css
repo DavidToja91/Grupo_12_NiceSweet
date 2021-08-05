@@ -1,9 +1,23 @@
-.container{
-  margin-top: 110px !important;
-  margin-bottom: 3rem!important;
+.container-card{
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
 
+.product h5{
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
 
 .card{
   border: none;
@@ -11,23 +25,47 @@
   background-color: white;
   border-radius: 20px;
   transition: transform .3s;
+  text-align: center;
+  width: 275px;
 }
 
 .card:hover{
   transform: translateY(-15px)
 }
 
+.card .button-card{
+  color: white;
+  padding: 16px 0;
+}
+
+.card .product{
+  padding-top: 10px;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+
+
 .text1{
   font-size: 13px;
   color: #cbcbcb;
+  display: block;
 }
 
 .info{
   line-height: 17px;
+  margin-bottom: 15px;
 }
 
 .star{
   color: #fbc02d;
+  margin: 10px 0 15px;
+}
+
+.col-md-4{
+  margin: 17px 10px;
 }
 
 /* card 1 */
@@ -37,7 +75,7 @@
   font-size: 20px;
 }
 
-.shoe{
+.button-card{
   background: #dc3545;
 }
 
@@ -49,4 +87,23 @@
   cursor: pointer;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+
+
+@media (min-width: 576px){
+.container {
+  max-width: 540px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+  max-width: 720px;
+  }
+}
+
+@media (min-width: 992px){
+  .container{
+  max-width: 960px;
+  }
 }
