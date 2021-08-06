@@ -433,15 +433,28 @@ footer .button {
 
   /* MEDIA QUERIES */
 
-  @media screen and (min-width: 576px){
-    
-     
+  @media screen and (max-width: 764px){
+    .hilera{
+      align-items: center;
+      display: block;
+      margin-bottom: 3px;
+    }
+     .tarjeta{
+       margin-top: 15px;
+     }
     } 
     
   /* TABLET */
 
-  @media (min-width: 768px) {
-    
+  @media screen and (min-width: 768px) {
+    .hilera{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+    }
+    .tarjeta{
+      margin-bottom: 15px;
+    }
     .burger-menu{
       display: none;
     }
