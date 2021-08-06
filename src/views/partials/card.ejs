@@ -2,26 +2,27 @@
     <div class="row">
         <!-- card1 -->
         <% cardDB.forEach(product => { %>
-            <div class="col-md-4">
-            <div class="card">
-                  <div class="product">
-                    <img src="/images/<%- product.image %> " alt="" class="rounded" width="160">
-                    <h5><%- product.name %> </h5>
-                    <!-- card info -->
-                    <div class="info">
-                         <span class="text1"> Lorem ipsum dolor sit amet.</span> 
-                         <span class="text1">Lorem, ipsum dolor.</span>
-                    </div>
-                     <div class="cost">
-                        <span>$69.99</span>
-                        <div class="star">
-                            <i class="fa fa-star"></i>                                    
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
+            <a href="/products/detail/<%-product.id%> ">
+                <div class="col-md-4">
+                    <div class="card">
+                      <div class="product">
+                        <img src="/images/<%- product.image %> " alt="" class="rounded" width="160">
+                        <h5><%- product.name %> </h5>
+                        <!-- card info -->
+                        <div class="info">
+                             <span class="text1"><%-product.description  %>  </span> 
                         </div>
-                    </div>
+                         <div class="cost">
+                            <span>$<%-product.price  %> </span>
+                            <div class="star">
+                                <i class="fa fa-star"></i>                                    
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+            </a>
                     <!-- card info end -->
                 </div>
                     <!-- button for cards -->
