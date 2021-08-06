@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 /* routes */
 var indexRouter = require('./routes/index');
@@ -20,12 +21,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-
+app.use(methodOverride('_method'));
 
 /* Rutas */
 app.use('/', indexRouter); // home - contact
 app.use('/users', usersRouter); // register - login - profile
 app.use('/products', productsRouter); // list - detail - cart - CRUD
+
+app.use((req, res, next) => {
+  res.status(404).render('error');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
