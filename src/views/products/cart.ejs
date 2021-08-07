@@ -10,49 +10,56 @@
     <main>
       <form action="" method="POST">
         <div>
-          <section class="tabla1">
-            <table>
-              <thead>
-                <tr>
-                  <th class="princi color">Producto</td>
-                </tr>
-                <tr>
-                  <th class="princi text">Breve descripción</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="color">Precio</th>
-                  <td class="canti color">Cantidad</th>
-                  <td class="color">Total</th>
-                </tr>
-                <tr>
-                  <td><input type="number"></td>
-                  <td class="canti">
-                    <button type="button" value="-">-</button>
-                    <input class="type2" type="number">
-                    <button type="button" value="+">+</button>
-                  </td>
-                  <td><input type="number"></td>
-                </tr>
-              </tbody>
-            </table>
-            <table>
-              <thead>
-                <tr>
-                  <td class="canti order color">
-                    <p class="chikita">Total de productos</p><input class="type2" type="number">
-                  </td>
-                  <td class="canti order color">
-                    <p class="chikita">Precio final</p><input class="type2" type="number">
-                  </td>
-                </tr>
-              </thead>
-            </table>
-          </section>
+          <!-- Tabla 1 -->
+          <div class="tablas">
+            <section class="tabla1">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="princi color">Producto</td>
+                  </tr>
+                  <tr>
+                    <th class="princi text">Breve descripción</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="color">Precio</th>
+                    <td class="canti color">Cantidad</th>
+                    <td class="color">Total</th>
+                  </tr>
+                  <tr>
+                    <td><input type="number"></td>
+                    <td class="canti">
+                      <button type="button" value="-">-</button>
+                      <input class="type2" type="number">
+                      <button type="button" value="+">+</button>
+                    </td>
+                    <td><input type="number"></td>
+                  </tr>
+                </tbody>
+              </table>         
+            </section>
+          </div>
+            <section class="tabla1">
+              <table>
+                <thead>
+                  <tr>
+                    <td class="canti order color">
+                      <p class="chikita">Total de productos</p><input class="type2" type="number">
+                    </td>
+                    <td class="canti order color">
+                      <p class="chikita">Precio final</p><input class="type2" type="number">
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </section>
+          
           <div class="btnProduct">
             <button href="">Agregar otro producto</button>
           </div>
+          <!-- Tabla 2 -->
           <section class="tabla2">
             <table>
               <thead>
@@ -73,10 +80,10 @@
                 </tr>
               </tbody>
             </table>
+            <div class="btnFinal">
+              <button type="submit">Finalizar compra</button>
+            </div>
           </section>
-          <div class="btnFinal">
-            <button type="submit">Finalizar compra</button>
-          </div>
         </div>  
       </form>
     </main>
