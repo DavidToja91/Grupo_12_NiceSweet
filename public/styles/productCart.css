@@ -19,7 +19,7 @@
 
 body {
   align-items: center;
-  background-color: var(--color-fondo);
+  background-color: #000000;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -33,124 +33,12 @@ a {
   
 ul, ol {list-style: none;}
 
-/* Header */
-/* Header-top */
-header {width: 100%;}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 11px 10px 10px 10px; 
-  background-color: #add8e6;
-  height: 61px;
-}
-
-.header-top .logo {
-  background-color: #E2DFDF;
-  display: flex;
-  width: 25%;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-}
-
-.header-top .tittle {
-  display: flex;
-  background-color: aquamarine;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-top .burger-menu {
-  background-color: #0b38429e;
-  border: 1px solid black;
-  border-radius: 5px;
-  text-align : center;
-  margin: auto 0;
-  padding: 5px;
-  width: 33px;
-  height: 34px;
-}
-
-header .topnav input[type=email],
-header .topnav input[type=text] {
-  float: center;
-  padding: 6px;
-  border: none;
-  margin-right: 5px;
-  font-size: 17px;
-}
-
-header .option-menu {
-  font-size: 27px;
-  padding: 0 5px;
-  display: none;
-}
-
-.header-bot .menu-search {
-  margin: auto;
-  width: 550px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header-bot {
-  background-color: #add8e6;
-  height: 66px;
-  display: none;
-  padding: 5px;
-}
-
-.header-bot .nav ul {z-index: 1;}
-
-.header-bot .nav li a {
-  border-radius: 8px;
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-}
-
-.nav li a:hover {background-color: lightseagreen;}
-
-.nav > li {
-  float: left;
-  margin-left: 10px;
-}
-
-.nav li ul {
-  display: none;
-  position: absolute;
-  min-width: 140px;
-}
-
-.nav li:hover > ul {display: block;}
-
-.nav li ul li {position: relative;}
-
-.nav li ul li ul {
-  right: -140px;
-  top: 0px;
-}
-
-/* Search-bar */
-.header-top .search-bar input {
-  margin-left: 15px;
-  width: 85%;
-}
-
-.search-bar input {
-  border-radius: 3px;
-  height: 27px;
-}
-
 /* MAIN */
 main {
+  background-color: white;
+  border-radius: 25px;
   width: 90%;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 main p {margin-bottom: 0;}
@@ -159,29 +47,29 @@ main p {margin-bottom: 0;}
 main .tabla1, main .tabla2 {
   flex-grow: 1;
   font-size: 0.8rem;
-  margin: 10px auto;
-  max-width: 320px;
+  margin: 20px 10px;
+  max-width: 400px;
 }
 
 main table {
   border: none;
   border-radius: 2px;   
+  margin: 0 20px;
   padding: 2px;
   text-align: center;
-  width: 100%;
 }
 
 main table tr {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 1px 0;
 }
 
 /* tabla1 */
-main .tabla1 table thead th {
+main .tabla1 table .color {
   background-color: thistle;
-  margin-top: 20px;
+
 }
 
 main .tabla1 th, main .tabla1 td {
@@ -189,18 +77,19 @@ main .tabla1 th, main .tabla1 td {
   border: solid 1px rosybrown;
   border-radius: 2px; 
   padding: 2px; 
-  width: 17%;
+  width: 26%;
 }
 
-main .tabla1 table #princi {
-  flex-grow: 0.37;
-  flex-wrap: nowrap;
-  width: 37%;
+main .tabla1 table .princi {
+  flex-grow: 0.95;
+  width: 95%;
 }
 
-main .tabla1 table #canti {
-  flex-grow: 0.23;
-  width: 23%;
+main .tabla1 table .text {height: 50px;}
+
+main .tabla1 table .canti {
+  flex-grow: 0.46;
+  width: 47.5%;
 }
 
 main .tabla1 table .order {
@@ -229,17 +118,19 @@ main .tabla2 th, main .tabla2 td {
   background-color: blanchedalmond;
   border: solid 1px rosybrown;
   border-radius: 2px;
-  width: 24.5%;
+  width: 24.9%;
 }
 
 /* buttons */
 main .tabla1 table tbody button {
-  background-color: lightgoldenrodyellow;
+  background-color: var(--color-aqua);
   border: solid 1px rosybrown;
   border-radius: 3px;
   flex-grow: 0.20;
-  max-width: 30px;
-  width: 20%;
+  min-height: 3.5vh;
+  margin: 0 5px;
+  max-width: 25px;
+  width: 22%;
 }
 
 main .btnProduct, main .btnFinal {
@@ -264,7 +155,7 @@ main .btnProduct button {
 
 main .btnFinal button {
   flex-grow: 0.23;
-  margin: 40px 0;
+  margin: 20px 0;
   max-width: 115px;
   width: 23%;
 }
@@ -278,9 +169,6 @@ main table input {
 }
 
 main table .type2 {width: 27%;}
-
-
-
 
 /* MEDIA QUERIES */
 /* Tablet */

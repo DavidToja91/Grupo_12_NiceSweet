@@ -9,87 +9,75 @@
     <%- include('../partials/header') %> 
     <main>
       <form action="" method="POST">
-        <section class="tabla1">
-          <table>
-            <thead>
-              <tr>
-                <th id="princi">Producto</td>
-                <th>Precio</td>
-                <th id="canti">Cantidad</td>
-                <th>Total</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="princi">Breve descripción</td>
-                <td><input type="number"></td>
-                <td id="canti">
-                  <button type="button" value="-">-</button>
-                  <input class="type2" type="number">
-                  <button type="button" value="+">+</button>
-                </td>
-                <td><input type="number"></td>
-              </tr>
-              <tr>
-                <td id="princi">Breve descripción</td>
-                <td><input type="number"></td>
-                <td id="canti">
-                  <button type="button" value="-">-</button>
-                  <input class="type2" type="number">
-                  <button type="button" value="+">+</button>
-                </td>
-                <td><input type="number"></td>
-              </tr>
-              <tr>
-                <td id="princi">Breve descripción</td>
-                <td><input type="number"></td>
-                <td id="canti">
-                  <button type="button" value="-">-</button>
-                  <input class="type2" type="number">
-                  <button type="button" value="+">+</button>
-                </td>
-                <td><input type="number"></td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td id="princi" class="order">
-                  <p class="chikita">Numero total de productos</p><input class="type2" type="number">
-                </td>
-                <td class="align"><input type="number"></td>
-                <td id="canti"><input type="number" class="align"></td>
-                <td><input type="number"></td>
-              </tr>
-            </tfoot>
-          </table>
-        </section>
-        <section class="tabla2">
-          <table>
-            <thead>
-              <tr>
-                <th>Subtotal</td>
-                <th>Precio de envío</td>
-                <th>
-                  <p>Descuento</p><input class="type2" type="number"></td>
-                <th>Agregar cupon</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-              </tr>
-            </tbody>
-          </table>
+        <div>
+          <section class="tabla1">
+            <table>
+              <thead>
+                <tr>
+                  <th class="princi color">Producto</td>
+                </tr>
+                <tr>
+                  <th class="princi text">Breve descripción</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="color">Precio</th>
+                  <td class="canti color">Cantidad</th>
+                  <td class="color">Total</th>
+                </tr>
+                <tr>
+                  <td><input type="number"></td>
+                  <td class="canti">
+                    <button type="button" value="-">-</button>
+                    <input class="type2" type="number">
+                    <button type="button" value="+">+</button>
+                  </td>
+                  <td><input type="number"></td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <td class="canti order color">
+                    <p class="chikita">Total de productos</p><input class="type2" type="number">
+                  </td>
+                  <td class="canti order color">
+                    <p class="chikita">Precio final</p><input class="type2" type="number">
+                  </td>
+                </tr>
+              </thead>
+            </table>
+          </section>
           <div class="btnProduct">
             <button href="">Agregar otro producto</button>
           </div>
-        </section>
-        <div class="btnFinal">
-          <button type="submit">Finalizar compra</button>
-        </div>
+          <section class="tabla2">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subtotal</td>
+                  <th>Precio de envío</td>
+                  <th>
+                    <p>Descuento</p><input class="type2" type="number">%</td>
+                  <th>Agregar cupon</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="number"></td>
+                  <td><input type="number"></td>
+                  <td><input type="number"></td>
+                  <td><input type="number"></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <div class="btnFinal">
+            <button type="submit">Finalizar compra</button>
+          </div>
+        </div>  
       </form>
     </main>
     <%- include('../partials/footer') %>
