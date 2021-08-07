@@ -279,98 +279,8 @@ main table input {
 
 main table .type2 {width: 27%;}
 
-/* FOOTER */
-footer {
-  text-align: center;
-  background-color: #cac1c18a;
-  padding: 17px 0;
-  border-top: 1px solid #cac1c1;
-  border-bottom: 1px solid #cac1c1;
-  width: 100%;
-}
-    
-footer .footer-sus {
-  display: flex;
-  margin-bottom: 3px;
-  justify-content: center;
-  align-items: center;
-}
-    
-footer .redes {
-  display: flex;
-  justify-content: center;   
-  margin-top: 20px; 
-}
-    
-footer .redes i {
-  background-color: white;
-  width: 40px;
-  padding: 7px;
-  font-size: 24px;
-  margin-right: 10px;
-  border-radius: 18px;
-}  
 
-footer .term {margin-top: 20px;}
 
-footer .term ul {
-  display: flex;
-  padding: 2px 10px;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-footer .term ul li {
-  margin: 0 10px;
-  max-width: 45%;
-}
-    
-.topnav input[type=email] {
-  float: center;
-  padding: 6px;
-  border: none;
-  margin-right: 5px;
-  font-size: 15px;
-}
-    
-footer .button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 21px;
-  width: 80px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  height: 35px;
-}
-    
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-    
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-    
-.button:hover span {
-  padding-right: 25px;
-}
-    
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
 
 /* MEDIA QUERIES */
 /* Tablet */
@@ -389,25 +299,6 @@ footer .button {
     flex-grow: 0.8;
     max-width: 500px;
   }
-
-  /* Footer */
-  .footer-cont p {font-size: 20px;}
-  
-  .footer-sus .topnav input {width: 270px;}
-  
-  footer .redes i {
-    font-size: 30px;
-    width: 50px;
-    padding: 5px;
-  }
-  
-  footer .term ul {margin: 40px 2%;}  
-  
-  /* When the input field gets focus, change its width to 100% */
-  input[type=text]:focus {width: 100%;}
-
-  .fade img {max-height: 320px;}
-
 }
   
 @media(min-width: 1024px) {
@@ -430,21 +321,4 @@ footer .button {
     flex-grow: 0.6;
     max-width: 768px;
   }
-
-  /* Footer */
-  footer .term ul {
-    margin: 30px 5%;
-    float: center;
-    text-align: center;
-  }
-
-  footer .term ul li {
-    display: inline-block;
-    padding: 0 10px;
-    text-transform: capitalize;
-    text-align: center;
-  }
-
-  footer .term ul li:last-child {border-right: none;}
-
 }
