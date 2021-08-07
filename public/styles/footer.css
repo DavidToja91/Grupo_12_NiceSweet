@@ -132,7 +132,6 @@ footer .button {
   footer .term ul li {
     display: inline-block;
     padding: 0 10px;
-    text-transform: capitalize;
     text-align: center;
   }
 
