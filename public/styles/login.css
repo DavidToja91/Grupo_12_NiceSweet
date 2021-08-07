@@ -1,381 +1,204 @@
-* {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-  color: var(--color-letra);
-  font-family: var(--letra);
-  font-size: 17px;
+:root {
+  --color-lightBlue: #73a1dd;
+  --color-dark-x: #474b52;
+  --color-dark-xx: #acbddf;
+  --color-light: #ffffff;
+  --color-grey: #f5f6f8;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  background-color: var(--color-grey);
+  color: var(--color-light);
+  letter-spacing: .05rem;
+}
+
+.bg-light {
+  background-color: var(--color-light)!important;
+}
+
+.bg-dark {
+  background-color: var(--color-lightBlue)!important;
+}
+
+.p-6 {
+  padding: 4rem 7rem;
+}
+
+.contact-box {
+  padding: 3rem;
+}
+
+.btn {
+  font-weight: 400;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  min-width: 10rem;
+}
+
+.btn-outline-dark {
+  border: 2px solid var(--color-dark-xx);
 }
 
 
-
-/* Header */
-/* Header-top */
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 11px 10px 10px 10px; 
-  background-color: #add8e6;
-  height: 61px;
+.form-control {
+  background-color: var(--color-dark-xx);
+  border: 2px solid var(--color-dark-xx);
+  border-radius: .2rem;
+  padding: 1.5rem 1rem;
 }
 
-.header-top .logo {
-  background-color: #E2DFDF;
-  display: flex;
-  width: 25%;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
+
+.register-bg {
+  background-image: url('/images/NICE\ SWEET\ logo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
-.header-top .tittle {
-  display: flex;
-  background-color: aquamarine;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
+.testiomonial {
+  bottom: 10px
 }
 
-.header-top .burger-menu {
-  background-color: #0b38429e;
-  border: 1px solid black;
-  border-radius: 5px;
-  text-align : center;
-  margin: auto 0;
-  padding: 5px;
-  width: 33px;
-  height: 34px;
-}
-
-header .option-menu {
-  font-size: 27px;
-  padding: 0 5px;
-  display: none;
-}
-
-.header-bot .menu-search {
-  margin: auto;
-  width: 550px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.header-bot {
-  background-color: #add8e6;
-  height: 50px;
-  display: none;
-  padding: 5px;
-}
-
-.header-bot .nav li a {
-  border-radius: 8px;
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-}
-
-.nav li a:hover {background-color: lightseagreen;}
-
-.nav > li {
-  float: left;
-  margin-left: 10px;
-}
-
-.nav li ul {
-  display: none;
-  position: absolute;
-  min-width: 140px;
-}
-
-.nav li:hover > ul {display: block;}
-
-.nav li ul li {position: relative;}
-
-.nav li ul li ul {
-  right: -140px;
-  top: 0px;
-}
-
-/* Search-bar */
-.header-top .search-bar input {
-  margin-left: 15px;
-  width: 85%;
-}
-
-.search-bar input{
-  border-radius: 3px;
-  height: 27px;
-}
-
-/* Estilos del menú de navegación*/
-.topnav {
-  overflow: hidden;
-  background-color : lightblue;
+/* *** Footer *** */
+footer{
   position: relative;
 }
-
-/* Oculta los links dentro del menu de navegación */
-.topnav #myLinks {display: none;}
-  
-/* Estilos a los links del menú de navegación */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
-  
-/* Estilos a la hamburguesa*/
-.topnav a.icon {
-  background: white;
-  display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-  
-/* Agrega color gris al fondo cuando clickeás */
-.topnav a:hover {
-/* background-color : grey; */
-  color: black;
-}
-  
-/* Estilos del menú desplegable  */
-.active {
-  background-color: lightblue;
-  color: white;
-}
-
-/************ LOGIN ***********/
-/***** MAIN **********/
-
-main {  
-  background: #659999; 
-   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f4791f, #659999);  
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f4791f, #659999);
-   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: 'Poppins', sans-serif;
-  width:100%;
-  height: 400px;
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-}
-
-main h1 {
-  text-align: center;
-  margin: 10px 0;
-  font-weight:800;
-}
-
-main form {
-  background: #fff;
-  width: 90%;
-  padding: 10px 0px;
-  border-radius: 20px;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-  margin: 20px auto;
-}
-
-main .form-log-in {
-  background-color: rgb(255, 231, 235);
-  position:relative;
-  top: 385px;
-  left: 5px;
-  margin-bottom: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+   
+footer p{
+ 
+   margin: 0;
 }
 
 
-main form .grupo {
-  position: relative;
-  margin: 25px 0 0px; 
-}
+.footer-cont{
+   text-align: center;
+   background-color: #cac1c18a;
+   height: 180px;
+   padding: 25px 0 50px;
+   border-top: 1px solid #cac1c1;
+   border-bottom: 1px solid #cac1c1;
+   margin-bottom: 20px;
+   }
+   
+   footer .footer-sus{
+     display: flex;
+     margin-bottom: 3px;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   footer .redes{
+     display: flex;
+     justify-content: center;
+     
+   }
+   
+   footer .redes i{
+     background-color: white;
+     width: 40px;
+     padding: 7px;
+     font-size: 24px;
+     margin-right: 10px;
+     border-radius: 18px;
+   }
+   
+   /* Term-Footer */
+   footer .term{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 10px;
+   }
+   
+   footer .term p{
+     display: inline-block;
+     font-size: 13px;
+     text-align: center;
+   }
+   
+   .topnav input[type=text],
+   .topnav input[type=email] {
+   float: center;
+   padding: 6px;
+   border: none;
+   margin-right: 5px;
+   font-size: 17px;
+   }
+   
+   footer .button {
+     border-radius: 4px;
+     background-color: #f4511e;
+     border: none;
+     color: #FFFFFF;
+     text-align: center;
+     font-size: 21px;
+     width: 100px;
+     transition: all 0.5s;
+     cursor: pointer;
+     margin: 5px;
+     height: 35px;
+   }
+   .button span {
+     cursor: pointer;
+     display: inline-block;
+     position: relative;
+     transition: 0.5s;
+   }
+   
+   .button span:after {
+     content: '\00bb';
+     position: absolute;
+     opacity: 0;
+     top: 0;
+     right: -20px;
+     transition: 0.5s;
+   }
+   
+   .button:hover span {
+     padding-right: 25px;
+   }
+   
+   .button:hover span:after {
+     opacity: 1;
+     right: 0;
+   }
 
-main input:focus~label,
-main input:valid~label,
-main textarea:focus~label,
-main textarea:valid~label {
-  position: absolute;
-  top: -14px;
-  font-size: 12px;
-  color: #2196F3;
-}
 
-main label {
-  color: var(--colorTextos);
-  font-size: 16px;
-  position: absolute;
-  left: 5px ;
-  top: 5px;
-  transition: 0.3s ease all;
-  pointer-events: none;
-}
+      /* Search-bar */
 
-main input:focus~.barra::before, 
-textarea:focus~.barra::before {width: 100%;}
-
-main.barra {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-main .barra::before {
-  content:'';
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  position: absolute;
-  background: linear-gradient(to right, #f3e073, #c2bf0d);
-  transition: 0.3 ease all;
-  left: 0%;
-}
-
-main button {
-  background: #659999; 
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f4791f, #659999);  
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f4791f, #659999);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  display: block;
-  width: 100px;
-  height: 40px;
-  border: none;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 16px;
-  margin:10px auto;
-  margin-top: 25px;
-  cursor: pointer;
-}
-  
-/* Footer */
-.footer-cont {
-  text-align: center;
-  background-color: #cac1c18a;
-  height: 200px;
-  padding: 25px 0 50px;
-  border-top: 1px solid #cac1c1;
-  border-bottom: 1px solid #cac1c1;
-  margin-bottom: 20px;
-}
-
-footer .footer-sus {
-  display: flex;
-  margin-bottom: 3px;
-  justify-content: center;
-  align-items: center;
-}
-
-footer .redes {
-  display: flex;
-  justify-content: center;
-}
-
-footer .redes i {
-  background-color: white;
-  width: 40px;
-  padding: 7px;
-  font-size: 24px;
-  margin-right: 10px;
-  border-radius: 18px;
-}
-
-/* Term-Footer */
-footer .term {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px
-}
-
-footer .term p {
-  display: inline-block;
-  font-size: 13px;
-  text-align: center;
-  margin-bottom: 0px;
-}
-
-.topnav input[type=email],
-.topnav input[type=text] {
-  float: center;
-  padding: 6px;
-  border: none;
-  margin-right: 5px;
-  font-size: 17px;
-}
-
-footer .button {
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 21px;
-  width: 100px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  height: 35px;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {padding-right: 25px;}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-/* ****** */
+   .search-bar input{
+   margin-left: 15px;
+   width: 85%;
+   }
+   
+   .search-bar input{
+   border-radius: 3px;
+   height: 27px;
+   }
 
 
 
-/* Medias queries*/
-@media (min-width: 768px){
 
-  /* Header */
-  .burger-menu{display: none;}
-
-  header .option-menu {display: inline-block;}
-
-  header .search-bar {flex-grow: 0.7;}
-
-  .header-bot {display: block;}
-
-  /* Main */
-  main .tit {
-    font-size: 20px;
-    margin: 15px 0 20px;
+@media (max-width: 575.98px) {
+  .p-6 {
+      padding: 2rem;
   }
 
-  .section-1 .ext,
-  .section-2 .ext {display: block;}
+  .contact-box {
+      padding: 0;
+  }
 
+  .width-100 {
+      width: 100%;
+  }
+}
+
+@media (max-width: 1200px) { 
+  .register-bg {
+      min-height: 50vh;
+  }
 }
