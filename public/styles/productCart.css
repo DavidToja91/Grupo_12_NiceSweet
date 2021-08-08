@@ -5,7 +5,7 @@
   --color-amarrillo: #F3EAC2;
   --color-grisClaro: #C4C4C4;
   --color-purpura : #BA135D;
-  --color-verdeAgua : #99D8D0
+  --color-verdeAgua :  #99D8D0
 }
 
 * {
@@ -52,6 +52,8 @@ main div {
   justify-content: space-evenly;
 }
 
+main .tablas {margin-top: 25px;}
+
 main .tabla1, main .tabla2 {
   flex-grow: 1;
   font-size: 0.8rem;
@@ -74,11 +76,10 @@ main table tr {
   justify-content: space-evenly;
 }
 
-/* tabla1 */
-main .tabla1 table .color {
-  background-color: thistle;
+main table tr td {height: 32px;}
 
-}
+/* tabla1 */
+main .tabla1 table .color {background-color: thistle;}
 
 main .tabla1 th, main .tabla1 td {
   background-color: blanchedalmond;
@@ -93,7 +94,7 @@ main .tabla1 table .princi {
   width: 95%;
 }
 
-main .tabla1 table .text {height: 50px;}
+main .tabla1 table .text {height: 42px;}
 
 main .tabla1 table .canti {
   flex-grow: 0.46;
@@ -112,9 +113,7 @@ main .tabla1 table .chikita {
   width: 40%;
 }
 
-main .tabla1 table .align {
-  align-self: 0 0 10px 0;
-}
+main .tabla1 table .align {align-self: 0 0 10px 0;}
 
 /* tabla2 */
 main .tabla2 table thead th {
@@ -131,7 +130,7 @@ main .tabla2 th, main .tabla2 td {
 
 /* buttons */
 main .tabla1 table tbody button {
-  background-color: var(--color-aqua);
+  background-color: var(--color-verdeAgua);
   border: solid 1px rosybrown;
   border-radius: 3px;
   flex-grow: 0.20;
@@ -149,19 +148,21 @@ main .btnProduct, main .btnFinal {
 }
 
 main .btnProduct button, main .btnFinal button {
-  background-color: blanchedalmond;
   border: solid 1px rosybrown;
   border-radius: 10px;
+  color: white;
   padding: 2px 10px;
 }
 
 main .btnProduct button {  
+  background-color: var(--color-aqua);
   flex-grow: 1;   
   max-width: 150px;
   width: 100%;
 }
 
 main .btnFinal button {
+  background-color: var(--color-rosaOscuro);
   flex-grow: 1;
   margin: 20px 0;
   max-width: 115px;
@@ -195,6 +196,7 @@ main table .type2 {width: 27%;}
     flex-grow: 0.8;
     max-width: 500px;
   }
+  
 }
   
 @media(min-width: 1024px) {
@@ -212,16 +214,19 @@ main table .type2 {width: 27%;}
 
   .menu-search .nav > li {margin-left: 50px;}
 
-  /* main div .tablas .tabla1 table {
+  main .newsize { max-width: 1000px;}
+
+  main .tablas {
     align-items: flex-start;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
+    margin-top: 25px;
   }
 
-  .princi {
-    width: 20vw;
-  } */
+  main thead, main tbody {width: 400px;} 
+
+  main .tabla1 table .text {height: 32px;}
 
 }
