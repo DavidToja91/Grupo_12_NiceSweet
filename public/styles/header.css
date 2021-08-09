@@ -32,7 +32,7 @@ header {
 
 .main-header .burguer-menu-icon{
     font-size: 24px;
-    order: 0; 
+    order: -1; 
 }
 
 .main-header .logo {
