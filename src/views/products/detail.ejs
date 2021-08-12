@@ -23,14 +23,12 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="/images/cofler-aireado2.png" class="img-fluid rounded-start" alt="...">
+              <img src="/images/<%= product.image %> " class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Chocolate Cofler AIR</h5>
-                <p class="card-text"> Tableta de chocolate por 180gr.
-                  $160
-                </p>
+                <h5 class="card-title"><%- product.name %> </h5>
+                <p class="card-text"> <%- product.description %> </p>
                 <div class="boton">
                   <div class="boton-dos"> 
                     <button type="button" value="-" class="minus">-</button>
