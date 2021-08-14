@@ -1,11 +1,16 @@
-let productsDB = require('../data/productsDB')
+const { getProducts } = require('../data/productsDB');
 
 module.exports = {
     'list': (req, res) => {
         res.render('products/list');
     },
-    'detail': (req, res) => {        
-        res.render('products/detail');
+    'detail': (req, res) => {
+        let productID = +req.params.id;
+        let product = getProducts.find(product => product.id === productID)
+
+        res.render('products/detail',{
+            product,
+        });
     },
     'cart': (req, res) => {
         res.render('products/cart');

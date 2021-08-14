@@ -16,3 +16,18 @@ module.exports= {
 
     }
 }
+
+//EDU SI VES ESTO LO COMENTÉ PARA NO MANDARME MACANAS TKM
+// let { getProducts, getUsers } = require('../data/productsDB')
+
+// module.exports = {
+//     'index': (req, res) => {
+//         res.render('admin/index');
+//     },
+//     'products': (req, res) => {        
+//         res.render('admin/products');
+//     },
+//     'users': (req, res) => {        
+//         res.render('admin/users');
+//     },
+// };

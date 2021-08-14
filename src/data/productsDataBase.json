@@ -14,4 +14,3 @@
 {"id":14, "name":"Dos Corazones", "category": "Golosinas", "subcategory": "Bombones", "price": "90","discount":"10", "description": "Bombón Dos Corazones 26gr",  "image":["dos-corazones.jpg"]},
 {"id":15, "name":"Bombones Ferrero Rocher", "category": "Golosinas", "subcategory": "Bombones", "price": "640","discount":"25", "description": "Bombones Ferrero Rocher 8unidades",  "image":["ferrero-rocher.jpg"]},
 {"id":16, "name":"Kinder Sorpresa", "category": "Golosinas", "subcategory": "Chocolates", "price": "180","discount":"10", "description": "Kinder Sorpresa 20gr",  "image":["kinder-sorpresa.png"]}]
-

@@ -6,7 +6,26 @@
   --color-grey: #f5f6f8;
 }
 
-body {
+/* General */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.contenedorMain {
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
@@ -61,125 +80,6 @@ body {
 .testiomonial {
   bottom: 10px
 }
-
-/* *** Footer *** */
-footer{
-  position: relative;
-}
-   
-footer p{
- 
-   margin: 0;
-}
-
-
-.footer-cont{
-   text-align: center;
-   background-color: #cac1c18a;
-   height: 180px;
-   padding: 25px 0 50px;
-   border-top: 1px solid #cac1c1;
-   border-bottom: 1px solid #cac1c1;
-   margin-bottom: 20px;
-   }
-   
-   footer .footer-sus{
-     display: flex;
-     margin-bottom: 3px;
-     justify-content: center;
-     align-items: center;
-   }
-   
-   footer .redes{
-     display: flex;
-     justify-content: center;
-     
-   }
-   
-   footer .redes i{
-     background-color: white;
-     width: 40px;
-     padding: 7px;
-     font-size: 24px;
-     margin-right: 10px;
-     border-radius: 18px;
-   }
-   
-   /* Term-Footer */
-   footer .term{
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     align-items: center;
-     margin-bottom: 10px;
-   }
-   
-   footer .term p{
-     display: inline-block;
-     font-size: 13px;
-     text-align: center;
-   }
-   
-   .topnav input[type=text],
-   .topnav input[type=email] {
-   float: center;
-   padding: 6px;
-   border: none;
-   margin-right: 5px;
-   font-size: 17px;
-   }
-   
-   footer .button {
-     border-radius: 4px;
-     background-color: #f4511e;
-     border: none;
-     color: #FFFFFF;
-     text-align: center;
-     font-size: 21px;
-     width: 100px;
-     transition: all 0.5s;
-     cursor: pointer;
-     margin: 5px;
-     height: 35px;
-   }
-   .button span {
-     cursor: pointer;
-     display: inline-block;
-     position: relative;
-     transition: 0.5s;
-   }
-   
-   .button span:after {
-     content: '\00bb';
-     position: absolute;
-     opacity: 0;
-     top: 0;
-     right: -20px;
-     transition: 0.5s;
-   }
-   
-   .button:hover span {
-     padding-right: 25px;
-   }
-   
-   .button:hover span:after {
-     opacity: 1;
-     right: 0;
-   }
-
-
-      /* Search-bar */
-
-   .search-bar input{
-   margin-left: 15px;
-   width: 85%;
-   }
-   
-   .search-bar input{
-   border-radius: 3px;
-   height: 27px;
-   }
-
 
 
 
