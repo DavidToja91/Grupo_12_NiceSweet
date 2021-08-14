@@ -1,9 +1,10 @@
-let productsDB = require('../data/productsDB');
+// let productsDB = require('../data/productsDB');
+let { getProducts, getUsers } = require('../data/productsDB')
 
 module.exports= {
     productos: (req, res)=>{
         res.render('admin' , {
-            productsDB /*Le pasamos como objeto la base de datos */
+            getProducts /*Le pasamos como objeto la base de datos */
         })
     },
     producto: (req, res)=>{
