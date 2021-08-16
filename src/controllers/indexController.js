@@ -4,6 +4,7 @@ module.exports = {
     'home': (req, res) => {
         let cardDB = productsDB.filter(product => product.id <= 8)
         res.render('home', {
+            title: "HomePage",
             cardDB,
         });
     },
