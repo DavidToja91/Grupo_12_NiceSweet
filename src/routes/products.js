@@ -1,11 +1,11 @@
 let express = require('express');
 let router = express.Router();
-let controllers = require('../controllers/productsController')
+let { list, detail, cart, create, edit } = require('../controllers/productsController')
 
-router.get('/list', controllers.list);
-router.get('/detail/:id', controllers.detail);
-router.get('/cart', controllers.cart);
-router.get('/create', controllers.create);
-router.get('/edit/:id', controllers.edit);
+router.get('/list', list);
+router.get('/detail/:id', detail);
+router.get('/cart', cart);
+router.get('/create', create);
+router.get('/edit/:id', edit);
 
 module.exports = router;

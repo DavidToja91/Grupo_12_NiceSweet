@@ -14,6 +14,11 @@
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * Ignacio Marquez * > :
+    • Armado de base de dato.
+    • Implemetancion de ejs, partials de header, footer.
+    • Modificaion de las card
+    • Cambios puestos en trello
+    • Agregar a los controlladores una limitacion para que me muestre los primeros 8 productos
 
 --------------------------------------------------------------------------------------------------------------------------------
 
