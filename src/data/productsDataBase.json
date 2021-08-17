@@ -2,7 +2,7 @@
 {"id":2, "name":"Alfajor MiniTorta Aguila", "category": "Golosinas", "subcategory": "Alfajores", "price": "110", "discount":"15", "description": "Alfajor de dulce de leche y brownie 72gr.",  "image":["alfajorAguilaMiniTorta.jpg"]},
 {"id":3, "name":"Chocolate Aguila 100gr", "price": "125","discount":"20", "description": "Chocolate en barra Aguila para taza 100 Gr.", "category":"Golosinas", "subcategory": "Chocolates", "image":["chocolateAguila.jpg"]},
 {"id":4, "name":"Chocolate Arcor Con Leche (Blanco)", "category": "Golosinas", "subcategory": "Chocolates", "price": "40","discount":"10", "description": "Chocolate Arcor blanco 25gr",  "image":["chocolate-arcor.jpg"]},
-{"id":5, "name":"Chocolate Cofler Aireado", "category": "Golosinas", "subcategory": "Chocolates", "price": "220","discount":"10",  "description": "Chocolate Cofler Aireado con almendras 27gr",  "image":["cofler-aireado2.jpg"]},
+{"id":5, "name":"Chocolate Cofler Aireado", "category": "Golosinas", "subcategory": "Chocolates", "price": "220","discount":"10",  "description": "Chocolate Cofler Aireado con almendras 27gr",  "image":["cofler-aireado2.png"]},
 {"id":6, "name":"Alfajor Tita", "category": "Golosinas", "subcategory": "Alfajores", "price": "38","discount":"10", "description": "Alfajor TITA de 36gr",  "image":["tita.jpg"]},
 {"id":7, "name":"Alfajor B&N", "category": "Golosinas", "subcategory": "Alfajores", "price": "85","discount":"5", "description": "Alfajor B&N 70gr",  "image":["alfajor byn.jpg"]},
 {"id":8, "name":"Chocolate Bonafide", "category": "Golosinas", "subcategory": "Chocolates", "price": "150","discount":"10", "description": "Chocolate Bonafide 60% cacao 100gr",  "image":["chocolate-bonafide.jpg"]},
