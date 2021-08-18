@@ -3,12 +3,13 @@ let { getProducts, getUsers } = require('../data/productsDB')
 
 module.exports= {
     inicio: (req, res)=>{
-        res.render('/', {
+        res.render('admin/adminIndex', {
+            getProducts,
             title: "Bienvenide Admin"
         } )
     },
     productos: (req, res)=>{
-        res.render('admin/adminIndex.ejs' , {
+        res.render('admin/adminProductos' , {
             getProducts /*Le pasamos como objeto la base de datos */
         })
     },
