@@ -8,8 +8,7 @@ footer {
 }
 
 footer .footer-cont {
-  padding: 25px 0 50px;
-  margin-bottom: 20px;
+  padding: 25px 0;
 }
     
 footer .footer-sus {
@@ -113,13 +112,7 @@ footer .button {
 @media (min-width: 768px) {
   .footer-cont p, .footer-cont strong {font-size: 18px;}
   
-  .footer-sus .topnav input {width: 270px;}
-
-  footer .redes {
-    margin-top: 10px;
-    float: center;
-    text-align: center;
-  } 
+  .footer-sus .topnav input {width: 270px;} 
   
   /* When the input field gets focus, change its width to 100% */
   input[type=text]:focus {width: 100%;}

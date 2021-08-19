@@ -9,4 +9,9 @@ module.exports = {
             title: "¡Inicia sesión!"
         });
     },
+    'profile': (req, res) => {        
+        res.render('users/profile',{
+            title: "¡Tus datos!"
+        });
+    },
 };

@@ -1,9 +1,9 @@
-<header >
+<header>
     <div class="main-header">
         <a href="/">
             <div class="logo">
                 <img src="/images/logo.jpeg" alt="">
-            </div>  
+            </div>
         </a>
     
     <i class="fas fa-bars burguer-menu-icon" onclick="dropMenu()"></i>
@@ -119,7 +119,47 @@
             <li><a href="">Item 3</a></li>
         </ul>
     </div>
+
+    <nav class="nav_menu">
+
+        <!-- Buscador mobile -->
+        <form action="#" class="search-form-mobile" id="search">
+            <div class="search-bar">
+                <input type="search" name="busqueda" id="" placeholder="Buscar">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+
+        <!-- Subcategorias desplegables -->
+        <div class="subcategory_menu" id="school">
+            <div class="subcategory_header">
+                <h3>CHOCOLATES</h3><img src="/images/close.png" onclick="closeWindow()" alt="">
+            </div>
+            <ul>
+                <li><a href="">Alfajores</a></li>
+                <li><a href="">Chocolates</a></li>
+            </ul>
+        </div>
+
+        <div class="subcategory_menu" id="art">
+            <div class="subcategory_header">
+                <h3>PROMOCIONES</h3><img src="/images/close.png" onclick="closeWindow()" alt="">
+            </div>
+            <ul>
+                <li><a href="">Promociones del Mes</a></li>
+            </ul>
+        </div>
+
+        <div class="subcategory_menu" id="office">
+            <div class="subcategory_header">
+                <h3>OFICINA</h3><img src="/images/close.png" onclick="closeWindow()" alt="">
+            </div>
+            <ul>
+                <li><a href="">Item 1</a></li>
+                <li><a href="">Item 2</a></li>
+                <li><a href="">Item 3</a></li>
+            </ul>
+        </div>
     </nav>
-    
 
 </header>
