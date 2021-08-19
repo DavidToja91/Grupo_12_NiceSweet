@@ -3,11 +3,11 @@ let router = express.Router();
 let {inicio,
     productos,
     agregarFormulario,
-    agregarProducto } = require('../controllers/adminController.js')
+    agregarProducto } = require('../controllers/adminController.js');
+let uploadFile = require('../middlewares/uploadFiles');
 
 /* GET: Index para el admin */
 router.get('/' , inicio);
-
 
 /* GET : Muestra la lista con todos los productos */
 router.get('/productos' , productos);
@@ -20,7 +20,7 @@ router.get('/productos' , productos);
 /* GET: Formulario para agregar productos.*/
 router.get('/agregarProducto' , agregarFormulario); /*Agrega un producto nuevo al formulario */
 /*POST : Formulario para capturar los datos recibidos */
-router.post('/agregarProducto' , agregarProducto) /*Envía los datos del formulario */
+router.post('/agregarProducto' , uploadFile.single('image'), agregarProducto) /*Envía los datos del formulario */
 
 /*PUT */
 
