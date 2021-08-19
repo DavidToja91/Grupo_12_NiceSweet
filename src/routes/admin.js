@@ -4,7 +4,7 @@ let {inicio,
     productos,
     agregarFormulario,
     agregarProducto } = require('../controllers/adminController.js');
-let uploadFile = require('./multer');
+let uploadFile = require('../middlewares/uploadFiles');
 
 /* GET: Index para el admin */
 router.get('/' , inicio);
