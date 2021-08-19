@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<%- include('../partials/bootstrap') %>
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <!-- productCreateForm -->
+                <div class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 bg-teal-light border border-info rounded p-4">
+                            <h2 class="mb-5">Nuevo producto</h2>
+
+                            <form method="POST" action="/products/create" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-6 my-1">
+                                        <div class="form-group">
+                                            <label><b>Nombre:</b></label>
+                                            <input type="text" name="name" class="form-control">
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <div class="form-group">
+                                            <label><b>Precio:</b></label>
+                                            <input type="password" name="password" class="form-control">
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <div class="form-group">
+                                            <label><b>Descuento:</b></label>
+                                            <input type="password" name="password" class="form-control">
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <div class="form-group">
+                                            <label><b>Imagen:</b></label>
+                                            <input class="form-control" type="file" name="avatar">
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <div class="form-group">
+                                            <label><b>Categoría:</b></label>                                           
+                                            <select name="category" class="form-select">
+                                                <option value="0"></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 my-1">
+                                        <div class="form-group">
+                                            <label class="col-12"><b>Subcategoría:</b></label>
+                                            <select name="category" class="form-select">
+                                                <option value="0"></option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                            </div>
+                                        </div>
+                                    </div>          
+                                    <div class="col-md-12 my-3">
+                                        <div class="form-group">
+                                            <label><b>Descripción:</b></label>
+                                            <textarea type="password" name="password" class="form-control td-none"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center my-3 mt-4">
+                                        <button class="btn btn-teal text-light">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>
