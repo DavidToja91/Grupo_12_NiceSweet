@@ -9,6 +9,7 @@ module.exports = {
         let product = getProducts.find(product => product.id === productID)
 
         res.render('products/detail',{
+            title: "Detalle del producto",
             product,
         });
     },

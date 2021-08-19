@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 
 /* Rutas */
+app.use('/', indexRouter)
 app.use('/users', usersRouter); // register - login - profile - CRUD de info personal para usuarios
 app.use('/products', productsRouter); // list - detail - cart - CRUD de productos para usuarios
 app.use('/admin', adminRouter); // index - CRUD de info personal para admin - CRUD de productos para admin

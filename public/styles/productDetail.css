@@ -305,8 +305,9 @@ h4{
   justify-content: center;
   flex-wrap: wrap;
 }
-#col-md-8{
+div.col-md-8{
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .parrafo{
@@ -646,6 +647,11 @@ footer .button {
     }
     .tarjeta{
       margin-bottom: 15px;
+    }
+    .col-md-8{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     /* .burger-menu{
       display: none;
