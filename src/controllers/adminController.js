@@ -16,6 +16,7 @@ module.exports= {
         res.render('admin/agregarProducto')
     },
     agregarProducto: (req, res)=>{
+        res.send(req.body)
         
 
     }
