@@ -1,5 +1,6 @@
 // let productsDB = require('../data/productsDB');
-let { getProducts, getUsers } = require('../data/productsDB')
+const { NotExtended } = require('http-errors')
+let { getProducts, getUsers, writeJson } = require('../data/productsDB')
 
 module.exports= {
     inicio: (req, res)=>{
@@ -17,9 +18,29 @@ module.exports= {
         res.render('admin/agregarProducto')
     },
     agregarProducto: (req, res)=>{
-        
+        let lastId = 1;
+        getProducts.forEach(product => {
+            if(product.id > lastId){
+                lastId = product.id
+            }
+        }) 
+        let {name, price, category, subcategory} = req.body;
 
-    }
+        let newProduct = {
+            id: lastId + 1,
+            name: name,
+            price: price,
+            category: category,
+            subcategory: subcategory,
+            discount: "0",
+            description: "none",
+            image: req.file ? req.file.filename : "default-image.png"
+        }
+        getProducts.push(newProduct);
+        writeJson(getProducts);
+        res.redirect('/admin')
+    },
+
 }
 
 //EDU SI VES ESTO LO COMENTÉ PARA NO MANDARME MACANAS TKM

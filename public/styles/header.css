@@ -58,6 +58,13 @@ header {
     display: none;
 }
 
+
+/* Menu usuario */
+.main-header .menu-usuario{
+    display: none;
+    background-color: blue;
+}
+
 /* Botón y barra de búsqueda mobile */
 
 .search-form-mobile {

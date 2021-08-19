@@ -1,7 +1,5 @@
 <header >
     <div class="main-header">
-    
-    
         <a href="/">
             <div class="logo">
                 <img src="/images/logo.jpeg" alt="">
@@ -20,11 +18,11 @@
         
         <!-- Lista con los elementos del menú (categorías) -->
         <ul class="menu">
-            <li class="dropdown-menu" onclick="dropSubCategoryMenu(`school`)">
+            <li class="dropdown-menu" onclick="dropSubCategoryMenu(`choco`)">
                 Chocolates
                 <i class="fas fa-chevron-down" ></i>
             </li>
-            <li class="dropdown-menu" onclick="dropSubCategoryMenu(`art`)">
+            <li class="dropdown-menu" onclick="dropSubCategoryMenu(`promo`)">
                 Promociones
                 <i class="fas fa-chevron-down" ></i>
             </li>
@@ -40,11 +38,11 @@
     <nav class="navigation-bar" id="navigation-bar-desktop">
     <!-- Lista con los elementos del menú (categorías) -->
         <ul class="menu">
-            <li class="menu-desplegable" onclick="dropSubCategoryMenu(`school`)">
+            <li class="menu-desplegable" onclick="dropSubCategoryMenu(`choco`)">
                 Chocolates
                 <i class="fas fa-chevron-down" ></i>
             </li>
-            <li class="menu-desplegable" onclick="dropSubCategoryMenu(`art`)">
+            <li class="menu-desplegable" onclick="dropSubCategoryMenu(`promo`)">
                 Promociones
                 <i class="fas fa-chevron-down" ></i>
             </li>
@@ -68,12 +66,18 @@
             <button type="submit"><i class="fas fa-search"></i></button>
         </div>
     </form>
-    
+    <!-- ************************************************** -->
+    <!-- ***********Iconos de login a modificar************ -->
+    <!-- ************************************************** -->
     <div class="user-icons-desktop">
-        <a href="/users/login"><i class="fas fa-user"></i></a>
+       <i class="fas fa-user" onclick="dropLogin()"></i>
         <a href=""><i class="fas fa-shopping-cart"></i></a>
-        
     </div>  
+
+    <!-- Menu desplegable de loging/register -->
+    <div class="menu-usuario" id="login-register">
+        <p>hola</p>
+    </div>
     
     
     </div>
@@ -90,7 +94,7 @@
     
     <!-- Subcategorias desplegables -->
     
-    <div class="subcategory_menu" id="school">
+    <div class="subcategory_menu" id="choco">
         <div class="subcategory_header"><h3>CHOCOLATES</h3><img src="/images/close.png" onclick="closeWindow()" alt=""></div>
         <ul>
             <li><a href="">Alfajores</a></li>
@@ -99,7 +103,7 @@
       
     </div>
     
-    <div class="subcategory_menu" id="art">
+    <div class="subcategory_menu" id="promo">
         <div class="subcategory_header"><h3>PROMOCIONES</h3><img src="/images/close.png" onclick="closeWindow()" alt=""></div>
         <ul> 
             <li><a href="">Promociones del Mes</a></li>
