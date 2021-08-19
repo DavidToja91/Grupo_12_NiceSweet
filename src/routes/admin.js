@@ -10,7 +10,7 @@ let uploadFile = require('../middlewares/uploadFiles');
 router.get('/' , inicio);
 
 /* GET : Muestra la lista con todos los productos */
-router.get('/productos' , productos);
+router.get('/products' , productos);
 
 
 /* GET : Muestra cada categoría, ej chocolates, alfajores, etc (parametrizada) :categoria*/
@@ -18,9 +18,9 @@ router.get('/productos' , productos);
 
 
 /* GET: Formulario para agregar productos.*/
-router.get('/agregarProducto' , agregarFormulario); /*Agrega un producto nuevo al formulario */
+router.get('/createProduct' , agregarFormulario); /*Agrega un producto nuevo al formulario */
 /*POST : Formulario para capturar los datos recibidos */
-router.post('/agregarProducto' , uploadFile.single('image'), agregarProducto) /*Envía los datos del formulario */
+router.post('/createProduct' , uploadFile.single('image'), agregarProducto) /*Envía los datos del formulario */
 
 /*PUT */
 
