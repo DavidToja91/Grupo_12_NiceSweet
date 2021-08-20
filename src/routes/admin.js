@@ -18,9 +18,9 @@ router.get('/products' , productos);
 
 
 /* GET: Formulario para agregar productos.*/
-router.get('/createProduct' , agregarFormulario); /*Agrega un producto nuevo al formulario */
+router.get('/agregarProducto/' , agregarFormulario); /*Agrega un producto nuevo al formulario */
 /*POST : Formulario para capturar los datos recibidos */
-router.post('/createProduct' , uploadFile.single('image'), agregarProducto) /*Envía los datos del formulario */
+router.post('/agregarProducto/' , uploadFile.single('image'), agregarProducto) /*Envía los datos del formulario */
 
 /*PUT */
 
