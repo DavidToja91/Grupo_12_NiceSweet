@@ -2,6 +2,7 @@
 /* Capturo los elementos del DOM */
 let navBar = document.getElementById("navigation-bar-mobile");
 let searchBar = document.getElementById("search");
+let menuLogin = document.getElementById("login-register")
 
 function dropMenu(){    
     let subcategoryMenu = document.querySelector(".active");
@@ -44,4 +45,13 @@ function dropSubCategoryMenu (id) {
 }else {
     document.querySelector(".main-header").classList.remove("header-opacity")
      
+}
+
+function dropLogin(){
+    if (menuLogin.style.display ==="none") {
+        menuLogin.style.display = "block"
+    } else {
+        menuLogin.style.display = "none"
+    }
+
 }

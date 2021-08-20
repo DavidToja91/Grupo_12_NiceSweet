@@ -3,8 +3,11 @@ let router = express.Router();
 let {inicio,
     productos,
     agregarFormulario,
-    agregarProducto } = require('../controllers/adminController.js');
-let uploadFile = require('../middlewares/uploadFiles');
+    agregarProducto,
+    editarFormulario,
+    editarProducto, 
+    eliminarProducto} = require('../controllers/adminController.js');
+// let uploadFile = require('../middlewares/uploadFiles');
 
 /* GET: Index para el admin */
 router.get('/' , inicio);
@@ -20,21 +23,17 @@ router.get('/productos' , productos);
 /* GET: Formulario para agregar productos.*/
 router.get('/agregarProducto' , agregarFormulario); /*Agrega un producto nuevo al formulario */
 /*POST : Formulario para capturar los datos recibidos */
-router.post('/agregarProducto' , uploadFile.single('image'), agregarProducto) /*Envía los datos del formulario */
+router.post('/agregarProducto' , agregarProducto); /*Envía los datos del formulario */
+// uploadFile.single('image')
 
-/*PUT */
+/* GET: formulario de edición de productos */
+router.get('/editarProducto/:id' , editarFormulario);
+/* PUT : recibe los datos de edición */ 
+router.put('/editarProducto/:id' , editarProducto);
 
-/*DELETE */
+/* DELETE: Elimina un producto */
+router.delete('eliminarProducto/:id', eliminarProducto);
 
 
 
 module.exports = router
-// var express = require('express');
-// var router = express.Router();
-// let controllers = require('../controllers/adminController');
-
-// router.get('/admin', controllers.index);
-// router.get('/products', controllers.products);
-// router.get('/users', controllers.users);
-
-// module.exports = router;
