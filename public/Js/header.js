@@ -53,5 +53,4 @@ function dropLogin(){
     } else {
         menuLogin.style.display = "none"
     }
-
 }
