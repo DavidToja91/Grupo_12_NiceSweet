@@ -13,8 +13,9 @@
   <main class="container">
     <h3 class="text-center">Agregar nuevo producto</h3>
     <div class="container col-md-4">
-        <form class="row g-3" action="/admin/agregarProducto" method="POST" enctype="multipart/form-data">
+        <form class="row g-3" action="/admin/agregarProducto/" method="POST" enctype="multipart/form-data">
             <div class="col-12">
+<<<<<<< HEAD
                 <label for="inputName" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="nombre" id="nombre">
             </div>
@@ -29,6 +30,22 @@
             <div class="col-12">
                 <label for="inputSubcategory" class="form-label">Subcategoría</label>
                 <input type="text" class="form-control" id="subcategoria" name="subcategoria">
+=======
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="col-12">
+                <label for="price" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="price" name="price">
+            </div>
+            <div class="col-12">
+                <label for="category" class="form-label">Categoría</label>
+                <input type="text" class="form-control" id="category" name="category">
+            </div>
+            <div class="col-12">
+                <label for="subcategory" class="form-label">Subcategoría</label>
+                <input type="text" class="form-control" id="subcategory" name="subcategory">
+>>>>>>> 29465e95d0c0d4733de3d0caf3934778d5b2c38b
             </div>
             <div class="col-12">
                 <label for="inputFile" class="form-label">Imagen</label>
@@ -39,12 +56,7 @@
             </div>
         </form>
     </div>
-  </main>
-
-
-
-  
-              
+  </main>          
   
 </body>
 </html>

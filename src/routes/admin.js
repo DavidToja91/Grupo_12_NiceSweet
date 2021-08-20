@@ -13,7 +13,7 @@ let {inicio,
 router.get('/' , inicio);
 
 /* GET : Muestra la lista con todos los productos */
-router.get('/productos' , productos);
+router.get('/products' , productos);
 
 
 /* GET : Muestra cada categoría, ej chocolates, alfajores, etc (parametrizada) :categoria*/
@@ -21,7 +21,7 @@ router.get('/productos' , productos);
 
 
 /* GET: Formulario para agregar productos.*/
-router.get('/agregarProducto' , agregarFormulario); /*Agrega un producto nuevo al formulario */
+router.get('/agregarProducto/' , agregarFormulario); /*Agrega un producto nuevo al formulario */
 /*POST : Formulario para capturar los datos recibidos */
 router.post('/agregarProducto' , agregarProducto); /*Envía los datos del formulario */
 // uploadFile.single('image')

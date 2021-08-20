@@ -24,7 +24,7 @@ module.exports= {
                 lastId = product.id
             }
         }) 
-        let {name, price, category, subcategory} = req.body;
+        let {name, price, category, subcategory} = req.body
 
         let newProduct = {
             id: lastId + 1,
