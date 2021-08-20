@@ -10,7 +10,7 @@ module.exports= {
         } )
     },
     productos: (req, res)=>{
-        res.render('admin/adminProductos' , {
+        res.render('admin/adminIndex' , {
             getProducts /*Le pasamos como objeto la base de datos */
         })
     },

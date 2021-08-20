@@ -33,7 +33,7 @@ router.get('/editarProducto/:id' , editarFormulario);
 router.put('/editarProducto/:id' , editarProducto);
 
 /* DELETE: Elimina un producto */
-router.delete('eliminarProducto/:id', eliminarProducto);
+router.delete('/eliminarProducto/:id', eliminarProducto);
 
 
 
