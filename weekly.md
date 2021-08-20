@@ -38,5 +38,40 @@
     • Implementar los cambios en Trello.
 
 
+*******************************************************************************************************************************
+*_______________________________// ( "Semana 13/8 al 20/8"(Cuarto Sprint)" ) //________________________________________________*
+*******************************************************************************************************************************
+
+
+     
+                                < * Fernanda Valdez * > :
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+                                < * Eduardo A. Lucero * > : 
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+                                < * Ignacio Marquez * > :
+    
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+                                < * David Toja * > :
+
+                   
+    • Imagen modificada haciendola mas adaptativa a la pantalla/vista requerida.
+    • Creación de carpeta Middleware con archivo UploadFiles.js (utilización del Multer)
+    • Modificación del archivo Weekly para implementar los nuevos cambios semanales.
+    • Modificación del RETRO.md agregando la nueva retrospectiva del Sprint 3.
+    • Tarjetas de Trello(organización y concordancia al sprint)
+    • Creación de carpetas organizativas del CSS. Haciendolas mas facil ubicarlas y administrar la base de dato.
+    • Modificación de las vistas Log In y Register para nuevos cambios de Users.
+                                 ===:( TO DO LIST ):===>
+
+    • Implementar nuevos campos para los formularios.
+    • Implementar los cambios en Trello.
+
 
 

@@ -1,4 +1,4 @@
-// let productsDB = require('../data/productsDB');
+
 const { NotExtended } = require('http-errors')
 let { getProducts, getUsers, writeJson } = require('../data/productsDB')
 
@@ -6,7 +6,7 @@ module.exports= {
     inicio: (req, res)=>{
         res.render('admin/adminIndex', {
             getProducts,
-            title: "Bienvenide Admin"
+            title: "Bienvenid@ Admin"
         } )
     },
     productos: (req, res)=>{

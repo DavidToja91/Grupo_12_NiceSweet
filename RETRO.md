@@ -26,4 +26,17 @@ _Keep doing:_ * Continuar con la división de tareas y con la cooperación entre
 _Less doing:_ * Dejar detalles a último momento.
 _Stop doing:_ * Desmotivarnos y dejar de hacer las tareas asignadas.
 
+______________________________________________________________________________________________________________________________
+******************************************************************************************************************************
 
+# Retrospectiva del Tercer Sprint:
+
+Este Sprint fue de los más inesperados, dónde los tiempos se acortaron demasiado y el caos comenzo a dar vueltas nuestras cabezas.
+Pero a diferencia de los anteriores, éste nos tomó mas preparados. Nuestro enfoque cambio en grandes proporciones, lo cual nos ayudo a concientizar los problemas que nos tenian mal enfocados anteriormente, y pese a la corta comunicacion que seguimos manteniendo dado nuestros tiempos complicados, hemos progresado demasiado en el modelo y forma de nuestra página.
+En perspectiva de Retrospectiva hemos llegado a la conclusión siguiente:
+
+Start doing:_ * 
+_More of:_ * buscar incentivos en varias páginas, comunicar los avances obtenidos.
+_Keep doing:_ * buscar motivacion para terminar el proyecto, integrar conocimientos externos.
+_Less doing:_ * 
+_Stop doing:_ * No comunicarnos diariamente sobre los progresos individuales.

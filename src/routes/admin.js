@@ -7,7 +7,7 @@ let {inicio,
     editarFormulario,
     editarProducto, 
     eliminarProducto} = require('../controllers/adminController.js');
-// let uploadFile = require('../middlewares/uploadFiles');
+let uploadFile = require('../middlewares/uploadFiles');
 
 /* GET: Index para el admin */
 router.get('/' , inicio);
@@ -22,6 +22,7 @@ router.get('/products' , productos);
 
 /* GET: Formulario para agregar productos.*/
 router.get('/agregarProducto/' , agregarFormulario); /*Agrega un producto nuevo al formulario */
+
 /*POST : Formulario para capturar los datos recibidos */
 router.post('/agregarProducto' , agregarProducto); /*Envía los datos del formulario */
 // uploadFile.single('image')
