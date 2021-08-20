@@ -5,7 +5,10 @@
 *_______________________________// ( "Semana 30/7 al 9/8"(Tercer Sprint)" ) //________________________________________________*
 *******************************************************************************************************************************                
                                 < * Fernanda Valdez * > :
-
+* Retrospectiva del sprint anterior (2do Sprint).
+* Modificación de la vista product detail, según las indicaciones del profesor (cambios en las cards y en el footer de la vista)
+* Página: creación y edición de productos; formulario al que accede el administrador para cargar nuevos productos, editar y visualizar en forma de lista los existentes.
+* Implementación del motor de templates en la vista product detail.
 
 --------------------------------------------------------------------------------------------------------------------------------
                                 < * Eduardo A. Lucero * > : 
@@ -45,6 +48,11 @@
 
      
                                 < * Fernanda Valdez * > :
+    • Últimos detalles agregados de la vista product detail (flexbox, border)
+    • Organización de tarjetas en trello.
+    • Creación de base de datos para usuarios.
+    • CRUD de productos para admin (listado de todos los productos, formulario de creación, acción de creación, formulario de edición de productos, acción de edición, acción de borrado de productos)
+    
 
 
 --------------------------------------------------------------------------------------------------------------------------------
