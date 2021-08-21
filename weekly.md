@@ -63,6 +63,11 @@
 
                                 < * Ignacio Marquez * > :
     
+    • Modificaciones de home en la parte de los controllers
+    • Solución en error del crud no tomaba datos
+    • Terminacion de las rutas pedidas por el sprint.
+    • Creacion de la vista list y contenido
+    • Agregar opcion en el header de usuario
 
 --------------------------------------------------------------------------------------------------------------------------------
 

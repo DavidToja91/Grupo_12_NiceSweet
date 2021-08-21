@@ -1,8 +1,10 @@
 const { getProducts } = require('../data/productsDB');
 
 module.exports = {
-    'list': (req, res) => {
-        res.render('products/list');
+    'index': (req, res) => {
+        res.render('products/list',{
+            getProducts
+        })
     },
     'detail': (req, res) => {
         let productID = +req.params.id;
