@@ -5,14 +5,20 @@
 *_______________________________// ( "Semana 30/7 al 9/8"(Tercer Sprint)" ) //________________________________________________*
 *******************************************************************************************************************************                
                                 < * Fernanda Valdez * > :
-* Retrospectiva del sprint anterior (2do Sprint).
-* Modificación de la vista product detail, según las indicaciones del profesor (cambios en las cards y en el footer de la vista)
-* Página: creación y edición de productos; formulario al que accede el administrador para cargar nuevos productos, editar y visualizar en forma de lista los existentes.
-* Implementación del motor de templates en la vista product detail.
+    • Retrospectiva del sprint anterior (2do Sprint).
+    • Modificación de la vista product detail, según las indicaciones del profesor (cambios en las cards y en el footer de la vista)
+    • Página: creación y edición de productos; formulario al que accede el administrador para cargar nuevos productos, editar y visualizar en forma de lista los existentes.
+    • Implementación del motor de templates en la vista product detail.
 
 --------------------------------------------------------------------------------------------------------------------------------
                                 < * Eduardo A. Lucero * > : 
-
+    • Modificación responsive en el carrito
+    • Ruteo general e implementación de middlewares
+    • Distintos arreglos en archivos css y partials
+    • Vistas create y edit products para el usuario
+    • Vistas profile y edit para el usuario
+    • Linkeo de formularios y buttons
+    • Correción de errores 
 
 --------------------------------------------------------------------------------------------------------------------------------
 
