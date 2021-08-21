@@ -4,19 +4,27 @@
 *******************************************************************************************************************************
 *_______________________________// ( "Semana 30/7 al 9/8"(Tercer Sprint)" ) //________________________________________________*
 *******************************************************************************************************************************                
+                
                                 < * Fernanda Valdez * > :
-* Retrospectiva del sprint anterior (2do Sprint).
-* Modificación de la vista product detail, según las indicaciones del profesor (cambios en las cards y en el footer de la vista)
-* Página: creación y edición de productos; formulario al que accede el administrador para cargar nuevos productos, editar y visualizar en forma de lista los existentes.
-* Implementación del motor de templates en la vista product detail.
+
+    • Retrospectiva del sprint anterior (2do Sprint).
+    • Modificación de la vista product detail, según las indicaciones del profesor (cambios en las cards y en el footer de la vista)
+    • Página: creación y edición de productos; formulario al que accede el administrador para cargar nuevos productos, editar y visualizar en forma de lista los existentes.
+    • Implementación del motor de templates en la vista product detail.
 
 --------------------------------------------------------------------------------------------------------------------------------
+                               
                                 < * Eduardo A. Lucero * > : 
 
+    • Implementación de express-generator y organización de carpetas acorde a lo pedido
+    • Ruteo general e implementación de middlewares
+    • Arreglos en archivos css y partials
+    • Modificación responsive en el carrito
 
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * Ignacio Marquez * > :
+
     • Armado de base de dato.
     • Implemetancion de ejs, partials de header, footer.
     • Modificaion de las card
@@ -25,9 +33,8 @@
 
 --------------------------------------------------------------------------------------------------------------------------------
 
-                                < * David Toja * > :
+                                < * David Toja * > :     
 
-                   
     • Implementacion de nuevas estructuras de Log-in y Register, haciendolos mas llamativos y "responsive" a las diferentes vistas.
     • Creación de Logo definitivo que representa la marca y el concepto de página. Incluye unas variaciones para agregar a diferentes vistas.
     • Creación de este archivo Weekly para implementar los nuevos cambios semanales.
@@ -44,10 +51,9 @@
 *******************************************************************************************************************************
 *_______________________________// ( "Semana 13/8 al 20/8"(Cuarto Sprint)" ) //________________________________________________*
 *******************************************************************************************************************************
-
-
      
                                 < * Fernanda Valdez * > :
+
     • Últimos detalles agregados de la vista product detail (flexbox, border)
     • Organización de tarjetas en trello.
     • Creación de base de datos para usuarios.
@@ -56,8 +62,14 @@
 
 
 --------------------------------------------------------------------------------------------------------------------------------
+                               
                                 < * Eduardo A. Lucero * > : 
 
+    • Más arreglos en archivos css y partials
+    • Vistas create y edit products para el usuario
+    • Vistas profile y edit para el usuario
+    • Linkeo de formularios y buttons
+    • Correción de errores en controllers y routes
 
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -73,7 +85,6 @@
 
                                 < * David Toja * > :
 
-                   
     • Imagen modificada haciendola mas adaptativa a la pantalla/vista requerida.
     • Creación de carpeta Middleware con archivo UploadFiles.js (utilización del Multer)
     • Modificación del archivo Weekly para implementar los nuevos cambios semanales.
