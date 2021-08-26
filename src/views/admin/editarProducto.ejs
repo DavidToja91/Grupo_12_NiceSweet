@@ -13,26 +13,26 @@
   <main class="container">
     <h3 class="text-center">Editar el siguiente producto: <%= product.name %>   </h3>
     <div class="container col-md-4">
-        <form class="row g-3" action="/admin/editarProducto/<%= product.id %>?_method=PUT " method="POST" enctype="multipart/form-data">
+        <form class="row g-3" action="/admin/editarProducto/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="col-12">
-                <label for="inputName" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre" id="nombre" value="<%= product.name %>">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" value="<%= product.name%>" id="name" name="name" class="form-control">
             </div>
             <div class="col-12">
-                <label for="inputPrice" class="form-label">Precio</label>
-                <input type="number" class="form-control" name="precio" id="precio" value="<%= product.price %>">
+                <label for="price" class="form-label">Precio</label>
+                <input type="number" class="form-control" name="price" id="price" value="<%= product.price %>">
             </div>
             <div class="col-12">
-                <label for="inputCategory" class="form-label">Categoría</label>
-                <input type="text" class="form-control" name="categoria" id="categoria" value="<%= product.category %>" >
+                <label for="category" class="form-label">Categoría</label>
+                <input type="text" class="form-control" name="category" id="category" value="<%= product.category %>" >
             </div>
             <div class="col-12">
-                <label for="inputSubcategory" class="form-label">Subcategoría</label>
-                <input type="text" class="form-control" id="subcategoria" name="subcategoria" value="<%= product.subcategory %>">
+                <label for="subcategory" class="form-label">Subcategoría</label>
+                <input type="text" class="form-control" id="subcategory" name="subcategory" value="<%= product.subcategory %>">
             </div>
             <div class="col-12">
-                <label for="inputFile" class="form-label">Imagen</label>
-                <input type="file" class="form-control" id="imagen" name="imagen" value="<%= product.image %>">
+                <label for="image" class="form-label">Imagen</label>
+                <input type="file" class="form-control" id="image" name="image" value="<%= product.image %>">
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-info">EDITAR</button>

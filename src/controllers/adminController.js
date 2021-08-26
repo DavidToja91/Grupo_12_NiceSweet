@@ -25,7 +25,6 @@ module.exports= {
             }
         }) 
         let {name, price, category, subcategory} = req.body
-
         let newProduct = {
             id: lastId + 1,
             name: name,
@@ -41,16 +40,16 @@ module.exports= {
         res.redirect('/admin')
     },
     editarFormulario : (req, res)=>{
-        let product = getProducts.find(product =>{
-            return product.id === +req.params.id
-        })
+        let product = getProducts.find(product => product.id === +req.params.id)
         res.render('admin/editarProducto', {
             product
-        })
+        })  
 
     },
     editarProducto: (req, res)=>{
-        let {name , price , category , subcategory , discount , description , image} = req.body
+        let {name, price, category, subcategory} = req.body
+        
+
         getProducts.forEach(product=>{
             if(product.id === +req.params.id){
                 product.id = product.id
@@ -58,8 +57,6 @@ module.exports= {
                 product.price = price
                 product.category = category
                 product.subcategory = subcategory
-                product.discount = discount
-                product.description = description
                 product.image = "default-image.png"
             }
         })
