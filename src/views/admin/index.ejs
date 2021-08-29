@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<%- include('../partials/bootstrap') %>
+    <body>
+    <%- include('../partials/header.ejs') %>
+        <main class="container">
+            <div class="d-flex justify-content-between row">
+                <div class="col-md-6 p-3 text-end">
+                    <a class="btn btn-warning" href="/admin/products">PRODUCTOS</a>
+                </div>
+                <div class="col-md-6 p-3 text-end">
+                    <a class="btn btn-danger" href="/admin/users">USUARIOS</a>
+                </div>
+            </div>       
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
+</html>

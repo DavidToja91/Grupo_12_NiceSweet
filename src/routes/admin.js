@@ -5,8 +5,8 @@ let {inicio,
     agregarFormulario,
     agregarProducto,
     editarFormulario,
-    editarProducto, 
-    eliminarProducto} = require('../controllers/adminController.js');
+    editarProducto, eliminarProducto,
+    addUser, editUser, deleteUser} = require('../controllers/adminController.js');
 let uploadFile = require('../middlewares/uploadFiles');
 
 /* GET: Index para el admin */
@@ -35,6 +35,17 @@ router.put('/editarProducto/:id', uploadFile.single('image'), editarProducto);
 /* DELETE: Elimina un producto */
 router.delete('/eliminarProducto/:id', eliminarProducto);
 
+/*POST : Formulario para capturar los datos recibidos */
+router.post('/addUser' , uploadFile.single('image'), addUser); /*Envía los datos del formulario */
+// uploadFile.single('image')
+
+/* GET: formulario de edición de usuario */
+router.get('/editUser/:id' , editUser);
+/* PUT : recibe los datos de edición */ 
+router.put('/editUser/:id', uploadFile.single('image'), editarProducto);
+
+/* DELETE: Elimina un producto */
+router.delete('/deleteUser/:id', deleteUser);
 
 
 module.exports = router

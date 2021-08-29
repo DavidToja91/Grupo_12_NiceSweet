@@ -11,6 +11,6 @@ module.exports = {
         });
     },
     'contact': (req, res) => {        
-        res.render('contact')
+        res.render('contact', { title: "contacto",})
     },
 };

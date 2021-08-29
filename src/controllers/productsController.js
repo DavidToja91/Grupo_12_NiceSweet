@@ -16,7 +16,7 @@ module.exports = {
         });
     },
     'cart': (req, res) => {
-        res.render('products/cart');
+        res.render('products/cart', {title: "Carrito de compras"});
     },
     'create': (req, res) => {        
         res.render('products/create');
