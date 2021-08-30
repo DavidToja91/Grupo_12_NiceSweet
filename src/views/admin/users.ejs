@@ -6,31 +6,29 @@
     <%- include('../partials/header.ejs') %>
         <main class="container">
             <div class="p-3 text-end">
-                <a class="btn btn-info" href="/admin/agregarProducto">AGREGAR PRODUCTO</a>
+                <a class="btn btn-info" href="/admin/addUser">AGREGAR USUARIO</a>
             </div>
             <table class="table table-success table-striped">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre del producto</th>
-                        <th scope="col">Precio</th>
+                        <th scope="col">Nombre completo</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Categoría</th>
-                        <th scope="col">Subcategoría</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Edición</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% getProducts.forEach(product=> { %>
+                    <% getUsers.forEach(user => { %>
                         <tr>
-                            <th scope="row"><%= product.id %></th>
-                            <td><%= product.name %></td>
-                            <td><%= product.price %></td>
-                            <td><%= product.category %></td>
-                            <td><%= product.subcategory %></td>
-                            <td><%= product.image %></td>
+                            <th scope="row"><%= user.id %></th>
+                            <td><%= user.name + " " + user.lastName %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.category %></td>
+                            <td><%= user.image %></td>
                             <td>
-                                <a class="btn btn-success" href="/admin/editarProducto/<%- product.id %> ">
+                                <a class="btn btn-success" href="/admin/editUser/<%- user.id %> ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
@@ -39,7 +37,7 @@
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                     </svg>
                                 </a>
-                                <form action="/admin/eliminarProducto/<%- product.id %>?_method=DELETE" method="post">
+                                <form action="/admin/deleteUser/<%- user.id %>?_method=DELETE" method="post">
                                     <button class="btn btn-danger" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

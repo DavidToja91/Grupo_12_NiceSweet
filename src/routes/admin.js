@@ -6,7 +6,7 @@ let {inicio,
     agregarProducto,
     editarFormulario,
     editarProducto, eliminarProducto,
-    addUser, editUser, deleteUser} = require('../controllers/adminController.js');
+    users, addUser, editUser, deleteUser} = require('../controllers/adminController.js');
 let uploadFile = require('../middlewares/uploadFiles');
 
 /* GET: Index para el admin */
@@ -34,6 +34,9 @@ router.put('/editarProducto/:id', uploadFile.single('image'), editarProducto);
 
 /* DELETE: Elimina un producto */
 router.delete('/eliminarProducto/:id', eliminarProducto);
+
+/* GET : Muestra la lista con todos los usuarios */
+router.get('/users' , users);
 
 /*POST : Formulario para capturar los datos recibidos */
 router.post('/addUser' , uploadFile.single('image'), addUser); /*Envía los datos del formulario */
