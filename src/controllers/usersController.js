@@ -1,3 +1,5 @@
+let { getUsers, writeUsersJson } = require('../data/usersDB');
+
 module.exports = {
     'register': (req, res) => {
         res.render('users/register',{
