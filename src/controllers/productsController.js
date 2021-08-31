@@ -1,8 +1,10 @@
 const { getProducts } = require('../data/productsDB');
 
 module.exports = {
-    'list': (req, res) => {
-        res.render('products/list');
+    'index': (req, res) => {
+        res.render('products/list',{
+            getProducts
+        })
     },
     'detail': (req, res) => {
         let productID = +req.params.id;
@@ -14,7 +16,7 @@ module.exports = {
         });
     },
     'cart': (req, res) => {
-        res.render('products/cart');
+        res.render('products/cart', {title: "Carrito de compras"});
     },
     'create': (req, res) => {        
         res.render('products/create');

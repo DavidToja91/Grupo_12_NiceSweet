@@ -14,4 +14,9 @@ module.exports = {
             title: "¡Tus datos!"
         });
     },
+    'edit': (req, res) => {        
+        res.render('users/edit',{
+            title: "¡Tus datos!"
+        });
+    },
 };

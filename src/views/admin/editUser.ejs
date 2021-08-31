@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<%- include('../partials/bootstrap') %>
+    <body>
+    <%- include('../partials/header.ejs') %>
+        <main class="container">
+            <h3 class="text-center">Editar el siguiente usuario: <%= user.name %>
+            </h3>
+            <div class="container col-md-4">
+                <form class="row g-3" action="/admin/editUser/<%= user.id %>?_method=PUT" method="POST"
+                    enctype="multipart/form-data">
+                    <div class="col-12">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" value="<%= user.name %>" id="name" name="name" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="price" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="lastName" id="lastName" value="<%= user.lastName %>">
+                    </div>
+                    <div class="col-12">
+                        <label for="subcategory" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            value="<%= user.email %>">
+                    </div>
+                    <div class="col-12">
+                        <label for="category" class="form-label">Categoría</label>
+                        <input type="text" class="form-control" name="category" id="category"
+                            value="<%= user.category %>">
+                    </div>
+                    <div class="col-12">
+                        <label for="image" class="form-label">Imagen</label>
+                        <input type="file" class="form-control" id="image" name="image" value="<%= user.image %>">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-info">EDITAR</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
+</html>
