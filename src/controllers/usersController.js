@@ -4,10 +4,16 @@ module.exports = {
             title: "¡Registrate!"
         });
     },
+    'processRegister': (req, res) => {
+        
+    },
     'login': (req, res) => {        
         res.render('users/login',{
             title: "¡Inicia sesión!"
         });
+    },
+    'processLogin': (req, res) => {
+        
     },
     'profile': (req, res) => {        
         res.render('users/profile',{
