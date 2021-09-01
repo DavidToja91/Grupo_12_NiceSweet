@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-let { register, login, profile, edit } = require('../controllers/usersController');
+let { register, login, profile, edit, processLogin,logout } = require('../controllers/usersController');
 let loginValidator = require('../validations/loginValidator');
 let editProfileValidator = require('../validations/editProfileValidator');
-
+let registerValidator = require('../validations/registerValidator')
 let multer= require('multer');
 let path=require('path');
 
@@ -19,11 +19,14 @@ const storage= multer.diskStorage({
 });
 const upload= multer({storage});
 
+
+// Rutas //
 router.get('/register', register);
-router.post('/register',upload.single('avatar'), register);
+router.post('/register',registerValidator ,upload.single('avatar'), processRegister);
 
 router.get('/login', login);
 router.post('/login', loginValidator, login);
+router.get('/logout', logout);
 
 router.get('/profile', profile);
 
