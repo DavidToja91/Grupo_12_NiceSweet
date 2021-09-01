@@ -1,6 +1,6 @@
 const { check, body } = require('express-validator');
 const { getUsers } = require('../data/usersDB');
-/* const bcrypt = require('bcrypt.js') */
+const bcrypt = require('bcryptjs');
 
 module.exports = [
     check('email')
