@@ -25,7 +25,7 @@ router.get('/register', register);
 router.post('/register',registerValidator ,upload.single('avatar'), processRegister);
 
 router.get('/login', login);
-router.post('/login', loginValidator, login);
+router.post('/login', loginValidator, processLogin, login);
 router.get('/logout', logout);
 
 router.get('/profile', profile);
