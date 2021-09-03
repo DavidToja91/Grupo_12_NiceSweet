@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-let { register, login, profile, edit, processLogin,logout } = require('../controllers/usersController');
+let { register, processRegister, 
+    login, processLogin, profile, 
+    edit, logout } = require('../controllers/usersController');
 let loginValidator = require('../validations/loginValidator');
 let editProfileValidator = require('../validations/editProfileValidator');
 let registerValidator = require('../validations/registerValidator')
@@ -8,7 +10,7 @@ let multer= require('multer');
 let path=require('path');
 
 const storage= multer.diskStorage({
-    destination: (req,file,cb)=>{
+    destination: (req, file, cb)=>{
         cb(null,path.join(__dirname, '../images/users'))
     },
     filename: (req,file,cb)=>{
