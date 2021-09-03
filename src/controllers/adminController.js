@@ -107,12 +107,12 @@ module.exports= {
         
         getUsers.forEach(user => {
             if (user.id === +req.params.id) {
-                user.id = user.id,
-                user.name = name,
-                user.lastName = lastName,
-                user.email = email,
-                user.category = category,         
-                user.image = "default-image.png"
+                user.id = user.id;
+                user.name = name;
+                user.lastName = lastName;
+                user.email = email;
+                user.category = category;       
+                user.image = image? image : "default-image.png";
             }
         });
 
