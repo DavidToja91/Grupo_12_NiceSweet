@@ -1,38 +1,25 @@
-var express = require('express');
-var router = express.Router();
-let { register, processRegister, 
-    login, processLogin, profile, 
-    edit, logout } = require('../controllers/usersController');
-let loginValidator = require('../validations/loginValidator');
-let editProfileValidator = require('../validations/editProfileValidator');
-let registerValidator = require('../validations/registerValidator')
-let multer= require('multer');
-let path=require('path');
+const express = require('express');
+const router = express.Router();
 
-const storage= multer.diskStorage({
-    destination: (req, file, cb)=>{
-        cb(null,path.join(__dirname, '../images/users'))
-    },
-    filename: (req,file,cb)=>{
-        console.log(file);
-        const newFilename='user-'+ Date.now() + path.extname(file.originalname);
-        cb(null,newFilename);
-    }
-});
-const upload= multer({storage});
+// Controller
+const {register, processRegister,
+login, processLogin,
+profile, logout} = require('../controllers/userController');
 
+// Middlewares
+const uploadFile = require('../middlewares/multerMiddleware');
+const validations = require('../middlewares/validateRegisterMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
-// Rutas //
-router.get('/register', register);
-router.post('/register',registerValidator ,upload.single('avatar'), processRegister);
+// Ruotes
+router.get('/register', guestMiddleware, register);
+router.post('/register', uploadFile.single('avatar'), validations, processRegister);
 
-router.get('/login', login);
-router.post('/login', loginValidator, processLogin, login);
-router.get('/logout', logout);
+router.get('/login', guestMiddleware, login);
+router.post('/login', processLogin);
 
-router.get('/profile', profile);
-
-router.get('/profile', edit);
-router.patch('/profile', editProfileValidator, edit);
+router.get('/profile/', authMiddleware, profile);
+router.get('/logout/', logout);
 
 module.exports = router;
