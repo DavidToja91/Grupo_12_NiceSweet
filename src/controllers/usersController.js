@@ -1,5 +1,5 @@
 let { getUsers, writeUsersJson } = require('../data/usersDB');
-const{validationResult}= require('express-validator');
+const{ validationResult }= require('express-validator');
 
 module.exports = {
     'register': (req, res) => {
@@ -24,7 +24,8 @@ module.exports = {
                 name, 
                 last_name,
                 email,
-                pass1
+                pass1,
+                phone
               } = req.body;
             
             let newUser = {
@@ -35,20 +36,15 @@ module.exports = {
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default-image.png",
                 category: "USER",
-                tel: "",
-                address: "",
-                pc:"",
-                province:"",
-                city:""
+                phone: "",
             };
     
             users.push(newUser);
-            writeUsersJSON(users);
+            writeUsersJson(users);
             res.redirect('/users/login');
 
         } else {
-            res.render('register', {
-                categories, 
+            res.render('users/register', {
                 errors : errors.mapped(),
                 old : req.body,
                 session: req.session
@@ -121,7 +117,7 @@ module.exports = {
             user.tel = tel
             user.avatar = req.file ? req.file.filename : user.avatar
 
-            writeUsersJSON(users);
+            writeUsersJson(users);
 
             delete user.pass          
             req.session.user = user
