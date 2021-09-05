@@ -6,7 +6,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 let session = require('express-session');
 
-/* routes */
+/* Routes */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
@@ -28,7 +28,8 @@ app.use(methodOverride('_method'));
 app.use(session({ 
   secret: "mySecret", 
   resave: false, 
-  saveUninitialized: true 
+  saveUninitialized: true ,
+  cookie: { maxAge: (1000 * 60) * 60 }
 }));
 
 /* Rutas */

@@ -1,25 +1,29 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
 // Controller
-const {register, processRegister,
-login, processLogin,
-profile, logout} = require('../controllers/userController');
+let { register, processRegister, 
+    login, processLogin, logout, 
+    profile, editProfile, updateProfile } = require('../controllers/usersController');
 
 // Middlewares
-const uploadFile = require('../middlewares/multerMiddleware');
-const validations = require('../middlewares/validateRegisterMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
+let loginValidator = require('../validations/loginValidator');
+let editProfileValidator = require('../validations/editProfileValidator');
+let registerValidator = require('../validations/registerValidator')
+let upload = require('../middlewares/uploadAvatar');
+let path=require('path');
+const userSession = require('../middlewares/userSession');
 
-// Ruotes
-router.get('/register', guestMiddleware, register);
-router.post('/register', uploadFile.single('avatar'), validations, processRegister);
+// Rutas
+router.get('/register', register);
+router.post('/register', upload.single('avatar'), registerValidator, processRegister);
 
-router.get('/login', guestMiddleware, login);
-router.post('/login', processLogin);
+router.get('/login', login);
+router.post('/login', loginValidator, processLogin);
+router.get('/logout', logout);
 
-router.get('/profile/', authMiddleware, profile);
-router.get('/logout/', logout);
+router.get('/profile', userSession, profile);
+router.get('/profile/edit/:id', editProfile);
+router.put('/profile/edit/:id', upload.single('avatar'), updateProfile);
 
 module.exports = router;

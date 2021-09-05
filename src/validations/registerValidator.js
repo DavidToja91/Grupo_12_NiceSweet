@@ -1,5 +1,5 @@
 const {check,body} = require('express-validator');
-const {getUsers} = require('../data/usersDB');
+const { getUsers } = require('../data/usersDB');
 
 module.exports =[
     check('name')
@@ -21,7 +21,11 @@ module.exports =[
             }
             
         });
-
+        /* let user = users.filter(user => { 
+            return user.email == value 
+        })
+        
+        return user == false; */
     })
     .withMessage("El Email ya esta registrado"),
 
@@ -34,8 +38,8 @@ module.exports =[
     })
     .withMessage("Debe tener entre 6 y 15 caracteres"),
 
-    body('passwordRegister2').custom((value,{req})=>
-        value !== req.body.passwordRegister? false : true)
+    body('passwordRegister2').custom((value,{req}) =>
+        value !== req.body.pass1? false : true)
     .withMessage("Las contraseñas no coinciden, reintente."),
 
     check("terms")
