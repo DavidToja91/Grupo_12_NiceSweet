@@ -37,23 +37,30 @@
                              <button class="btn btn-outline-dark d-inline-block text-light mb-3 width-100"><i class="icon ion-logo-facebook lead align-middle mr-2"></i> Facebook</button>
                          </div>
                          
-                         <form method="POST" action="/"> 
+                         <form method="POST" action="/users/login"> 
                            <div class="form-group mb-3">
-                                 <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
-                                 <input type="email" class="form-control" placeholder="Ingresa tu correo electrónico">
-                             </div>
+                                <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
+                                <input type="email" name="email" class="form-control" placeholder="Ingresa tu correo electrónico">
+                                <% if (locals.errors && errors.email) { %>
+                                    <small class="text-danger"><%= errors.email.msg %></small>
+                                <% } %>
+                            </div>
                              <div class="form-group mb-3">
                                  <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
-                                 <input type="password" class="form-control" placeholder="Ingresa una contraseña">
-                             </div>
+                                 <input type="password" name="pass" class="form-control" placeholder="Ingresa una contraseña">
+                                 <% if (locals.errors && errors.pass1) { %>
+                                    <small class="text-danger"><%= errors.pass1.msg %></small>
+                                <% } %>
+                            </div>
                              <div class="form-group mb-5">
                                  <div class="form-check">
-                                     <input class="form-check-input" type="checkbox">
+                                     <input class="form-check-input" id="check" type="checkbox" name="remember">
                                      <label class="form-check-label text-muted">Recordar mis datos en este dispositivo.</label>
                                  </div>
                              </div>
                              <button class="btn btn-primary width-100">Ingresar</button>
-                         </form>
+                            <a href="/users/register" class="userLink">Aún no tengo cuenta</a>
+                            </form>
                          <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2021 <i>NiceSweet</i></small>
                      </div>
                 </div>
