@@ -1,16 +1,22 @@
-let { getUsers, writeUsersJson } = require('../data/usersDB');
+let {categories, getUsers, writeUsersJson } = require('../data/usersDB');
 const{validationResult}= require('express-validator');
+const bscrypt= require('bcryptjs');
+
+
 
 module.exports = {
-    'register': (req, res) => {
+    register: (req, res) => {
         res.render('users/register',{
+            categories,
+            session: req.session,
             title: "¡Registrate!"
         });
     },
-    'processRegister': (req, res) => {
+    
+    processRegister: (req, res) => {
         let error = validationResult(req);//middleware , le pasa el error del objeto request y me retorna todos los errores //
         if (error.isEmpty()){
-            let lastId = 1;
+            let lastId = 0;
 
             getUsers.forEach(getUsers => {
                 if(getUsers.id > lastId){
@@ -18,10 +24,39 @@ module.exports = {
                 }
                 
             });
+            let {
+                name,
+                lastName,
+                email,
+                passwordRegister
+            } =req.body;
 
+            let newUser = {
+                id: lastId +1,
+                name,
+                lastName,
+                email,
+                pass: bcrypt.hashSync(passwordRegister, 10),
+                avatar: req.file ? req.file.filename :  "default.png",
+                rol: "ROL_USER",
+                tel: "",
+                adress: "",
+                pc: "",
+                province:"",
+                city: "",
+            };
 
+            getUsers.push(newUser);
 
+            writeUsersJson(getUsers);
 
+            res.redirect('/users/login')
+        } else{
+            res.render('register',{
+                categories,
+                error : errors.mapped(),
+                old: req.body
+            })
         }
     },
     'login': (req, res) => {        
