@@ -3,8 +3,6 @@ const{validationResult}= require('express-validator');
 const bscrypt= require('bcryptjs');
 
 
-let { getUsers, writeUsersJson } = require('../data/usersDB');
-const{ validationResult }= require('express-validator');
 
 module.exports = {
     register: (req, res) => {

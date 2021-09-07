@@ -174,3 +174,36 @@
 
     • Implementar nuevos campos para los formularios.
     • Implementar los cambios en Trello.
+    *******************************************************************************************************************************
+*_______________________________// ( "Semana 13/8 al 20/8"(Cuarto Sprint)" ) //________________________________________________*
+*******************************************************************************************************************************
+
+
+     
+                                < * Fernanda Valdez * > :
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+                                < * Eduardo A. Lucero * > : 
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+                                < * Ignacio Marquez * > :
+    
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+                                < * David Toja * > :
+
+    ● El formulario de Register incluiye los campos mínimos mencionados en el sprint anterior.
+    ● Permiso de subida de una imagen de perfil (con Multer).
+    ● Encripta la contraseña ingresada por el usuario (con bcrypt.js).
+    ● Guardado de los datos enviados en el archivo JSON de usuarios.
+
+
+    
+                                 ===:( TO DO LIST ):===>
+
+    • Integrar algunas cosas para que sea mas prolijo el uso de la app.
+    • 

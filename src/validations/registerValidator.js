@@ -27,11 +27,7 @@ module.exports =[
             }
             
         });
-        /* let user = users.filter(user => { 
-            return user.email == value 
-        })
         
-        return user == false; */
     })
     .withMessage("El Email ya esta registrado"),
 
