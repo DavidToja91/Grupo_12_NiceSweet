@@ -154,7 +154,10 @@
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * Ignacio Marquez * > :
-    
+    •Implementacion de identidad de usuario
+    •Armado de carpetas y json de user
+    •Comienzo de la vista de error
+    •Agregando pequeñas funciones cuando estemos logeados
 
 --------------------------------------------------------------------------------------------------------------------------------
 
