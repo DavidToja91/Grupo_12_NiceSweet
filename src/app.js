@@ -6,7 +6,7 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 let session = require('express-session');
 
-/* routes */
+/* Routes */
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
@@ -28,7 +28,8 @@ app.use(methodOverride('_method'));
 app.use(session({ 
   secret: "mySecret", 
   resave: false, 
-  saveUninitialized: true 
+  saveUninitialized: true ,
+  cookie: { maxAge: (1000 * 60) * 60 }
 }));
 
 /* Rutas */
@@ -36,7 +37,7 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter); // register - login - profile - CRUD de info personal para usuarios
 app.use('/products', productsRouter); // list - detail - cart - CRUD de productos para usuarios
 app.use('/admin', adminRouter); // index - CRUD de info personal para admin - CRUD de productos para admin
-
+/* 
 app.use((req, res, next) => {
   res.status(404).render('error');
 });
@@ -55,6 +56,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
+}); */
 
 module.exports = app;

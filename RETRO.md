@@ -40,3 +40,19 @@ _More of:_ * buscar incentivos en varias páginas, comunicar los avances obtenid
 _Keep doing:_ * buscar motivacion para terminar el proyecto, integrar conocimientos externos.
 _Less doing:_ * 
 _Stop doing:_ * No comunicarnos diariamente sobre los progresos individuales.
+
+______________________________________________________________________________________________________________________________
+******************************************************************************************************************************
+
+# Retrospectiva del Cuarto Sprint:
+
+La complicación fue cada vez menos y las ganas comenzaron a subir. Comenzando a ver el camino cada vez mas cercano al final.
+Por ende, las minuciosidades fueron cada vez mas exactas en el proyecto.
+El trabajo fue repartido en tiempo y pudimos terminar, finalmente, a tiempo el siguiente Sprint.
+
+Start doing:_ * 
+_More of:_ * buscar incentivos en varias páginas, comunicar los avances obtenidos.
+_Keep doing:_ * buscar motivacion para terminar el proyecto, integrar conocimientos externos.
+_Less doing:_ * 
+_Stop doing:_ * No comunicarnos diariamente sobre los progresos individuales.
+
