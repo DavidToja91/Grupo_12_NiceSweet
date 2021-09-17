@@ -1,6 +1,6 @@
 let {getUsers, writeUsersJson } = require('../data/usersDB');
 const{validationResult}= require('express-validator');
-const bscrypt= require('bcryptjs');
+const bcrypt= require('bcryptjs');
 
 module.exports = {
     register: (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
                 email,
                 pass1,
                 category,
-                phone
+                phone, 
             } = req.body;
 
             let newUser = {
@@ -38,9 +38,9 @@ module.exports = {
                 lastName,
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
-                avatar: req.file ? req.file.filename :  "default.png",
+                avatar: req.file ? req.file.filename : "default.png",
                 category: category,
-                phone: phone
+                phone: phone,
             };
 
             getUsers.push(newUser);
@@ -49,7 +49,7 @@ module.exports = {
 
             res.redirect('/')
         } else{
-            res.render('/users/register',{
+            res.render('users/register',{
                 error : errors.mapped(),
                 old: req.body
         })
@@ -99,7 +99,7 @@ module.exports = {
     editProfile: (req, res) => {
         let user = getUsers.find(user => user.id === +req.params.id)
 
-        res.render('userProfileEdit', {
+        res.render('users/edit', {
             user,
             session: req.session
         })
@@ -126,13 +126,13 @@ module.exports = {
 
             delete user.pass          
             req.session.user = user
-            res.redirect("/users/profile");
+            res.redirect("users/profile");
         }
     },
     logout: (req, res) =>{
         req.session.destroy();
         if(req.cookies.userArtisticaDali){
-            res.cookie('userArtisticaDali','',{maxAge:-1})
+            res.cookie('userArtisticaDali','',{maxAge: -1})
         }
         
         return res.redirect('/')

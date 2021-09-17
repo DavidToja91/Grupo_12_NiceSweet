@@ -94,15 +94,15 @@
                             </div>
                             
                             <div class="form-group mb-5">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox">
-                                    <label class="form-check-label text-muted width-100" name="terms">Al seleccionar esta casilla aceptas
-                                        nuestro aviso de privacidad y los términos y condiciones</label>
+                                <div class="form-ad-input_check">
+                                    <input type="checkbox" name="terms" id="check">
+                                    <label for="check">Acepto los términos y condiciones</label>
                                     <% if (locals.errors && errors.terms) { %>
-                                        <small class="text-danger"><%= errors.terms.msg %></small>
+                                        <small class="text-danger"><%= errors.terms.msg %> </small>
                                     <% } %>
                                 </div>
                             </div>
+
                             <button class="btn btn-primary width-100">Regístrate</button>
                             <a href="/users/login" class="userLink">Ya tengo cuenta</a>
 
