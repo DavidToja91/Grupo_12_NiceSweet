@@ -73,6 +73,7 @@ module.exports = {
                 name: user.name,
                 last_name: user.last_name,
                 email: user.email,
+                phone: user.phone,
                 avatar: user.avatar,
                 category: user.category
             }
@@ -124,8 +125,8 @@ module.exports = {
 
             writeUsersJson(users);
 
-            delete user.pass          
-            req.session.user = user
+            delete user.pass;          
+            req.session.user = user;
             res.redirect("users/profile");
         }
     },
