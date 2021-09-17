@@ -20,15 +20,18 @@ module.exports =[
     .isNumeric()
     .withMessage('Solo números, por favor'),
 
-    body('email').custom(value =>{
-        getUsers.forEach(getUsers => {
-            if(getUsers.email.includes(value)){
-                return false
-            }
-            
-        });
+    body('email').custom(value => {
+        let user = getUsers.filter(user=>{ 
+            return user.email == value 
+        })
         
+        if(user == false){ 
+            return true 
+        }else{
+            return false 
+        }
     })
+
     .withMessage("El Email ya esta registrado"),
 
     check('pass1')

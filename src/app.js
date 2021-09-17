@@ -37,7 +37,7 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter); // register - login - profile - CRUD de info personal para usuarios
 app.use('/products', productsRouter); // list - detail - cart - CRUD de productos para usuarios
 app.use('/admin', adminRouter); // index - CRUD de info personal para admin - CRUD de productos para admin
-/* 
+
 app.use((req, res, next) => {
   res.status(404).render('error');
 });
@@ -56,6 +56,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-}); */
+});
 
 module.exports = app;

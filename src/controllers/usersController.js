@@ -1,13 +1,10 @@
-let {categories, getUsers, writeUsersJson } = require('../data/usersDB');
+let {getUsers, writeUsersJson } = require('../data/usersDB');
 const{validationResult}= require('express-validator');
 const bscrypt= require('bcryptjs');
-
-
 
 module.exports = {
     register: (req, res) => {
         res.render('users/register',{
-            categories,
             session: req.session,
             title: "¡Registrate!"
         });
@@ -25,11 +22,12 @@ module.exports = {
                     lastId = user.id
                 }
             });
+
             let {
                 name,
                 lastName,
                 email,
-                passwordRegister
+                pass1
             } =req.body;
 
             let newUser = {
@@ -37,32 +35,27 @@ module.exports = {
                 name,
                 lastName,
                 email,
-                pass: bcrypt.hashSync(passwordRegister, 10),
+                pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename :  "default.png",
                 rol: "ROL_USER",
-                tel: "",
-                adress: "",
-                pc: "",
-                province:"",
-                city: "",
+                phone: ""
             };
 
             getUsers.push(newUser);
 
             writeUsersJson(getUsers);
 
-            res.redirect('/users/login')
+            res.redirect('/')
         } else{
-            res.render('register',{
-                categories,
+            res.render('/users/register',{
                 error : errors.mapped(),
                 old: req.body
-    })
+        })
     }
     },
 
     login: (req, res) => {        
-        res.render('users/login',{
+        res.render('users/login', {
             title: "¡Inicia sesión!"
         });
     },
@@ -71,7 +64,7 @@ module.exports = {
             
         if(errors.isEmpty()){
 
-            let user = getUsers.find(user => user.email === req.body.email)
+            let user = getUsers.find(user => user.email === req.body.email);
 
             req.session.user = { 
                 id: user.id,
@@ -118,13 +111,13 @@ module.exports = {
             let { 
                 name, 
                 last_name,
-                tel,
+                phone,
             } = req.body;
 
             user.id = user.id
             user.name = name
             user.last_name = last_name
-            user.tel = tel
+            user.phone = phone
             user.avatar = req.file ? req.file.filename : user.avatar
 
             writeUsersJson(users);
