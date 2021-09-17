@@ -27,8 +27,10 @@ module.exports = {
                 name,
                 lastName,
                 email,
-                pass1
-            } =req.body;
+                pass1,
+                category,
+                phone
+            } = req.body;
 
             let newUser = {
                 id: lastId +1,
@@ -37,8 +39,8 @@ module.exports = {
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename :  "default.png",
-                rol: "ROL_USER",
-                phone: ""
+                category: category,
+                phone: phone
             };
 
             getUsers.push(newUser);
