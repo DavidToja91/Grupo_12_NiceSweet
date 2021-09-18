@@ -37,6 +37,7 @@ module.exports = {
                 name,
                 lastName,
                 email,
+                category,
                 rol: "ROL_USER",
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
