@@ -12,7 +12,7 @@ module.exports = {
     
     processRegister: (req, res) => {
         let errors = validationResult(req);
-
+        
         if (errors.isEmpty()) {
 
             let lastId = 0;
@@ -28,6 +28,7 @@ module.exports = {
                 lastName,
                 email,
                 pass1,
+               
                 phone, 
             } = req.body;
 
@@ -36,9 +37,9 @@ module.exports = {
                 name,
                 lastName,
                 email,
-                category : "ROL_USER",
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
+                category: "ROL_USER",
                 phone: phone,
             };
 
@@ -78,11 +79,11 @@ module.exports = {
             }
 
             if(req.body.remember){ // Si el checkbox está seleccionado creo la cookie
-                res.cookie('userNiceSweet',req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
+                res.cookie('logged', req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
             }
 
             res.locals.user = req.session.user; //Creo la variable user en la propiedad locals dentro del objeto request y como valor le asigno los datos del usuario en sesión
-        
+            res.send(req.session.user)
             res.redirect('/')
                      
         } else{
@@ -123,7 +124,7 @@ module.exports = {
             user.phone = phone
             user.avatar = req.file ? req.file.filename : user.avatar
 
-            writeUsersJSON(users);
+            writeUsersJson(users);
 
             delete user.pass;          
             req.session.user = user;
@@ -133,7 +134,7 @@ module.exports = {
     logout: (req, res) =>{
         req.session.destroy();
         if(req.cookies.userArtisticaDali){
-            res.cookie('userNiceSweet','',{maxAge: -1})
+            res.cookie('userArtisticaDali','',{maxAge: -1})
         }
         
         return res.redirect('/')
