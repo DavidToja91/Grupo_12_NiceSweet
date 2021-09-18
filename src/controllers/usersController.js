@@ -28,7 +28,6 @@ module.exports = {
                 lastName,
                 email,
                 pass1,
-                category,
                 phone, 
             } = req.body;
 
@@ -37,8 +36,7 @@ module.exports = {
                 name,
                 lastName,
                 email,
-                category,
-                rol: "ROL_USER",
+                category : "ROL_USER",
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
                 phone: phone,
