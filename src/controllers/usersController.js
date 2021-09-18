@@ -1,4 +1,4 @@
-let {getUsers, writeUsersJson } = require('../data/usersDB');
+let {getUsers, writeUsersJSON } = require('../data/usersDB');
 const{validationResult}= require('express-validator');
 const bcrypt= require('bcryptjs');
 
@@ -37,20 +37,20 @@ module.exports = {
                 name,
                 lastName,
                 email,
+                rol: "ROL_USER",
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
-                category: category,
                 phone: phone,
             };
 
             getUsers.push(newUser);
 
-            writeUsersJson(getUsers);
+            writeUsersJSON(getUsers);
 
             res.redirect('/')
         } else{
             res.render('users/register',{
-                error : errors.mapped(),
+                errors : errors.mapped(),
                 old: req.body
         })
     }
@@ -124,7 +124,7 @@ module.exports = {
             user.phone = phone
             user.avatar = req.file ? req.file.filename : user.avatar
 
-            writeUsersJson(users);
+            writeUsersJSON(users);
 
             delete user.pass;          
             req.session.user = user;
@@ -134,7 +134,7 @@ module.exports = {
     logout: (req, res) =>{
         req.session.destroy();
         if(req.cookies.userArtisticaDali){
-            res.cookie('userArtisticaDali','',{maxAge: -1})
+            res.cookie('userNiceSweet','',{maxAge: -1})
         }
         
         return res.redirect('/')
