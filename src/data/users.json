@@ -1,1 +1,121 @@
-[{"id":1,"name":"Artur","lastName":"Quinell","email":"aquinell0@mac.com","password":"4hAlkDClO","category":"USER","image":"https://robohash.org/optiooditut.png?size=50x50&set=set1"},{"id":2,"name":"Meridel","lastName":"Zorzini","email":"mzorzini1@nsw.gov.au","password":"FI9xekr0","category":"USER","image":"https://robohash.org/adundecum.png?size=50x50&set=set1"},{"id":3,"name":"Retha","lastName":"Kroch","email":"rkroch2@prlog.org","password":"ipxekFa","category":"USER","image":"https://robohash.org/explicaboullamfacere.png?size=50x50&set=set1"},{"id":4,"name":"Kessiah","lastName":"Brawson","email":"kbrawson3@typepad.com","password":"WwfJwzCnhgkV","category":"USER","image":"https://robohash.org/temporenatuseius.png?size=50x50&set=set1"},{"id":5,"name":"Humfrid","lastName":"Bleasdale","email":"hbleasdale4@godaddy.com","password":"kKXZvr","category":"USER","image":"https://robohash.org/molestiaeetdistinctio.png?size=50x50&set=set1"},{"id":6,"name":"Sella","lastName":"Monck","email":"smonck5@gmpg.org","password":"VyXhOmn3B6","category":"USER","image":"https://robohash.org/errorsitvoluptas.png?size=50x50&set=set1"},{"id":7,"name":"Gates","lastName":"Goundsy","email":"ggoundsy6@illinois.edu","password":"RhKoMxlLK","category":"USER","image":"https://robohash.org/facilisrerumin.png?size=50x50&set=set1"},{"id":8,"name":"Brice","lastName":"Gomm","email":"bgomm7@newyorker.com","password":"p99slFiNe","category":"USER","image":"https://robohash.org/ethicquisquam.png?size=50x50&set=set1"},{"id":9,"name":"Kenton","lastName":"Letchford","email":"kletchford8@springer.com","password":"biPiBdPBh1fW","category":"USER","image":"https://robohash.org/doloremutqui.png?size=50x50&set=set1"},{"id":10,"name":"Corny","lastName":"Feek","email":"cfeek9@skype.com","password":"INhVCNLm8","category":"USER","image":"https://robohash.org/atquetotamnon.png?size=50x50&set=set1"},{"id":11,"name":"Antonio","lastName":"Machacado","email":"coso@hotmail.com","password":"tamosmal","category":"ADMIN","image":"https://robohash.org/atquetotamnon.png?size=50x50&set=set1"},{"id":12,"name":"hola","lastName":"hola","email":"hola@hola.com","pass":"$2a$10$T/UKFx9UfPVqDC95iFNm7eh5LtWRfaA43QKsXOan/cRmdKmVayy22","avatar":"default.png","category":"ROL_USER","phone":"121423252"}]
+[
+    {
+        "id": 1,
+        "name": "Artur",
+        "lastName": "Quinell",
+        "email": "aquinell0@mac.com",
+        "password": "4hAlkDClO",
+        "category": "USER",
+        "image": "https://robohash.org/optiooditut.png?size=50x50&set=set1"
+    },
+    {
+        "id": 2,
+        "name": "Meridel",
+        "lastName": "Zorzini",
+        "email": "mzorzini1@nsw.gov.au",
+        "password": "FI9xekr0",
+        "category": "USER",
+        "image": "https://robohash.org/adundecum.png?size=50x50&set=set1"
+    },
+    {
+        "id": 3,
+        "name": "Retha",
+        "lastName": "Kroch",
+        "email": "rkroch2@prlog.org",
+        "password": "ipxekFa",
+        "category": "USER",
+        "image": "https://robohash.org/explicaboullamfacere.png?size=50x50&set=set1"
+    },
+    {
+        "id": 4,
+        "name": "Kessiah",
+        "lastName": "Brawson",
+        "email": "kbrawson3@typepad.com",
+        "password": "WwfJwzCnhgkV",
+        "category": "USER",
+        "image": "https://robohash.org/temporenatuseius.png?size=50x50&set=set1"
+    },
+    {
+        "id": 5,
+        "name": "Humfrid",
+        "lastName": "Bleasdale",
+        "email": "hbleasdale4@godaddy.com",
+        "password": "kKXZvr",
+        "category": "USER",
+        "image": "https://robohash.org/molestiaeetdistinctio.png?size=50x50&set=set1"
+    },
+    {
+        "id": 6,
+        "name": "Sella",
+        "lastName": "Monck",
+        "email": "smonck5@gmpg.org",
+        "password": "VyXhOmn3B6",
+        "category": "USER",
+        "image": "https://robohash.org/errorsitvoluptas.png?size=50x50&set=set1"
+    },
+    {
+        "id": 7,
+        "name": "Gates",
+        "lastName": "Goundsy",
+        "email": "ggoundsy6@illinois.edu",
+        "password": "RhKoMxlLK",
+        "category": "USER",
+        "image": "https://robohash.org/facilisrerumin.png?size=50x50&set=set1"
+    },
+    {
+        "id": 8,
+        "name": "Brice",
+        "lastName": "Gomm",
+        "email": "bgomm7@newyorker.com",
+        "password": "p99slFiNe",
+        "category": "USER",
+        "image": "https://robohash.org/ethicquisquam.png?size=50x50&set=set1"
+    },
+    {
+        "id": 9,
+        "name": "Kenton",
+        "lastName": "Letchford",
+        "email": "kletchford8@springer.com",
+        "password": "biPiBdPBh1fW",
+        "category": "USER",
+        "image": "https://robohash.org/doloremutqui.png?size=50x50&set=set1"
+    },
+    {
+        "id": 10,
+        "name": "Corny",
+        "lastName": "Feek",
+        "email": "cfeek9@skype.com",
+        "password": "INhVCNLm8",
+        "category": "USER",
+        "image": "https://robohash.org/atquetotamnon.png?size=50x50&set=set1"
+    },
+    {
+        "id": 11,
+        "name": "Antonio",
+        "lastName": "Machacado",
+        "email": "coso@hotmail.com",
+        "password": "tamosmal",
+        "category": "ADMIN",
+        "image": "https://robohash.org/atquetotamnon.png?size=50x50&set=set1"
+    },
+    {
+        "id": 12,
+        "name": "hola",
+        "lastName": "hola",
+        "email": "hola@hola.com",
+        "pass": "$2a$10$T/UKFx9UfPVqDC95iFNm7eh5LtWRfaA43QKsXOan/cRmdKmVayy22",
+        "avatar": "default.png",
+        "category": "ROL_USER",
+        "phone": "121423252"
+    },
+    {
+        "id": 13,
+        "name": "ignacio",
+        "lastName": "marquez",
+        "email": "mail3@mail.com",
+        "pass": "$2a$10$HSeRalxn8vSiFuO914yJOOdvvn/SiRmWAYqQQ4U5ixLeOztjGUavW",
+        "avatar": "default.png",
+        "category": "ROL_USER",
+        "phone": "123456789"
+    }
+]
