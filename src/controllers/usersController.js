@@ -133,8 +133,8 @@ module.exports = {
     },
     logout: (req, res) =>{
         req.session.destroy();
-        if(req.cookies.userArtisticaDali){
-            res.cookie('userArtisticaDali','',{maxAge: -1})
+        if(req.cookies.userNiceSweet){
+            res.cookie('userNiceSweet','',{maxAge: -1})
         }
         
         return res.redirect('/')
