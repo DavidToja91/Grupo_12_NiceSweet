@@ -105,6 +105,7 @@ module.exports = {
         let user = getUsers.find(user => user.id === +req.params.id)
 
         res.render('users/edit', {
+            title: "¡Tus datos!",
             user,
             session: req.session
         })
@@ -113,7 +114,6 @@ module.exports = {
         let errors = validationResult(req);
             
         if(errors.isEmpty()){
-            res.send('Hola');
             let user = getUsers.find(user => user.id === +req.params.id)
             
             let { 
@@ -135,7 +135,7 @@ module.exports = {
             res.redirect("/users/profile");
 
         } else {
-            res.render('users/edit/:id', {
+            res.render('users/edit', {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session 
