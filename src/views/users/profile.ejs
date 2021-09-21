@@ -16,62 +16,25 @@
                                     <img class="img-fluid bg-teal-light border rounded-circle"" src="/images/users/default.png" alt="">
                                 </div>
                                 <div class="col-md-7 container my-1">
-                                    <form method="POST" action="/"?_method="PATCH" enctype="multipart/form-data">
-                                        <div class="row my-1">
-                                            <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Nombre:</b></label>
-                                                    <p></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Apellido:</b></label>
-                                                    <input type="text" name="last-name" class="form-control">
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Email:</b></label>
-                                                    <input type="email" name="email" class="form-control" readonly>
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Contraseña:</b></label>
-                                                    <input type="password" name="password" class="form-control">
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Categoría:</b></label> 
-                                                    <input type="category" name="category" class="form-control" readonly>
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Imagen:</b></label>
-                                                    <input class="form-control" type="file" name="avatar">
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 text-center my-3 mt-4">
-                                                <button class="btn btn-teal text-light">Guardar</button>
-                                            </div>
+                                    <div class="row my-1">
+                                        <div class="col-md-6 my-1">
+                                            <p>Nombre: <%= user.name %></p>
+                                        </div>
+                                        <div class="col-md-6 my-1">
+                                            <p>Apellido: <%= user.lastName %></p>
+                                        </div>
+                                        <div class="col-md-6 my-1">
+                                            <p>Email: <%= user.email %></p>
+                                        </div>
+                                        <div class="col-md-6 my-1">
+                                            <p>Categoría: <%= user.category %></p> 
+                                        </div>
+                                        <div class="col-12 text-center my-3 mt-4">
+                                            <a href="/users/edit/<%= user.id %>" class="btn btn-teal text-light">EDITAR</a>
                                         </div>
                                     </div>
-                                </form>
                                 </div>
+                            </div>
                             
                         </div>
                     </div>

@@ -13,32 +13,33 @@
                             
                             <div class="d-flex justify-content-between row">
                                 <div class="col-md-3 pb-4">
-                                    <img class="img-fluid bg-teal-light border rounded-circle"" src="/images/users/default.png" alt="">
+                                    <img class="img-fluid bg-teal-light border rounded-circle"" src="/images/users/<%= user.avatar %>" alt="">
                                 </div>
                                 <div class="col-md-7 container my-1">
-                                    <form method="POST" action="/"?_method="PUT" enctype="multipart/form-data">
+                                    <form method="POST" action="/users/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
                                         <div class="row my-1">
                                             <div class="col-md-6 my-1">
-                                                   <p>Nombre: <%= user.name %></p>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                    <p>Apellido: <%= user.lastName %></p>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                    <p>Email: <%= user.email %></p>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                    <p>Contraseña: <%= user.pass1 %></p>
-                                            </div>
-                                            <div class="col-md-6 my-1">
-                                                    <p>Categoría:</p> 
+                                                <div class="form-group">
+                                                    <input type="text" name="name" placeholder="Nombre" value="<%= locals.old? old.name : user.name %>">
+                                                    <% if (locals.errors && errors.name) { %>
+                                                        <small class="text-danger"><%= errors.name.msg %></small>
+                                                    <% } %>
+                                                </div>
                                             </div>
                                             <div class="col-md-6 my-1">
                                                 <div class="form-group">
-                                                    <label><b>Imagen:</b></label>
-                                                    <input class="form-control" type="file" name="avatar">
-                                                    <div class="invalid-feedback">
-                                                    </div>
+                                                    <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old? old.lastName : user.lastName %>">
+                                                    <% if (locals.errors && errors.lastName) { %>
+                                                        <small class="text-danger"><%= errors.lastName.msg %></small>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 my-1">
+                                                <div class="form-group">
+                                                    <input type="number" name="phone" placeholder="Telefono" value="<%= locals.old? old.phone : user.phone %>">
+                                                    <% if (locals.errors && errors.phone) { %>
+                                                        <small class="text-danger"><%= errors.phone.msg %></small>
+                                                    <% } %>
                                                 </div>
                                             </div>
                                             <div class="col-12 text-center my-3 mt-4">

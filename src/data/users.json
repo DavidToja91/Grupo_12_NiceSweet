@@ -118,5 +118,15 @@
         "avatar": "default.png",
         "category": "USER",
         "phone": "01125117730"
+    },
+    {
+        "id": 14,
+        "name": "Queso",
+        "lastName": "De Cabra",
+        "email": "un@email.com",
+        "pass": "$2a$10$aThV4bT7qLg5rMVZ2S.n/uydom30Pqzwd1.q7rXSPK63s89qT7KaO",
+        "avatar": "default.png",
+        "category": "USER",
+        "phone": "1122556729"
     }
 ]

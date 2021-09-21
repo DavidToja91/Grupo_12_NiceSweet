@@ -15,7 +15,7 @@ router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 
 router.get('/profile', userSession, profile);
-router.get('/profile/edit/:id', editProfile);
-router.put('/profile/edit/:id', upload.single('avatar'), updateProfile);
+router.get('/edit/:id', editProfile);
+router.put('/edit/:id', upload.single('avatar'), updateProfile);
 
 module.exports = router;
