@@ -16,46 +16,22 @@
                                     <img class="img-fluid bg-teal-light border rounded-circle"" src="/images/users/default.png" alt="">
                                 </div>
                                 <div class="col-md-7 container my-1">
-                                    <form method="POST" action="/"?_method="PATCH" enctype="multipart/form-data">
+                                    <form method="POST" action="/"?_method="PUT" enctype="multipart/form-data">
                                         <div class="row my-1">
                                             <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Nombre:</b></label>
-                                                    <p></p>
-                                                    </div>
-                                                </div>
+                                                   <p>Nombre: <%= user.name %></p>
                                             </div>
                                             <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Apellido:</b></label>
-                                                    <input type="text" name="last-name" class="form-control">
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
+                                                    <p>Apellido: <%= user.lastName %></p>
                                             </div>
                                             <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Email:</b></label>
-                                                    <input type="email" name="email" class="form-control" readonly>
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
+                                                    <p>Email: <%= user.email %></p>
                                             </div>
                                             <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Contraseña:</b></label>
-                                                    <input type="password" name="password" class="form-control">
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
+                                                    <p>Contraseña: <%= user.pass1 %></p>
                                             </div>
                                             <div class="col-md-6 my-1">
-                                                <div class="form-group">
-                                                    <label><b>Categoría:</b></label> 
-                                                    <input type="category" name="category" class="form-control" readonly>
-                                                    <div class="invalid-feedback">
-                                                    </div>
-                                                </div>
+                                                    <p>Categoría:</p> 
                                             </div>
                                             <div class="col-md-6 my-1">
                                                 <div class="form-group">
