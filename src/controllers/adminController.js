@@ -1,7 +1,7 @@
 
 const { NotExtended } = require('http-errors');
-let { getProducts, writeProductsJson } = require('../data/productsDB');
-let { getUsers, writeUsersJson } = require('../data/usersDB');
+let { getProducts, writeProductJSON } = require('../data/productsDB');
+let { getUsers, writeUsersJSON } = require('../data/usersDB');
 
 module.exports= {
     inicio: (req, res) => {
@@ -42,7 +42,9 @@ module.exports= {
         }
 
         getProducts.push(newProduct);
-        writeProductsJson(getProducts);
+
+        writeProductJSON(getProducts);
+
         res.redirect('/admin');
     },
     editarFormulario : (req, res) => {
@@ -67,7 +69,7 @@ module.exports= {
             }
         });
 
-        writeProductsJson(getProducts);
+        writeProductJSON(getProducts);
         res.redirect('/admin');
     },
     eliminarProducto: (req, res) => {
@@ -78,7 +80,7 @@ module.exports= {
             }
         })
 
-        writeProductsJson(getProducts);
+        writeProductJSON(getProducts);
         res.redirect('/admin/products');
     },
     ////////// USERS \\\\\\\\\\
@@ -116,7 +118,7 @@ module.exports= {
             }
         });
 
-        writeUsersJson(getUsers);
+        writeUsersJSON(getUsers);
         res.redirect('/admin');
     },
     deleteUser: (req, res) => {
@@ -127,7 +129,7 @@ module.exports= {
             }
         });
 
-        writeUsersJson(getUsers)
+        writeUsersJSON(getUsers)
         res.redirect('/admin/users')
     }
 }

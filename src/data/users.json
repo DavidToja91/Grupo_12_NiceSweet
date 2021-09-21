@@ -97,5 +97,25 @@
         "password": "tamosmal",
         "category": "ADMIN",
         "image": "https://robohash.org/atquetotamnon.png?size=50x50&set=set1"
+    },
+    {
+        "id": 12,
+        "name": "hola",
+        "lastName": "hola",
+        "email": "hola@hola.com",
+        "pass": "$2a$10$T/UKFx9UfPVqDC95iFNm7eh5LtWRfaA43QKsXOan/cRmdKmVayy22",
+        "avatar": "default.png",
+        "category": "ROL_USER",
+        "phone": "121423252"
+    },
+    {
+        "id": 13,
+        "name": "ignacio",
+        "lastName": "marquez",
+        "email": "mail3@mail.com",
+        "pass": "$2a$10$HSeRalxn8vSiFuO914yJOOdvvn/SiRmWAYqQQ4U5ixLeOztjGUavW",
+        "avatar": "default.png",
+        "category": "ROL_USER",
+        "phone": "123456789"
     }
 ]

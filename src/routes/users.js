@@ -2,10 +2,8 @@ var express = require('express');
 var router = express.Router();
 let { register, login, profile, editProfile,updateProfile, processRegister,processLogin,logout } = require('../controllers/usersController');
 let loginValidator = require('../validations/loginValidator');
-let editProfileValidator = require('../validations/editProfileValidator');
 let registerValidator = require('../validations/registerValidator')
 let upload = require('../middlewares/uploadAvatar');
-let path=require('path');
 const userSession = require('../middlewares/userSession');
 
 // Rutas

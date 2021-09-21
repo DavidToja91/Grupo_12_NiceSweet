@@ -1,4 +1,4 @@
-let {getUsers, writeUsersJson } = require('../data/usersDB');
+let {getUsers, writeUsersJSON } = require('../data/usersDB');
 const{validationResult}= require('express-validator');
 const bcrypt= require('bcryptjs');
 
@@ -12,7 +12,7 @@ module.exports = {
     
     processRegister: (req, res) => {
         let errors = validationResult(req);
-
+        
         if (errors.isEmpty()) {
 
             let lastId = 0;
@@ -28,7 +28,7 @@ module.exports = {
                 lastName,
                 email,
                 pass1,
-                category,
+               
                 phone, 
             } = req.body;
 
@@ -39,18 +39,18 @@ module.exports = {
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
-                category: category,
+                category: "ROL_USER",
                 phone: phone,
             };
 
             getUsers.push(newUser);
 
-            writeUsersJson(getUsers);
+            writeUsersJSON(getUsers);
 
-            res.redirect('/')
+            res.redirect('/users/login')
         } else{
             res.render('users/register',{
-                error : errors.mapped(),
+                errors : errors.mapped(),
                 old: req.body
         })
     }
@@ -83,6 +83,7 @@ module.exports = {
             }
 
             res.locals.user = req.session.user; //Creo la variable user en la propiedad locals dentro del objeto request y como valor le asigno los datos del usuario en sesión
+            res.send(req.session.user)
             res.redirect('/')
                      
         } else{

@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="es">
 
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Font awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link href="/styles/register.css" rel="stylesheet">
@@ -16,120 +17,126 @@
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
 
-    <title>!Inicia Sesión!</title>
-  </head>
-  
+    <title>Inicia Sesión!</title>
+</head>
+
 <body>
     <%- include('../partials/header.ejs') %>
-        <section class="contact-box">
-            <div class="row no-gutters bg-dark">
-                <div class="col-xl-5 col-lg-12 register-bg">
-                    <div class="position-absolute testiomonial p-4">
-                        <h3 class="font-weight-bold text-light">!Bienvenidos a NiceSweet!.</h3>
-                        <p class="lead text-light">El camino de la dulzura comienza
-                            <strong><i>Registrandose</i></strong>.</p>
-                    </div>
+    <section class="contact-box">
+        <div class="row no-gutters bg-dark">
+            <div class="col-xl-5 col-lg-12 register-bg">
+                <div class="position-absolute testiomonial p-4">
+                    <h3 class="font-weight-bold text-light">!Bienvenidos a NiceSweet!.</h3>
+                    <p class="lead text-light">El camino de la dulzura comienza
+                        <strong><i>Registrandose</i></strong>.</p>
                 </div>
-                <div class="col-xl-7 col-lg-12 d-flex">
-                    <div class="container align-self-center p-6">
-                        <h1 class="font-weight-bold mb-3">Crea tu cuenta gratis</h1>
-                        <div class="form-group">
-                            <button class="btn btn-outline-dark d-inline-block text-light mr-2 mb-3 width-100"><i
-                                    class="icon ion-logo-google lead align-middle mr-2"></i> Google </button>
-                            <button class="btn btn-outline-dark d-inline-block text-light mb-3 width-100"><i
-                                    class="icon ion-logo-facebook lead align-middle mr-2"></i> Facebook</button>
+            </div>
+            <div class="col-xl-7 col-lg-12 d-flex">
+                <div class="container align-self-center p-6">
+                    <h1 class="font-weight-bold mb-3">Crea tu cuenta gratis</h1>
+                    <div class="form-group">
+                        <button class="btn btn-outline-dark d-inline-block text-light mr-2 mb-3 width-100"><i
+                                class="icon ion-logo-google lead align-middle mr-2"></i> Google </button>
+                        <button class="btn btn-outline-dark d-inline-block text-light mb-3 width-100"><i
+                                class="icon ion-logo-facebook lead align-middle mr-2"></i> Facebook</button>
+                    </div>
+                    <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p>
+
+                    <form action="/users/register" method="POST" enctype="multipart/form-data">
+
+                        <div class="form-row mb-2">
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
+                                <input type="text" name="name" class="form-control" placeholder="Tu nombre" value="<%= locals.old && old.name %>">
+                                <% if (locals.errors && errors.name) { %>
+                                <small class="text-danger"><%= errors.name.msg %></small>
+                                <% } %>
+                                <%=  locals.old && old.name %> 
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
+                                <input type="text" name="lastName" class="form-control" placeholder="Tu apellido" value="<%= locals.old && old.lastName %>">
+                                <% if (locals.errors && errors.lastName) { %>
+                                <small class="text-danger"><%= errors.lastName.msg %></small>
+                                <% } %>
+                                <%=  locals.old && old.lastName %> 
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Teléfono<span class="text-danger">*</span></label>
+                                <input type="number" name="phone" class="form-control" placeholder="Tu número" value="<%= locals.old && old.phone %>">
+                                <% if (locals.errors && errors.phone) { %>
+                                <small class="text-danger"><%= errors.phone.msg %></small>
+                                <% } %>
+                            </div>
                         </div>
-                        <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p>
 
-                        <form action="/users/register" method="POST" enctype="multipart/form-data">
-
-                            <div class="form-row mb-2">
-                                <div class="form-group col-md-6">
-                                    <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
-                                    <input type="text" name= "name" class="form-control" placeholder="Tu nombre">
-                                    <% if (locals.errors && errors.name) { %>
-                                        <small class="text-danger"><%= errors.name.msg %></small>
-                                    <% } %>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
-                                    <input type="text" name= "lastName" class="form-control" placeholder="Tu apellido">
-                                    <% if (locals.errors && errors.lastName) { %>
-                                        <small class="text-danger"><%= errors.lastName.msg %></small>
-                                    <% } %>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="font-weight-bold">Teléfono<span class="text-danger">*</span></label>
-                                    <input type="number" name="phone" class="form-control" placeholder="Tu número">
-                                    <% if (locals.errors && errors.phone) { %>
-                                        <small class="text-danger"><%= errors.phone.msg %></small>
-                                    <% } %>
-                                </div>
-                            </div>
-
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Correo electrónico <span
+                                    class="text-danger">*</span></label>
+                            <input type="email" name="email" class="form-control"
+                                placeholder="Ingresa tu correo electrónico">
+                            <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger"><%= errors.email.msg %></small>
+                            <% } %>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
+                            <input type="password" name="pass1" class="form-control"
+                                placeholder="Ingresa una contraseña">
+                            <% if (locals.errors && errors.pass1) { %>
+                            <small class="text-danger"><%= errors.pass1.msg %></small>
+                            <% } %>
                             <div class="form-group mb-3">
-                                <label class="font-weight-bold">Correo electrónico <span
+                                <label class="font-weight-bold">Repite tu contraseña <span
                                         class="text-danger">*</span></label>
-                                <input type="email" name="email" class="form-control" placeholder="Ingresa tu correo electrónico">
-                                <% if (locals.errors && errors.email) { %>
-                                    <small class="text-danger"><%= errors.email.msg %></small>
-                                <% } %>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
-                                <input type="password" name="pass1" class="form-control" placeholder="Ingresa una contraseña">
-                                <% if (locals.errors && errors.pass1) { %>
-                                    <small class="text-danger"><%= errors.pass1.msg %></small>
-                                <% } %>
-                            <div class="form-group mb-3">
-                                <label class="font-weight-bold">Repite tu contraseña <span class="text-danger">*</span></label>
-                                <input type="password" name="pass2" class="form-control" placeholder="Repite la misma contraseña">
+                                <input type="password" name="pass2" class="form-control"
+                                    placeholder="Repite la misma contraseña">
                                 <% if (locals.errors && errors.pass2) { %>
-                                    <small class="text-danger"><%= errors.pass2.msg %></small>
+                                <small class="text-danger"><%= errors.pass2.msg %></small>
                                 <% } %>
                             </div>
                             <div class="form- group mb-2 input-file">
-                                <label class="font-weight-bold" >Agrega tu Foto</label>
-                                <input type="file" class="form-control"  name="avatar">
+                                <label class="font-weight-bold">Agrega tu Foto</label>
+                                <input type="file" class="form-control" name="avatar">
                             </div>
-                            
+
                             <div class="form-group mb-5">
                                 <div class="form-ad-input_check">
                                     <input type="checkbox" name="terms" id="check">
                                     <label for="check">Acepto los términos y condiciones</label>
                                     <% if (locals.errors && errors.terms) { %>
-                                        <small class="text-danger"><%= errors.terms.msg %> </small>
+                                    <small class="text-danger"><%= errors.terms.msg %> </small>
                                     <% } %>
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary width-100">Regístrate</button>
+                            <button class="btn btn-primary width-100" type="submit">Regístrate</button>
                             <a href="/users/login" class="userLink">Ya tengo cuenta</a>
 
-                             <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2021
-                            <i>NiceSweet</i></small>
-                            </div>
-                            
+                            <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | © 2021
+                                <i>NiceSweet</i></small>
+                        </div>
 
-                        </form>
-                        
-                    </div>
+
+                    </form>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!--  JavaScript -->
+    <!--  JavaScript -->
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-        <script src="/Js/header.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="/Js/header.js" defer></script>
 
 </body>
 <%- include('../partials/footer.ejs') %>
