@@ -93,9 +93,13 @@ module.exports = {
             })
         }  
     },
-    profile: (req, res) => {        
+    profile: (req, res) => {     
+        let user = users.find(user=> user.id === req.session.user.id);
+
         res.render('users/profile',{
-            title: "¡Tus datos!"
+            title: "¡Tus datos!",
+            session: req.session,
+            user
         });
     },
     editProfile: (req, res) => {
@@ -124,11 +128,19 @@ module.exports = {
             user.phone = phone
             user.avatar = req.file ? req.file.filename : user.avatar
 
-            writeUsersJson(users);
+            writeUsersJSON(users);
 
             delete user.pass;          
             req.session.user = user;
             res.redirect("users/profile");
+
+        } else {
+            res.render('edit', {
+                categories,
+                errors: errors.mapped(),
+                old: req.body,
+                session:req.session 
+            })   
         }
     },
     logout: (req, res) =>{
