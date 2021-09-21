@@ -1,3 +1,4 @@
+
 <header>
     <div class="main-header">
         <a href="/">
@@ -12,9 +13,14 @@
     <nav class="navigation-bar" id="navigation-bar-mobile">
         
         <div class="user-icons-mobile">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-shopping-cart"></i>
+            <ul>
+                <li><a href="/users/login"><i class="fas fa-user"></i></a></li>
+                <li><a href="/users/register"></a></li>
+            </ul>
+            
+            <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
         </div> 
+        
         
         <!-- Lista con los elementos del menú (categorías) -->
         <ul class="menu">
@@ -69,20 +75,15 @@
     <!-- ************************************************** -->
     <!-- ***********Iconos de login a modificar************ -->
     <!-- ************************************************** -->
-    <div class="user-icons-desktop">
-        <!-- <a href="/users/login"> --><i class="fas fa-user" onclick="dropLogin()"></i><!-- </a> -->
-        <a href="/products/cart"><i class="fas fa-shopping-cart"></i></a>
-        <div class="menu-usuario" id="login-register">
-            <a href="/users/login"><p>Login</p></a>
-            <a href="/users/register"><p id="ress">Registrate!</p></a>
-        </div>
-    </div>  
+       
+             
+
 
     <!-- Menu desplegable de loging/register -->
 
     
     
-    </div>
+    
     
     <nav class="nav_menu">        
     <!-- Buscador mobile -->
@@ -165,3 +166,5 @@
     </nav>
 
 </header>
+
+<script src="/Js/header.js"></script>

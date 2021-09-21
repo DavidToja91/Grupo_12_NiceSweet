@@ -128,8 +128,7 @@ header {
 }
 
 .main-header .navigation-bar .user-icons-mobile {
-    display: flex;
-    justify-content: flex-end;
+    display: flex
 }
 
 .main-header .navigation-bar .user-icons-mobile i{
@@ -174,6 +173,11 @@ header {
 
 .header-opacity {
     opacity: 0.8;
+}
+
+.menu-usuario .nav {
+    width:500px; /*Le establecemos un ancho*/
+    margin:0 auto; /*Centramos automaticamente*/
 }
 
 /* MEDIA QUERIES */
@@ -242,7 +246,7 @@ header {
     }
     
     .main-header .navigation-bar .user-icons-mobile {
-        display: none;
+        display: flex;
     }
     
     .main-header .logo {
