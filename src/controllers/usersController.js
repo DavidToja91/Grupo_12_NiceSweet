@@ -113,6 +113,7 @@ module.exports = {
         let errors = validationResult(req);
             
         if(errors.isEmpty()){
+            res.send('Hola');
             let user = getUsers.find(user => user.id === +req.params.id)
             
             let { 
@@ -134,12 +135,11 @@ module.exports = {
             res.redirect("/users/profile");
 
         } else {
-            res.send('dale!')
-            /* res.render('users/edit', {
+            res.render('users/edit/:id', {
                 errors: errors.mapped(),
                 old: req.body,
-                session:req.session 
-            }); */  
+                session: req.session 
+            }); 
         }
     },
     logout: (req, res) =>{
