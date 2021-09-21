@@ -39,7 +39,7 @@ module.exports = {
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
-                category: "ROL_USER",
+                category: "USER",
                 phone: phone,
             };
 
@@ -58,43 +58,20 @@ module.exports = {
 
     login: (req, res) => {        
         res.render('users/login', {
-            title: "¡Inicia sesión!"
+            title: "¡Inicia sesión!",
+            session:req.session
         });
     },
     processLogin: (req, res) => {
-        let errors = validationResult(req)
+        let user = getUsers.find(user=> user.id === req.session.user.id);
             
-        if(errors.isEmpty()){
-
-            let user = getUsers.find(user => user.email === req.body.email);
-
-            req.session.user = { 
-                id: user.id,
-                name: user.name,
-                last_name: user.last_name,
-                email: user.email,
-                phone: user.phone,
-                avatar: user.avatar,
-                category: user.category
-            }
-
-            if(req.body.remember){ // Si el checkbox está seleccionado creo la cookie
-                res.cookie('logged', req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
-            }
-
-            res.locals.user = req.session.user; //Creo la variable user en la propiedad locals dentro del objeto request y como valor le asigno los datos del usuario en sesión
-            res.send(req.session.user)
-            res.redirect('/')
-                     
-        } else{
-            res.render('login', {
-                errors: errors.mapped(), 
-                session:req.session 
-            })
-        }  
+        res.render('userProfile', {    
+            session: req.session,
+            user
+        });
     },
     profile: (req, res) => {     
-        let user = users.find(user=> user.id === req.session.user.id);
+        let user = getUsers.find(user=> user.id === req.session.user.id);
 
         res.render('users/profile',{
             title: "¡Tus datos!",
@@ -114,7 +91,7 @@ module.exports = {
         let errors = validationResult(req)
             
         if(errors.isEmpty()){
-            let user = users.find(user => user.id === +req.params.id)
+            let user = getUsers.find(user => user.id === +req.params.id)
             
             let { 
                 name, 
@@ -136,7 +113,6 @@ module.exports = {
 
         } else {
             res.render('edit', {
-                categories,
                 errors: errors.mapped(),
                 old: req.body,
                 session:req.session 
