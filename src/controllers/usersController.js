@@ -132,6 +132,7 @@ module.exports = {
 
             delete user.pass;          
             req.session.user = user;
+            
             res.redirect("/users/profile");
 
         } else {
