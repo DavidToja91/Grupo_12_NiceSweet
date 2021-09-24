@@ -15,18 +15,18 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-        discount: {
-            type: dataTypes.INTEGER(11),
-        },
         description: {
             type: dataTypes.STRING(200),
+        },
+        image: {
+            type: dataTypes.TEXT(50),
+        },
+        discount: {
+            type: dataTypes.INTEGER(11),
         },
         subcategoryId: {
             type: dataTypes.INTEGER(11),
             allowNull: false
-        },
-        image: {
-            type: dataTypes.TEXT(50),
         },
     };
     let config = {
