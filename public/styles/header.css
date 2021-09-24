@@ -26,7 +26,7 @@ header {
     display: none;
 }
 
-.main-header .user-icons-desktop {
+.main-header .iconos-desktop {
      display: none;
 }
 
@@ -113,6 +113,8 @@ header {
     border: none;
     background-color: white;
 }
+
+
 
 /* Finaliza botón y barra de búsqueda mobile */
 
@@ -254,15 +256,15 @@ header {
         width: 262px;
         order: 0;
     }
-
-    .main-header .user-icons-desktop {  
+   
+    .iconos-desktop {  
         display: flex;
         font-size: 24px;
         order: 4;
         position: relative;
         padding-right: 10px;
         margin-right: 15px ;
-    }
+    } 
 
     .main-header .user-icons-desktop i {
         margin-left: 10px;
