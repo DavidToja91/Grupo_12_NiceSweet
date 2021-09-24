@@ -28,20 +28,24 @@ module.exports = (sequelize, dataTypes) => {
         image: {
             type: dataTypes.TEXT(50),
         },
-    }
+    };
     let config = {
         tableName: "products",
         timeStamps: true
-    }
+    };
 
-    const Product = sequelize.define(alias, cols, config)
+    const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = models =>{
+    Product.associate = models => {
         Product.belongsTo(models.Subcategories,{
             as: "subcategory",
             foreignKey: "subcategoryId"
-        })
-    }
+        });
+        Product.hasMany(models.UserProducts,{
+            as: "productUsers",
+            foreignKey: "productId"
+        });
+    };
 
     return Product;
 }

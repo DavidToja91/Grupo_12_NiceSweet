@@ -28,20 +28,27 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INT(11)
         },
         rol: {
-            type: dataTypes.INTEGER(2).UNSIGNED
+            type: dataTypes.INTEGER(2).UNSIGNED,
             allowNull: false
         },
         avatar:{
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING(50),
             allowNull: false
         }
-    }
+    };
     let config = {
         tableName: "users",
         timestamps: true
-    }
+    };
 
-    const User = sequelize.define(alias, cols, config)
+    const User = sequelize.define(alias, cols, config);
+
+    User.associate = models => {
+        User.hasMany(models.UserProduct , {
+            as: "userProducts",
+            foreignKey : "userId" 
+        });
+    };
 
     return User;
 }

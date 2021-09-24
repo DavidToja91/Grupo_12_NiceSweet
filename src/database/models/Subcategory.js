@@ -16,24 +16,24 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         
-    }
+    };
     let config = {
         tableName: "subcategories",
         timestamps: false
-    }
+    };
 
-    const Subcategory = sequelize.define(alias, cols, config)
+    const Subcategory = sequelize.define(alias, cols, config);
 //se enlaza con la tabla de categorías
-    Subcategory.associate = models =>{
+    Subcategory.associate = models => {
         Subcategory.belongsTo(models.Categories, {
             as: "category",
             foreignKey: "categoryId"
-        })
+        });
         Subcategory.hasMany(models.Products , {
             as: "products",
-            foreignKey : "SubcategoryId" 
-        })
-    }
+            foreignKey : "subCategoryId" 
+        });
+    };
 
     return Subcategory;
 }
