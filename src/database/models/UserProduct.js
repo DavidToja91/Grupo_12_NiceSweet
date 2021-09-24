@@ -12,6 +12,8 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
         productId:{
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            allowNull: false
 
         },
         quantity:{
@@ -20,7 +22,7 @@ module.exports = (sequelize, dataTypes)=>{
         }
     };
     let config = {
-        tableName: "user_products",
+        tableName: "user_product",
         timestamps: true
     };
 
