@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes)=>{
         allowNull: false
     }
      let config = {
-        tableName: "users",
+        tableName: "user_products",
         timestamps: true
     }
 
