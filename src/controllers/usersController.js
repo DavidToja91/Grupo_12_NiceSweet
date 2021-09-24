@@ -8,8 +8,7 @@ module.exports = {
             session: req.session,
             title: "¡Registrate!"
         });
-    },
-    
+    }, 
     processRegister: (req, res) => {
         let errors = validationResult(req);
         
@@ -39,7 +38,7 @@ module.exports = {
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file ? req.file.filename : "default.png",
-                category: "ROL_USER",
+                category: "USER",
                 phone: phone,
             };
 
@@ -52,17 +51,17 @@ module.exports = {
             res.render('users/register',{
                 errors : errors.mapped(),
                 old: req.body
-        })
-    }
+            });
+        }
     },
-
     login: (req, res) => {        
         res.render('users/login', {
-            title: "¡Inicia sesión!"
+            title: "¡Inicia sesión!",
+            session: req.session
         });
     },
     processLogin: (req, res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
             
         if(errors.isEmpty()){
 
@@ -73,62 +72,75 @@ module.exports = {
                 name: user.name,
                 last_name: user.last_name,
                 email: user.email,
-                phone: user.phone,
                 avatar: user.avatar,
-                category: user.category
+                category: user.category,
+                phone: user.phone
             }
 
-            if(req.body.remember){ // Si el checkbox está seleccionado creo la cookie
-                res.cookie('logged', req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
+            if(req.body.remember) {
+                res.cookie('niceSweet',req.session.user,{expires: new Date(Date.now() + 900000), httpOnly: true})
             }
 
-            res.locals.user = req.session.user; //Creo la variable user en la propiedad locals dentro del objeto request y como valor le asigno los datos del usuario en sesión
-            res.send(req.session.user)
+            res.locals.user = req.session.user;
+        
             res.redirect('/')
-                     
+
         } else{
-            res.render('login', {
+            res.render('users/login', {
                 errors: errors.mapped(), 
-                session:req.session 
-            })
-        }  
+                session: req.session 
+            });
+        }
     },
-    profile: (req, res) => {        
+    profile: (req, res) => {     
+        let user = getUsers.find(user=> user.id === req.session.user.id);
+
         res.render('users/profile',{
-            title: "¡Tus datos!"
+            title: "¡Tus datos!",
+            session: req.session,
+            user
         });
     },
     editProfile: (req, res) => {
         let user = getUsers.find(user => user.id === +req.params.id)
 
         res.render('users/edit', {
+            title: "¡Tus datos!",
             user,
             session: req.session
         })
     },
     updateProfile: (req, res) => {        
-        let errors = validationResult(req)
+        let errors = validationResult(req);
             
         if(errors.isEmpty()){
-            let user = users.find(user => user.id === +req.params.id)
+            let user = getUsers.find(user => user.id === +req.params.id)
             
             let { 
                 name, 
-                last_name,
+                lastName,
                 phone,
             } = req.body;
 
             user.id = user.id
             user.name = name
-            user.last_name = last_name
+            user.lastName = lastName
             user.phone = phone
             user.avatar = req.file ? req.file.filename : user.avatar
 
-            writeUsersJson(users);
+            writeUsersJSON(getUsers);
 
             delete user.pass;          
             req.session.user = user;
-            res.redirect("users/profile");
+            
+            res.redirect("/users/profile");
+
+        } else {
+            res.render('users/edit', {
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session 
+            }); 
         }
     },
     logout: (req, res) =>{

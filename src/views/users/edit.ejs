@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<%- include('../partials/bootstrap') %>
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <!-- productCreateForm -->
+                <div class="container my-5">
+                    <div class="row justify-content-center bg-steel-light border border-secondary rounded p-4">
+                        <div class="col-md-10">
+                            <h2 class="text-center mb-5">Usuario</h2>
+                            
+                            <div class="d-flex justify-content-between row">
+                                <div class="col-md-3 pb-4">
+                                    <img class="img-fluid bg-teal-light border rounded-circle"" src="/images/users/<%= user.avatar %>" alt="">
+                                </div>
+                                <div class="col-md-7 container my-1">
+                                    <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                                        <div class="row my-1">
+                                            <div class="col-md-6 my-1">
+                                                <input type="text" name="name" placeholder="Nombre" value="<%= locals.old? old.name : user.name %>">
+                                                <% if (locals.errors && errors.name) { %>
+                                                    <small class="text-danger"><%= errors.name.msg %></small>
+                                                <% } %>
+                                            </div>
+                                            <div class="col-md-6 my-1">    
+                                                <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old? old.lastName : user.lastName %>">
+                                                <% if (locals.errors && errors.lastName) { %>
+                                                    <small class="text-danger"><%= errors.lastName.msg %></small>
+                                                <% } %>             
+                                            </div>
+                                            <div class="col-md-6 my-1">
+                                                <input type="number" name="phone" placeholder="Telefono" value="<%= locals.old? old.phone : user.phone %>">
+                                                <% if (locals.errors && errors.phone) { %>
+                                                    <small class="text-danger"><%= errors.phone.msg %></small>
+                                                <% } %>          
+                                            </div>
+                                            <div class="col-md-6 my-1">
+                                                <input type="file" name="avatar" value="<%= locals.old? old.avatar : user.avatar %>">
+                                                <% if (locals.errors && errors.avatar) { %>
+                                                    <small class="text-danger"><%= errors.avatar.msg %></small>
+                                                <% } %>
+                                            </div>
+                                            <div class="col-12 text-center my-3 mt-4">
+                                                <button type="submit" class="btn btn-teal text-light">Guardar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>
