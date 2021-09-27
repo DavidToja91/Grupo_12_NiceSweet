@@ -26,7 +26,7 @@ header {
     display: none;
 }
 
-.main-header .iconos-desktop {
+.main-header .user-icons-desktop {
      display: none;
 }
 
@@ -114,8 +114,6 @@ header {
     background-color: white;
 }
 
-
-
 /* Finaliza botón y barra de búsqueda mobile */
 
 /* Botón y menú desplegable mobile */
@@ -130,7 +128,8 @@ header {
 }
 
 .main-header .navigation-bar .user-icons-mobile {
-    display: flex
+    display: flex;
+    justify-content: flex-end;
 }
 
 .main-header .navigation-bar .user-icons-mobile i{
@@ -175,11 +174,6 @@ header {
 
 .header-opacity {
     opacity: 0.8;
-}
-
-.menu-usuario .nav {
-    width:500px; /*Le establecemos un ancho*/
-    margin:0 auto; /*Centramos automaticamente*/
 }
 
 /* MEDIA QUERIES */
@@ -248,7 +242,7 @@ header {
     }
     
     .main-header .navigation-bar .user-icons-mobile {
-        display: flex;
+        display: none;
     }
     
     .main-header .logo {
@@ -256,15 +250,15 @@ header {
         width: 262px;
         order: 0;
     }
-   
-    .iconos-desktop {  
+
+    .main-header .user-icons-desktop {  
         display: flex;
         font-size: 24px;
         order: 4;
         position: relative;
         padding-right: 10px;
         margin-right: 15px ;
-    } 
+    }
 
     .main-header .user-icons-desktop i {
         margin-left: 10px;

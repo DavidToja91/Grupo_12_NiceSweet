@@ -48,9 +48,9 @@ function dropSubCategoryMenu (id) {
 }
 
 function dropLogin(){
-    if (menuLogin.style.display ==="none") {
-        menuLogin.style.display = "block"
-    } else {
+    if (menuLogin.style.display ==="block") {
         menuLogin.style.display = "none"
+    } else {
+        menuLogin.style.display = "block"
     }
 }
