@@ -38,11 +38,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-<<<<<<< HEAD
-    /* Product.associate = models => {
-=======
 /*     Product.associate = models => {
->>>>>>> aebff415af43af12a6d4d42d1b6b38ce9f6fbaa7
         Product.belongsTo(models.Subcategories,{
             as: "subcategory",
             foreignKey: "subcategoryId"
