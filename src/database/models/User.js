@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         phoneNumber:{
-            type: dataTypes.INT(11)
+            type: dataTypes.INTEGER(11)
         },
         rol: {
             type: dataTypes.INTEGER(2).UNSIGNED,
@@ -43,12 +43,12 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
 
-    User.associate = models => {
+    /* User.associate = models => {
         User.hasMany(models.UserProduct , {
             as: "userProducts",
             foreignKey : "userId" 
         });
-    };
+    }; */
 
     return User;
 }

@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false 
         },
-        nameProduct: {
+        name: {
             type: dataTypes.STRING(20),
             allowNull: false
         },
@@ -36,7 +36,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = models => {
+    /* Product.associate = models => {
         Product.belongsTo(models.Subcategories,{
             as: "subcategory",
             foreignKey: "subcategoryId"
@@ -45,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "productUsers",
             foreignKey: "productId"
         });
-    };
+    }; */
 
     return Product;
 }

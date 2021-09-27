@@ -12,7 +12,8 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
         productId:{
-
+            type: dataTypes.INTEGER(11).UNSIGNED,
+            allowNull: false
         },
         quantity:{
             type: dataTypes.STRING(100),
@@ -21,12 +22,12 @@ module.exports = (sequelize, dataTypes)=>{
     };
     let config = {
         tableName: "user_products",
-        timestamps: true
+        timestamps: false
     };
 
     const UserProduct = sequelize.define(alias, cols, config);
 
-    UserProduct.associate = models => {
+    /* UserProduct.associate = models => {
         UserProduct.belongsTo(models.Products,{
             as: "productUsers",
             foreignKey: "productId"
@@ -35,7 +36,7 @@ module.exports = (sequelize, dataTypes)=>{
             as: "userProducts",
             foreignKey: "userId"
         });
-    };
+    }; */
 
     return UserProduct;
 }

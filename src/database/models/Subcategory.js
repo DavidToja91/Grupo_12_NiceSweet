@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Subcategory = sequelize.define(alias, cols, config);
 //se enlaza con la tabla de categorías
-    Subcategory.associate = models => {
+    /* Subcategory.associate = models => {
         Subcategory.belongsTo(models.Categories, {
             as: "category",
             foreignKey: "categoryId"
@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "products",
             foreignKey : "subCategoryId" 
         });
-    };
+    }; */
 
     return Subcategory;
 }
