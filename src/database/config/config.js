@@ -2,7 +2,7 @@ module.exports={
   "development": {
     "username": "root",
     "password": null,
-    "database": "nice_sweet.sql",
+    "database": "nice_sweetdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

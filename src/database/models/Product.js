@@ -7,8 +7,8 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false 
         },
-        nameProduct: {
-            type: dataTypes.STRING(20),
+        name: {
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         price: {
@@ -28,15 +28,17 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
+/*          created_at: dataTypes.TIMESTAMP,
+         updated_at: dataTypes.TIMESTAMP, */
     };
     let config = {
         tableName: "products",
-        timeStamps: true
+        timestamps: false,
     };
 
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = models => {
+/*     Product.associate = models => {
         Product.belongsTo(models.Subcategories,{
             as: "subcategory",
             foreignKey: "subcategoryId"
@@ -45,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "productUsers",
             foreignKey: "productId"
         });
-    };
+    }; */
 
     return Product;
 }

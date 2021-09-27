@@ -194,7 +194,7 @@
 
                                 < * Ignacio Marquez * > :
     
-
+    ● Terminacion y dando los ultimos detalles de la semana anterior
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * David Toja * > :
