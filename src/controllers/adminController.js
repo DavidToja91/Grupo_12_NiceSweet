@@ -1,14 +1,14 @@
 
 const { NotExtended } = require('http-errors');
 /* let { getProducts, writeProductJSON } = require('../data/productsDB');
-let { getUsers, writeUsersJSON } = require('../data/usersDB'); 
- */
+let { getUsers, writeUsersJSON } = require('../data/usersDB');  */
+
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 const Product = db.Products;
-
+const Users = db.Users;
 
 module.exports= {
     inicio: (req, res) => {
@@ -29,21 +29,21 @@ module.exports= {
     },
     agregarProducto: (req, res) => {
         const {
-            name,
+            nameProduct,
             price,
             discount,
             image,
-            category,
-            subcategoryId,
+/*             category,
+            subcategoryId, */
             description
         } = req.body
         Product.create({
-            name,
+            nameProduct,
             price,
             discount,
             image,
-            category,   
-            subcategoryId,
+            category: 1,   
+            subcategoryId:1,
             description
         })
         .then(() =>{
@@ -66,7 +66,7 @@ module.exports= {
             discount,
             image,
             category,
-            subcategory,
+            subCategoryId,
             description
         } = req.body
         Product.update({
@@ -75,7 +75,7 @@ module.exports= {
             discount,
             image,
             category,
-            subcategory,
+            subCategoryId,
             description
         }, {
             where: {
@@ -100,10 +100,10 @@ module.exports= {
     },
     ////////// USERS \\\\\\\\\\
     users: (req, res) => {
-        res.render('admin/users' , {
-            title: "Usuarios",
-            getUsers /*Le pasamos como objeto la base de datos */
-        });
+        Users.findAll()
+        .then(getUsers =>{
+            res.render('admin/users', {getUsers, title: "Usuarios"})
+        })   
     },
     addUser: (req, res) => {
         res.render('admin/addUser', {
@@ -112,40 +112,44 @@ module.exports= {
         });
     },
     editUser: (req, res) => {
-        let user = getUsers.find(user => user.id === +req.params.id);
-
-        res.render('admin/editUser', {
-            title: "Editar usuario",
-            user
-        });
+        Users.findByPk(req.params.id)
+        .then(user =>{
+            res.render("admin/editUser",{
+                user,
+                title: "Editar usuario"
+            })
+        })
     },
     proccessUser: (req, res) => {
-        let {name, lastName, email, category, image} = req.body;
-        
-        getUsers.forEach(user => {
-            if (user.id === +req.params.id) {
-                user.id = user.id;
-                user.name = name;
-                user.lastName = lastName;
-                user.email = email;
-                user.category = category;       
-                user.image = image? image : "default-image.png";
-            }
-        });
+        const {name, lastName, email, category, image} = req.body;
 
-        writeUsersJSON(getUsers);
-        res.redirect('/admin');
+        Users.update({
+            name,
+            lastName,
+            email,
+            image: image? image : "default-image.png",
+            category
+        }, {
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(() =>{
+            res.redirect('/admin/users')
+        })
+        .catch(error => console.log(error))
     },
     deleteUser: (req, res) => {
-        getUsers.forEach(user=>{
-            if(user.id === +req.params.id){
-                let usuarioAEliminar = getUsers.indexOf(user)
-                getUsers.splice(usuarioAEliminar, 1)
-            }
-        });
 
-        writeUsersJSON(getUsers)
-        res.redirect('/admin/users')
+        Users.destroy({
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(()=>{
+            res.redirect('/admin')
+        })
+        .catch(error => console.log(error))
     }
 }
 
