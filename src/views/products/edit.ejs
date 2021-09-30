@@ -10,29 +10,34 @@
                     <div class="row justify-content-center">
                         <div class="col-md-8 bg-teal-light border border-info rounded p-4">
                             <h2 class="mb-5">Editar producto</h2>
-
-                            <form method="POST" action="/products/create" enctype="multipart/form-data">
+                            <form method="POST" action="/products/create<%= product.id%>?method_PUT" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6 my-1">
                                         <div class="form-group">
                                             <label><b>Nombre:</b></label>
-                                            <input type="text" name="name" class="form-control">
+                                            <input type="text" name="name" class="form-control" id="inputName" value="<%= locals.old ? old.name : product.name %>" >
                                             <div class="invalid-feedback">
+                                                <% if (locals.errors && errors.name) { %>
+                                                    <small class="text-danger"><%= errors.name.msg %></small>
+                                                <% } %>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 my-1">
                                         <div class="form-group">
                                             <label><b>Precio:</b></label>
-                                            <input type="number" name="price" class="form-control">
+                                            <input type="number" name="price" class="form-control" value="<%= locals.old ? old.price : product.price %>">
                                             <div class="invalid-feedback">
+                                                <% if (locals.errors && errors.price) { %>
+                                                    <small class="text-danger"><%= errors.price.msg %></small>
+                                                <% } %>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 my-1">
                                         <div class="form-group">
                                             <label><b>Descuento:</b></label>
-                                            <input type="number" name="discount" class="form-control">
+                                            <input type="number" name="discount" class="form-control" value="<%= locals.old ? old.discount : product.discount %> ">
                                             <div class="invalid-feedback">
                                             </div>
                                         </div>
@@ -68,7 +73,7 @@
                                     <div class="col-md-12 my-3">
                                         <div class="form-group">
                                             <label><b>Descripción:</b></label>
-                                            <textarea type="text" name="description" class="form-control"></textarea>
+                                            <textarea type="text" name="description" class="form-control"><%= locals.old ? old.description : product.description %></textarea>
                                         </div>
                                     </div>
                                     <div class="col-12 text-center my-3 mt-4">

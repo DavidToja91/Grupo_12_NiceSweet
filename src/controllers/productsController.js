@@ -10,7 +10,7 @@ module.exports = {
     index: (req, res) => {
         Product.findAll()
             .then(products =>{
-                res.render('/', {products})
+                res.render('products/list.ejs', {products})
             })
     },
     detail: (req, res) => {
@@ -19,37 +19,8 @@ module.exports = {
             res.render('products/detail.ejs', {product})
         })
     },
-    add: (req, res) => {
-        res.render('products/create');
-    },
-    create: (req, res) => {
-        const {
-            name,
-            price,
-            discount,
-            image,
-            category,
-            subcategory,
-            description
-        } = req.body
-        Product.create({
-            name,
-            price,
-            discount,
-            image,
-            category,   
-            subcategory,
-            description
-        })
-        .then(() =>{
-            res.redirect('/products/list')
-        })
-        .catch(error => console.log(error))
-    },
-    edit: (req, res) => {        
-        res.render('products/edit');
-    },
     cart: (req, res)=>{
 
-    }
+    },
+
 }; 

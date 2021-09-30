@@ -6,10 +6,10 @@ router.get('/', index);
 router.get('/detail/:id', detail);
 router.get('/cart', cart);
 
-router.get('/create', add); 
+/* router.get('/create', add); 
 router.post('/create', create);
 
 router.get('/edit/:id', edit);
-router.put('/edit/:id', edit);
+router.put('/edit/:id', edit); */
 
 module.exports = router;

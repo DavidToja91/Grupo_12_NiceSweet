@@ -1,87 +1,102 @@
 
 const { NotExtended } = require('http-errors');
-let { getProducts, writeProductJSON } = require('../data/productsDB');
-let { getUsers, writeUsersJSON } = require('../data/usersDB');
+/* let { getProducts, writeProductJSON } = require('../data/productsDB');
+let { getUsers, writeUsersJSON } = require('../data/usersDB'); 
+ */
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const Product = db.Products;
+
 
 module.exports= {
     inicio: (req, res) => {
-        res.render('admin/index', {
-            getProducts,
-            title: "Bienvenid@ Admin"
-        });
+        Product.findAll()
+        .then(getProducts =>{
+            res.render('admin/index', {getProducts, title: "Bienvenid@ Admin"})
+        })   
     },
     ////////// PRODUCTS \\\\\\\\\\
     productos: (req, res) => {
-        res.render('admin/products' , {
-            title: "Productos",
-            getProducts /*Le pasamos como objeto la base de datos */
-        });
+        Product.findAll()
+        .then(getProducts =>{
+            res.render('admin/products', {getProducts, title: "Productos"})
+        })
     },
     agregarFormulario: (req, res) => {
         res.render('admin/addProduct', { title: "Agregar producto"});
     },
     agregarProducto: (req, res) => {
-        let lastId = 1;
-
-        getProducts.forEach(product => {
-            if (product.id > lastId) {
-                lastId = product.id;
-            }
-        });
-
-        let {name, price, category, subcategory} = req.body;
-        let newProduct = {
-            id: lastId + 1,
-            name: name,
-            price: price,
-            category: category,
-            subcategory: subcategory,
-            discount: "0",
-            description:"none",
-            image: req.file ? req.file.filename : "default-image.png"
-        }
-
-        getProducts.push(newProduct);
-
-        writeProductJSON(getProducts);
-
-        res.redirect('/admin');
+        const {
+            name,
+            price,
+            discount,
+            image,
+            category,
+            subcategory,
+            description
+        } = req.body
+        Product.create({
+            name,
+            price,
+            discount,
+            image,
+            category,   
+            subcategory,
+            description
+        })
+        .then(() =>{
+            res.redirect('/admin/products')
+        })
+        .catch(error => console.log(error))
     },
     editarFormulario : (req, res) => {
-        let product = getProducts.find(product => product.id === +req.params.id);
-        res.render('admin/editProduct', {
-            title: "Agregar producto",
-            product
-        }); 
-
+        Product.findByPk(req.params.id)
+        .then(product =>{
+            res.render("admin/editProduct",{
+                product
+            })
+        })
     },
     editarProducto: (req, res)=>{
-        let {name, price, category, subcategory} = req.body;
-        
-        getProducts.forEach(product => {
-            if (product.id === +req.params.id) {
-                product.id = product.id,
-                product.name = name,
-                product.price = price,
-                product.category = category,
-                product.subcategory = subcategory,
-                product.image = "default-image.png"
-            }
-        });
-
-        writeProductJSON(getProducts);
-        res.redirect('/admin');
-    },
-    eliminarProducto: (req, res) => {
-        getProducts.forEach(product => {
-            if (product.id === +req.params.id) {
-                let productoAEliminar = getProducts.indexOf(product);
-                getProducts.splice(productoAEliminar, 1);
+        const {
+            name,
+            price,
+            discount,
+            image,
+            category,
+            subcategory,
+            description
+        } = req.body
+        Product.update({
+            name,
+            price,
+            discount,
+            image,
+            category,
+            subcategory,
+            description
+        }, {
+            where: {
+                id: +req.params.id
             }
         })
-
-        writeProductJSON(getProducts);
-        res.redirect('/admin/products');
+        .then(() =>{
+            res.redirect('/admin/products')
+        })
+        .catch(error => console.log(error))
+    },
+    eliminarProducto: (req, res) => {
+        Product.destroy({
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(()=>{
+            res.redirect('/admin')
+        })
+        .catch(error => console.log(error))
     },
     ////////// USERS \\\\\\\\\\
     users: (req, res) => {
