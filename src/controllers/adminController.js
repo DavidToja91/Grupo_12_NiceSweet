@@ -34,7 +34,7 @@ module.exports= {
             discount,
             image,
             category,
-            subcategory,
+            subcategoryId,
             description
         } = req.body
         Product.create({
@@ -43,7 +43,7 @@ module.exports= {
             discount,
             image,
             category,   
-            subcategory,
+            subcategoryId,
             description
         })
         .then(() =>{
