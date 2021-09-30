@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: nice_sweet
+-- Host: localhost    Database: nice_sweetdb
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.20-MariaDB
+-- Server version	5.5.5-10.4.21-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,7 +26,7 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nameCategory` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'golosinas');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -47,7 +48,7 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nameProduct` varchar(20) NOT NULL,
+  `nameProduct` varchar(50) NOT NULL,
   `price` int(11) NOT NULL,
   `description` varchar(200) NOT NULL,
   `image` varchar(50) NOT NULL,
@@ -56,7 +57,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` (`subCategoryId`),
   CONSTRAINT `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,6 +66,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Chocolate Cofler Block',220,'Chocolate Cofler block con maní de 170 gr.','cofler-block170g.jpg',10,1),(2,'Alfajor MiniTorta Aguila',110,'Alfajor de dulce de leche y brownie 72gr.','alfajorAguilaMiniTorta.jpg',15,2),(3,'Chocolate Aguila 100gr',125,'Chocolate en barra Aguila para taza 100 Gr.','chocolateAguila.jpg',20,1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +84,7 @@ CREATE TABLE `subcategories` (
   PRIMARY KEY (`id`),
   KEY `FK_bbcfe395-3714-4bd7-9608-5798bbf0f7f2` (`categoryId`),
   CONSTRAINT `FK_bbcfe395-3714-4bd7-9608-5798bbf0f7f2` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,6 +93,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
+INSERT INTO `subcategories` VALUES (1,'chocolates',1),(2,'alfajores',1),(3,'bombones',1);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,7 +156,7 @@ LOCK TABLES `users` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'nice_sweet'
+-- Dumping routines for database 'nice_sweetdb'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -165,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-23 21:28:04
+-- Dump completed on 2021-09-30 16:36:58
