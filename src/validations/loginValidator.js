@@ -1,7 +1,7 @@
 const { check, body } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
-const User = db.Users;
+
 
 module.exports = [
     check('email')
