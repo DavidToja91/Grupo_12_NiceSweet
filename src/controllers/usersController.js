@@ -1,3 +1,29 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const User = db.Users;
+
+
+module.exports = {
+    index: (req, res) => {
+        Product.findAll()
+            .then(products =>{
+                res.render('products/list.ejs', {products})
+            })
+    },
+    detail: (req, res) => {
+        Product.findByPk(req.params.id)
+        .then(product =>{
+            res.render('products/detail.ejs', {product})
+        })
+    },
+    cart: (req, res)=>{
+
+    },
+
+};
+
 let {getUsers, writeUsersJSON } = require('../data/usersDB');
 const{validationResult}= require('express-validator');
 const bcrypt= require('bcryptjs');
@@ -9,44 +35,28 @@ module.exports = {
             title: "¡Registrate!"
         });
     }, 
-    processRegister: (req, res) => {
+    processRegister: (req, res) => {     
         let errors = validationResult(req);
         
         if (errors.isEmpty()) {
 
-            let lastId = 0;
-        
-            getUsers.forEach(user => {
-                if(user.id > lastId){
-                    lastId = user.id
-                }
-            });
+            const { name, lastName, email, password, phoneNumber, rol, avatar } = req.body;
 
-            let {
-                name,
-                lastName,
-                email,
-                pass1,
-               
-                phone, 
-            } = req.body;
+            User.findAll({ include: [{ association: 'userProducts' }] })
+                .then(users => res.status(200).json(users));
 
-            let newUser = {
-                id: lastId +1,
-                name,
-                lastName,
-                email,
-                pass: bcrypt.hashSync(pass1, 10),
-                avatar: req.file ? req.file.filename : "default.png",
-                category: "USER",
-                phone: phone,
-            };
+            if (User.email != email) {
+                password = bcrypt.hashSync(pass1, 10);
+                rol = 'USER';
+                avatar = req.file? req.file.filename : "default.png";
+                
+                User.create( name, lastName, email, password, phoneNumber, rol, avatar )
+                .then(user => res.status(201).json(user))
+                .catch(error => console.log(error)); 
 
-            getUsers.push(newUser);
+                res.redirect('/users/login');
+            }
 
-            writeUsersJSON(getUsers);
-
-            res.redirect('/users/login')
         } else{
             res.render('users/register',{
                 errors : errors.mapped(),

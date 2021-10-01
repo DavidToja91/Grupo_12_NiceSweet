@@ -30,6 +30,10 @@
                 Oficina
                 <i class="fas fa-chevron-down" ></i>
             </li>
+            <li class="dropdown-menu" onclick="dropSubCategoryMenu(`login-register`)">
+                Login
+                <i class="fas fa-chevron-down" ></i>
+            </li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav> 
@@ -49,6 +53,21 @@
             <li class="menu-desplegable" onclick="dropSubCategoryMenu(`office`)">
                 Oficina
                 <i class="fas fa-chevron-down" ></i>
+            </li>
+            <li class="menu-desplegable" onclick="dropSubCategoryMenu(`login-register`)">
+                <% if (typeof session.user != "undefined") { %>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/images/users/<%= user.avatar %>" width="30" style="border-radius: 100%;">
+                        Hola <%= user.name %>! 
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/users/profile">Mi perfil</a>
+                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                    </ul>
+                <% } else { %>
+                    Usuario
+                    <i class="fas fa-chevron-down" ></i>
+                <% } %>          
             </li>
             <li><a href="/contact">Contacto</a></li>
         </ul>
@@ -122,6 +141,14 @@
         </ul>
     </div>
 
+    <div class="subcategory_menu" id="login-register">
+        <div class="subcategory_header"><h3>USUARIO</h3><img src="/images/close.png" onclick="closeWindow()" alt=""></div>
+        <ul>
+            <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/register">Register</a></li>
+        </ul>
+    </div>
+
     <nav class="nav_menu">
 
         <!-- Buscador mobile -->
@@ -154,12 +181,11 @@
 
         <div class="subcategory_menu" id="office">
             <div class="subcategory_header">
-                <h3>OFICINA</h3><img src="/images/close.png" onclick="closeWindow()" alt="">
+                <h3>Login</h3><img src="/images/close.png" onclick="closeWindow()" alt="">
             </div>
             <ul>
-                <li><a href="">Item 1</a></li>
-                <li><a href="">Item 2</a></li>
-                <li><a href="">Item 3</a></li>
+                <li><a href="">Login/a></li>
+                <li><a href="">Register</a></li>
             </ul>
         </div>
     </nav>
