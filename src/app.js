@@ -40,9 +40,9 @@ app.use('/users', usersRouter); // register - login - profile - CRUD de info per
 app.use('/products', productsRouter); // list - detail - cart - CRUD de productos para usuarios
 app.use('/admin', adminRouter); // index - CRUD de info personal para admin - CRUD de productos para admin
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   res.status(404).render('error');
-});
+}); */
 
 // catch 404 and forward to error handler
 /* app.use(function(req, res, next) {
