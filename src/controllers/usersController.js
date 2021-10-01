@@ -36,7 +36,7 @@ module.exports = {
                 password: bcrypt.hashSync(pass1, 10),
                 avatar: req.file? req.file.filename : "default-image.png",
                 rol: 0,
-            }).then(() => res.redirect("users/login"));
+            }).then(() => res.redirect("login"));
 
         } else {
             res.render("users/register", {
