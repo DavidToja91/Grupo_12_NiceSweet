@@ -54,15 +54,17 @@
                 Oficina
                 <i class="fas fa-chevron-down" ></i>
             </li>
-            <li class="menu-desplegable" onclick="dropSubCategoryMenu(`login-register`)">
+            <li class="menu-desplegable">
                 <% if (typeof session.user != "undefined") { %>
                     <a class="nav-link dropdown-toggle" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="/images/users/<%= user.avatar %>" width="30" style="border-radius: 100%;">
                         Hola <%= user.name %>! 
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/users/profile">Mi perfil</a>
-                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" onclick="dropSubCategoryMenu(`login-register`)">
+                        <div class="menu-usuario" id="login-register">
+                            <a href="/users/profile">Mi perfil</a>
+                            <a href="/users/logout">Logout</a>
+                        </div>
                     </ul>
                 <% } %>          
             </li>
