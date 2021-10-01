@@ -60,7 +60,7 @@
                         <img src="/images/users/<%= user.avatar %>" width="30" style="border-radius: 100%;">
                         Hola <%= user.name %>! 
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" onclick="dropMenu()">
                         <a class="dropdown-item" href="/users/profile">Mi perfil</a>
                         <a class="dropdown-item" href="/users/logout">Logout</a>
                     </ul>
