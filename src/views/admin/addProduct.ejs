@@ -7,7 +7,7 @@
         <main class="container">
             <h3 class="text-center">Agregar nuevo producto</h3>
             <div class="container col-md-4">
-                <form class="row g-3" action="/admin/agregarProducto/" method="POST" enctype="multipart/form-data">
+                <form class="row g-3" action="/admin/agregarProducto/"   method="POST" enctype="multipart/form-data">
                     <div class="col-12">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="name" name="nameProduct" value="<%= locals.old && old.nameProduct %>">
@@ -25,16 +25,24 @@
                         <input type="text" class="form-control" id="description" name="description" value="<%= locals.old && old.description%>">
                     </div>
                     <div class="col-12">
-                        <label for="category" class="form-label">Categoría</label>
-                        <input type="text" class="form-control" id="category" name="category" value="<%= locals.old && old.category %>">
+                        <select class="form-select" id="specificSizeSelect" name="category">
+                          <option selected hidden value="">Categorias</option>
+                         <% categories.forEach(category => { %>
+                            <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.nameCategory %></option>
+                         <% }) %>
+                        </select>
                     </div>
                     <div class="col-12">
-                        <label for="subcategory" class="form-label">Subcategoría</label>
-                        <input type="text" class="form-control" id="subcategory" name="subcategoryId" value="<%= locals.old && old.subcategoryId %>">
+                        <select class="form-select" id="specificSizeSelect" name="subcategoryId">
+                          <option selected hidden value="">Subcategorias</option>
+                         <% subcategories.forEach(subcategory => { %>
+                            <option value="<%- subcategory.id%>" <%= locals.old && old.subcategory == subcategory.nameSubcategory ? "selected" : "" %>><%- subcategory.nameSubcategory %></option>
+                         <% }) %>
+                        </select>
                     </div>
                     <div class="col-12">
                         <label for="inputFile" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" id="imagen" name="imagen">
+                        <input type="file" class="form-control" id="imagen" name="image">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-info">AGREGAR</button>

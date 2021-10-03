@@ -38,16 +38,16 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-/*     Product.associate = models => {
+    Product.associate = models => {
         Product.belongsTo(models.Subcategories,{
             as: "subcategory",
             foreignKey: "subcategoryId"
         });
-        Product.hasMany(models.UserProducts,{
+/*         Product.hasMany(models.UserProducts,{
             as: "productUsers",
             foreignKey: "productId"
-        });
-    }; */
+        }); */
+    };  
 
     return Product;
 }

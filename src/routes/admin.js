@@ -27,10 +27,11 @@ router.get('/agregarProducto/' , agregarFormulario); /*Agrega un producto nuevo 
 router.post('/agregarProducto' , uploadFile.single('image'), agregarProducto); /*Envía los datos del formulario */
 // uploadFile.single('image')
 
+
 /* GET: formulario de edición de productos */
 router.get('/editarProducto/:id' , editarFormulario);
 /* PUT : recibe los datos de edición */ 
-router.put('/editarProducto/:id', uploadFile.single('image'), editarProducto);
+router.put('/editarProducto/:id', uploadFile.array('image'), editarProducto);
 
 /* DELETE: Elimina un producto */
 router.delete('/eliminarProducto/:id', eliminarProducto);

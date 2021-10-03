@@ -54,10 +54,12 @@ CREATE TABLE `products` (
   `image` varchar(50) NOT NULL,
   `discount` int(11) DEFAULT NULL,
   `subCategoryId` int(11) NOT NULL,
+  `updated_at` date DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` (`subCategoryId`),
   CONSTRAINT `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +68,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Chocolate Cofler Block',220,'Chocolate Cofler block con maní de 170 gr.','cofler-block170g.jpg',10,1),(2,'Alfajor MiniTorta Aguila',110,'Alfajor de dulce de leche y brownie 72gr.','alfajorAguilaMiniTorta.jpg',15,2),(3,'Chocolate Aguila 100gr',125,'Chocolate en barra Aguila para taza 100 Gr.','chocolateAguila.jpg',20,1);
+INSERT INTO `products` VALUES (1,'Chocolate Cofler Block',220,'Chocolate Cofler block con maní de 170 gr.','cofler-block170g.jpg',10,1,NULL,NULL),(2,'Alfajor MiniTorta Aguila',110,'Alfajor de dulce de leche y brownie 72gr.','alfajorAguilaMiniTorta.jpg',15,2,NULL,NULL),(3,'Chocolate Aguila 100gr',125,'Chocolate en barra Aguila para taza 100 Gr.','chocolateAguila.jpg',20,1,NULL,NULL),(10,'prueba',123123,'1512341','',14,1,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,6 +83,8 @@ CREATE TABLE `subcategories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nameSubcategory` varchar(50) NOT NULL,
   `categoryId` int(11) NOT NULL,
+  `createdAt` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_bbcfe395-3714-4bd7-9608-5798bbf0f7f2` (`categoryId`),
   CONSTRAINT `FK_bbcfe395-3714-4bd7-9608-5798bbf0f7f2` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
@@ -93,7 +97,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
-INSERT INTO `subcategories` VALUES (1,'chocolates',1),(2,'alfajores',1),(3,'bombones',1);
+INSERT INTO `subcategories` VALUES (1,'chocolates',1,NULL,NULL),(2,'alfajores',1,NULL,NULL),(3,'bombones',1,NULL,NULL);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +147,7 @@ CREATE TABLE `users` (
   `rol` varchar(20) NOT NULL,
   `avatar` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,6 +156,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','prueba','admin@mail.com','123456',123456789,'Admin','1632316508110_img_.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30 16:36:58
+-- Dump completed on 2021-10-02 16:04:19

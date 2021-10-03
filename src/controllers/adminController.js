@@ -25,25 +25,43 @@ module.exports= {
         })
     },
     agregarFormulario: (req, res) => {
-        res.render('admin/addProduct', { title: "Agregar producto"});
+        db.Categories.findAll({
+            include: [{
+                association: "subcategories"
+            }]
+        })
+        .then(categories => {
+            let subcategories = []
+            categories.forEach(category => {
+                category.subcategories.forEach(subcategory => {
+                    subcategories.push(subcategory)
+                })
+            })
+            
+            res.render('admin/addProduct', {
+                categories,
+                subcategories,
+                session: req.session
+            })
+        })
+        .catch(err => console.log(err))
     },
     agregarProducto: (req, res) => {
+
         const {
             nameProduct,
             price,
             discount,
-            image,
-/*             category,
-            subcategoryId, */
+            category,
+            subcategoryId, 
             description
         } = req.body
         Product.create({
             nameProduct,
             price,
             discount,
-            image,
-            category: 1,   
-            subcategoryId:1,
+            category,   
+            subcategoryId,
             description
         })
         .then(() =>{
@@ -55,7 +73,7 @@ module.exports= {
         Product.findByPk(req.params.id)
         .then(product =>{
             res.render("admin/editProduct",{
-                product
+                product,        
             })
         })
     },
