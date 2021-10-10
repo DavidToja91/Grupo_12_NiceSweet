@@ -41,8 +41,11 @@
                         </select>
                     </div>
                     <div class="col-12">
-                        <label for="inputFile" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" id="imagen" name="image">
+                        <label for="inputImage" class="form-label">Imagen</label>
+                        <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
+                        <% if (locals.errors && errors.image) { %>
+                            <small class="text-danger"><%= errors.image.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-info">AGREGAR</button>

@@ -18,9 +18,6 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING(200),
         },
-        image: {
-            type: dataTypes.TEXT(50),
-        },
         discount: {
             type: dataTypes.INTEGER(11),
         },
@@ -43,10 +40,10 @@ module.exports = (sequelize, dataTypes) => {
             as: "subcategory",
             foreignKey: "subcategoryId"
         });
-/*         Product.hasMany(models.UserProducts,{
-            as: "productUsers",
+        Product.hasMany(models.ProductImages, {
+            as: "productImages",
             foreignKey: "productId"
-        }); */
+        })
     };  
 
     return Product;

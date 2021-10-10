@@ -19,7 +19,10 @@ module.exports= {
     },
     ////////// PRODUCTS \\\\\\\\\\
     productos: (req, res) => {
-        Product.findAll()
+        Product.findAll({            
+            include: [{
+            association: "productImages"
+        }]})
         .then(getProducts =>{
             res.render('admin/products', {getProducts, title: "Productos"})
         })
@@ -47,14 +50,19 @@ module.exports= {
         .catch(err => console.log(err))
     },
     agregarProducto: (req, res) => {
-
+        let arrayImages = [];
+        if(req.files){
+            req.files.forEach(image => {
+                arrayImages.push(image.filename)
+            })
+        }
         const {
             nameProduct,
             price,
             discount,
             category,
             subcategoryId, 
-            description
+            description,
         } = req.body
         Product.create({
             nameProduct,
@@ -62,12 +70,28 @@ module.exports= {
             discount,
             category,   
             subcategoryId,
-            description
+            description,
         })
-        .then(() =>{
-            res.redirect('/admin/products')
+        .then(product => {
+            if (arrayImages.length > 0) {
+                let images = arrayImages.map(image => {
+                    return {
+                        image: image,
+                        productId: product.id
+                    }
+                })
+                db.ProductImages.bulkCreate(images)
+                .then(() => res.redirect('/admin/products'))
+                .catch(err => console.log(err))
+            }else {
+                db.ProductImages.create({
+                    image: "default-image.png",
+                    productId: product.id
+                })
+                .then(() => res.redirect('/admin/products'))
+                .catch(err => console.log(err))
+            }
         })
-        .catch(error => console.log(error))
     },
     editarFormulario : (req, res) => {
         Product.findByPk(req.params.id)
@@ -108,7 +132,7 @@ module.exports= {
     eliminarProducto: (req, res) => {
         Product.destroy({
             where: {
-                id: +req.params.id
+                id: +req.params.id,
             }
         })
         .then(()=>{
