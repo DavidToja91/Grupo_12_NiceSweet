@@ -19,43 +19,85 @@ module.exports= {
     },
     ////////// PRODUCTS \\\\\\\\\\
     productos: (req, res) => {
-        Product.findAll()
+        Product.findAll({            
+            include: [{
+            association: "productImages"
+        }]})
         .then(getProducts =>{
             res.render('admin/products', {getProducts, title: "Productos"})
         })
     },
     agregarFormulario: (req, res) => {
-        res.render('admin/addProduct', { title: "Agregar producto"});
+        db.Categories.findAll({
+            include: [{
+                association: "subcategories"
+            }]
+        })
+        .then(categories => {
+            let subcategories = []
+            categories.forEach(category => {
+                category.subcategories.forEach(subcategory => {
+                    subcategories.push(subcategory)
+                })
+            })
+            
+            res.render('admin/addProduct', {
+                categories,
+                subcategories,
+                session: req.session
+            })
+        })
+        .catch(err => console.log(err))
     },
     agregarProducto: (req, res) => {
+        let arrayImages = [];
+        if(req.files){
+            req.files.forEach(image => {
+                arrayImages.push(image.filename)
+            })
+        }
         const {
             nameProduct,
             price,
             discount,
-            image,
-/*             category,
-            subcategoryId, */
-            description
+            category,
+            subcategoryId, 
+            description,
         } = req.body
         Product.create({
             nameProduct,
             price,
             discount,
-            image,
-            category: 1,   
-            subcategoryId:1,
-            description
+            category,   
+            subcategoryId,
+            description,
         })
-        .then(() =>{
-            res.redirect('/admin/products')
+        .then(product => {
+            if (arrayImages.length > 0) {
+                let images = arrayImages.map(image => {
+                    return {
+                        image: image,
+                        productId: product.id
+                    }
+                })
+                db.ProductImages.bulkCreate(images)
+                .then(() => res.redirect('/admin/products'))
+                .catch(err => console.log(err))
+            }else {
+                db.ProductImages.create({
+                    image: "default-image.png",
+                    productId: product.id
+                })
+                .then(() => res.redirect('/admin/products'))
+                .catch(err => console.log(err))
+            }
         })
-        .catch(error => console.log(error))
     },
     editarFormulario : (req, res) => {
         Product.findByPk(req.params.id)
         .then(product =>{
             res.render("admin/editProduct",{
-                product
+                product,        
             })
         })
     },
@@ -90,7 +132,7 @@ module.exports= {
     eliminarProducto: (req, res) => {
         Product.destroy({
             where: {
-                id: +req.params.id
+                id: +req.params.id,
             }
         })
         .then(()=>{
