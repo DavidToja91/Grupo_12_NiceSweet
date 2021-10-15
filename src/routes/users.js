@@ -12,7 +12,7 @@ router.get('/register', register);
 router.post('/register', upload.single('avatar'), registerValidator, processRegister);
 
 router.get('/login', login);
-router.post('/login', loginValidator, processLogin);
+router.post('/login', /* loginValidator, */ processLogin);
 router.get('/logout', logout);
 
 router.get('/profile', userSession, profile);

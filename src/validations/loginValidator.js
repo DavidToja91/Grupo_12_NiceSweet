@@ -1,6 +1,7 @@
 const { check, body } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
+const User = db.Users;
 
 
 module.exports = [
@@ -13,17 +14,17 @@ module.exports = [
     .withMessage('Debes escribir tu contraseña'),
 
     body('email')
-    .custom(req => {
+    .custom((value, {req}) => {
         return User.findOne({
-            where:{ email: req.body.email }
+            where: { email: req.body.email }
         })
         .then(user => {
-            if(!bcrypt.compareSync(req.body.pass1, user.dataValues.pass)){
-                return Promise.reject()
+            if(!bcrypt.compareSync(value,user.dataValues.password)) {
+                return Promise.reject('Contraseña incorrecta');
             }
         })
         .catch((err) => {
             return Promise.reject("Email o contraseña incorrectos")
-        })
+        });
     })
-]    
+];  
