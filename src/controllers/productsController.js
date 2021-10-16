@@ -8,13 +8,20 @@ const Product = db.Products;
 
 module.exports = {
     index: (req, res) => {
-        Product.findAll()
+        Product.findAll({            
+            include: [{
+            association: "productImages"
+        }]})
             .then(products =>{
                 res.render('products/list.ejs', {products})
             })
     },
     detail: (req, res) => {
-        Product.findByPk(req.params.id)
+        Product.findByPk(req.params.id, {
+            include: [{
+                association: "productImages"
+            }]
+        })
         .then(product =>{
             res.render('products/detail.ejs', {product})
         })

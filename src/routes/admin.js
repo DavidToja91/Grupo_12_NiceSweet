@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 let {inicio,
     productos,
+    api,
     agregarFormulario,
     agregarProducto,
     editarFormulario,
@@ -14,7 +15,8 @@ router.get('/' , inicio);
 
 /* GET : Muestra la lista con todos los productos */
 router.get('/products' , productos);
-
+/* Probar las relaciones y datos enviados */
+router.get('/api', api)
 
 /* GET : Muestra cada categoría, ej chocolates, alfajores, etc (parametrizada) :categoria*/
 // router.get('/producto/:id' , controllers.producto); /* Sería el detalle del producto */

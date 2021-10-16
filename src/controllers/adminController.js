@@ -40,11 +40,11 @@ module.exports= {
                     subcategories.push(subcategory)
                 })
             })
-            
             res.render('admin/addProduct', {
                 categories,
                 subcategories,
                 session: req.session
+                
             })
         })
         .catch(err => console.log(err))
@@ -192,6 +192,10 @@ module.exports= {
             res.redirect('/admin')
         })
         .catch(error => console.log(error))
+    },
+    api: (req, res) => {
+        Product.findAll({ include: [{association: "productImages"}, {association: "subcategory"}] })
+        .then(product => res.status(200).json(product))
     }
 }
 
