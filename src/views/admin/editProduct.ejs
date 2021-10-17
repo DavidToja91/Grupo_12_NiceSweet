@@ -5,31 +5,39 @@
     <body>
     <%- include('../partials/header.ejs') %>
         <main class="container">
-            <h3 class="text-center">Editar el siguiente producto: <%= product.name %>
+            <h3 class="text-center">Editar el siguiente producto: <%= product.nameProduct %>
             </h3>
             <div class="container col-md-4">
                 <form class="row g-3" action="/admin/editarProducto/<%= product.id%>?_method=PUT" method="POST"
                     enctype="multipart/form-data">
                     <div class="col-12">
                         <label for="name" class="form-label">Nombre</label>
-                        <input type="text" value="<%= product.nameProduct%>" id="name" name="nameProduct" class="form-control">
+                        <input type="text" value="<%= locals.old ? old.nameProduct : product.nameProduct %>" id="name" name="nameProduct" class="form-control">
+                    <% if(locals.errors && errors.nameProduct) { %>
+                        <small class="text-danger"><%= errors.nameProduct.msg %> </small>
+                    <% } %>
                     </div>
                     <div class="col-12">
                         <label for="price" class="form-label">Precio</label>
-                        <input type="number" class="form-control" name="price" id="price" value="<%= product.price %>">
+                        <input type="number" class="form-control" name="price" id="price" value="<%= locals.old ? old.price : product.price %>">
+                    <% if(locals.errors && errors.price) { %> 
+                        <small class="text-danger"><%= errors.price.msg %> </small>
+                    <% } %> 
                     </div>
                     <div class="col-12">
                         <label for="discount" class="form-label">Descuento</label>
-                        <input type="number" class="form-control" name="discount" id="discount" value="<%= product.discount %>">
+                        <input type="number" class="form-control" name="discount" id="discount" value="<%= locals.old ? old.discount : product.discount %>">
                     </div>
                     <div class="col-12">
                         <label for="description" class="form-label">Descripción</label>
-                        <input type="text" class="form-control" name="description" id="description" value="<%= product.description %>">
+                        <input type="text" class="form-control" name="description" id="description" value="<%= locals.old ? old.description : product.description %>">
+                    <% if(locals.errors && errors.description) { %>
+                        <small class="text-danger"><%= errors.description.msg %>  </small> 
+                    <% } %> 
                     </div>
-                    <!-- Falta agregar categorias y subcategorias -->
                     <div class="col-12">
                         <label for="image" class="form-label">Imagen</label>
-                        <input type="file" class="form-control" id="image" name="image" value="<%= product.image %>">
+                        <input type="file" class="form-control" id="image" name="image" value="<%=locals.old ? old.image ? product.image %>">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-info">EDITAR</button>

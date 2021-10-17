@@ -119,40 +119,73 @@ module.exports= {
   
     },
     editarFormulario : (req, res) => {
-        Product.findByPk(req.params.id)
-        .then(product =>{
-            res.render("admin/editProduct",{
-                product,        
+        let promProduct = Product.findByPk(req.params.id)
+        let promCategory = db.Categories.findAll({
+            include: [{
+                association: "subcategories"
+            }]
+        })
+        Promise.all([promProduct, promCategory])
+        .then(([product, categories]) =>{
+            categories =>{
+                let subcategories = []
+                categories.forEach(category => {
+                    category.subcategories.forEach(subcategory => {
+                        subcategories.push(subcategory)
+                    })
+                })
+            }
+            return res.render("admin/editProduct",{
+                product,
+                session: req.session,
             })
+
         })
     },
     editarProducto: (req, res)=>{
-        const {
-            name,
-            price,
-            discount,
-            image,
-            category,
-            subCategoryId,
-            description
-        } = req.body
-        Product.update({
-            name,
-            price,
-            discount,
-            image,
-            category,
-            subCategoryId,
-            description
-        }, {
-            where: {
-                id: +req.params.id
-            }
-        })
-        .then(() =>{
-            res.redirect('/admin/products')
-        })
-        .catch(error => console.log(error))
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            const {
+                nameProduct,
+                price,
+                discount,
+                image,
+                category,
+                subCategoryId,
+                description
+            } = req.body
+            Product.update({
+                nameProduct,
+                price,
+                discount,
+                image,
+                category,
+                subCategoryId,
+                description
+            }, {
+                where: {
+                    id: +req.params.id
+                }
+            })
+            .then(() =>{
+                res.redirect('/admin/products')
+            })
+            .catch(error => console.log(error))
+        }
+        else {
+            Product.findByPk(req.params.id)
+            .then((product)=> { 
+                res.render('admin/editProduct', {
+                    product,
+                    session: req.session,
+                    errors : errors.mapped(),
+                    old : req.body 
+                })
+            })
+
+
+        }
+
     },
     eliminarProducto: (req, res) => {
         Product.destroy({
