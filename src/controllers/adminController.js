@@ -1,8 +1,6 @@
 
 const { NotExtended } = require('http-errors');
-/* let { getProducts, writeProductJSON } = require('../data/productsDB');
-let { getUsers, writeUsersJSON } = require('../data/usersDB');  */
-
+const { validationResult } = require('express-validator')
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -50,48 +48,75 @@ module.exports= {
         .catch(err => console.log(err))
     },
     agregarProducto: (req, res) => {
-        let arrayImages = [];
-        if(req.files){
-            req.files.forEach(image => {
-                arrayImages.push(image.filename)
-            })
-        }
-        const {
-            nameProduct,
-            price,
-            discount,
-            category,
-            subcategoryId, 
-            description,
-        } = req.body
-        Product.create({
-            nameProduct,
-            price,
-            discount,
-            category,   
-            subcategoryId,
-            description,
-        })
-        .then(product => {
-            if (arrayImages.length > 0) {
-                let images = arrayImages.map(image => {
-                    return {
-                        image: image,
-                        productId: product.id
-                    }
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            let arrayImages = [];
+            if(req.files){
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
                 })
-                db.ProductImages.bulkCreate(images)
-                .then(() => res.redirect('/admin/products'))
-                .catch(err => console.log(err))
-            }else {
-                db.ProductImages.create({
-                    image: "default-image.png",
-                    productId: product.id
-                })
-                .then(() => res.redirect('/admin/products'))
-                .catch(err => console.log(err))
             }
-        })
+            const {
+                nameProduct,
+                price,
+                discount,
+                category,
+                subcategoryId, 
+                description,
+            } = req.body
+            Product.create({
+                nameProduct,
+                price,
+                discount,
+                category,   
+                subcategoryId,
+                description,
+            })
+            .then(product => {
+                if (arrayImages.length > 0) {
+                    let images = arrayImages.map(image => {
+                        return {
+                            image: image,
+                            productId: product.id
+                        }
+                    })
+                    db.ProductImages.bulkCreate(images)
+                    .then(() => res.redirect('/admin/products'))
+                    .catch(err => console.log(err))
+                }else {
+                    db.ProductImages.create({
+                        image: "default-image.png",
+                        productId: product.id
+                    })
+                    .then(() => res.redirect('/admin/products'))
+                    .catch(err => console.log(err))
+                }
+            })
+        } else {
+            db.Categories.findAll({
+                include: [{
+                    association: "subcategories"
+                }]
+            })
+            .then(categories => {
+                let subcategories = []
+                categories.forEach(category => {
+                    category.subcategories.forEach(subcategory => {
+                        subcategories.push(subcategory)
+                    })
+                })
+                res.render('admin/addProduct', {
+                    categories,
+                    subcategories,
+                    session: req.session,
+                    errors : errors.mapped(),
+                    old : req.body 
+                })
+            })
+            .catch(err => console.log(err))
+
+        }
+  
     },
     editarFormulario : (req, res) => {
         Product.findByPk(req.params.id)
