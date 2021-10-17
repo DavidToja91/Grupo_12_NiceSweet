@@ -168,12 +168,12 @@ CREATE TABLE `users` (
   `name` varchar(20) NOT NULL,
   `lastName` varchar(40) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `phoneNumber` int(11) DEFAULT NULL,
+  `pass` varchar(70) NOT NULL,
+  `phone` int(11) DEFAULT NULL,
   `rol` varchar(20) NOT NULL,
   `avatar` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,6 +182,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (6,'admin','admin','admin@gmail.com','$2a$10$RhVmaVtnWqiMBBhZ78VQKeEFsxE8PIC9dlMIup/hCaDTLrNkyIq4.',12345678,'0','1634503359279_img_.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-10  0:41:08
+-- Dump completed on 2021-10-17 17:44:56

@@ -149,18 +149,12 @@ module.exports= {
                 nameProduct,
                 price,
                 discount,
-                image,
-                category,
-                subCategoryId,
                 description
             } = req.body
             Product.update({
                 nameProduct,
                 price,
                 discount,
-                image,
-                category,
-                subCategoryId,
                 description
             }, {
                 where: {
@@ -182,7 +176,6 @@ module.exports= {
                     old : req.body 
                 })
             })
-
 
         }
 

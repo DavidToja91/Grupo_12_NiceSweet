@@ -31,9 +31,9 @@ module.exports = {
             User.create({
                 name,
                 lastName,
-                phoneNumber: phone,
+                phone,
                 email,
-                password: bcrypt.hashSync(pass1, 10),
+                pass: bcrypt.hashSync(pass1, 10),
                 avatar: req.file? req.file.filename : "default-image.png",
                 rol: 0,
             }).then(() => res.redirect("login"));
@@ -49,34 +49,35 @@ module.exports = {
     login: (req, res) => {        
         res.render('users/login', {
             session: req.session
+            
         });
     },
     processLogin: (req, res) => {
-        let errors = validationResult(req);
-
+        let errors = validationResult(req)
         if (errors.isEmpty()) {
-            User.findOne({
-                where: { email: req.body.email },
-            }).then(user => {
+            db.Users.findOne({
+              where: {
+                email: req.body.email,
+              },
+            })
+            .then((user) => {
                 req.session.user = {
-                    id: user.id,
-                    name: user.name,
-                    last_name: user.last_name,
-                    phone: user.phone,
-                    email: user.email,
-                    avatar: user.avatar,
-                    rol: user.rol,
+                  id: user.id,
+                  name: user.name,
+                  lastName: user.last_name,
+                  email: user.email,
+                  avatar: user.avatar,
+                  rol: user.rol,
                 };
-
+        
                 if (req.body.remember) {
-                    res.cookie("niceSweet", req.session.user, {
-                        expires: new Date(Date.now() + 900000),
-                        httpOnly: true,
-                        secure: true,
+                    res.cookie("NiceSweet", req.session.user, {
+                      expires: new Date(Date.now() + 900000),
+                      httpOnly: true,
+                      secure: true,
                     });
-                }
-
-                res.locals.user = req.session.user;           
+                  }
+                res.locals.user = req.session.user;     
                 res.redirect("/");
             });
         } else {
@@ -114,7 +115,7 @@ module.exports = {
             User.update({
                 name,
                 lastName,
-                phoneNumber: phone,
+                phone,
                 avatar: req.file && req.file.filename,
             }, { where: { id: req.params.id } })
             .then(() => res.redirect("/users/profile"));
@@ -130,7 +131,7 @@ module.exports = {
     logout: (req, res) =>{
         req.session.destroy();
         
-        if(req.cookies.userNiceSweet){
+        if(req.cookies.user){
             res.cookie('userNiceSweet','',{maxAge: -1})
         }
         

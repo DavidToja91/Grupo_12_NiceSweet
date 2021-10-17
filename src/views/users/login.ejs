@@ -68,6 +68,7 @@
                                         dispositivo.</label>
                                 </div>
                             </div>
+                            <small class="text-danger"><%= (locals.errors && errors.custom && !errors.email && !errors.pass) ? errors.custom.msg : "" %> </small>
                             <button class="btn btn-primary width-100" type="submit">Ingresar</button>
                             <a href="/users/register" class="userLink">Aún no tengo cuenta</a>
                         </form>

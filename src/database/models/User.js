@@ -20,11 +20,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        password: {
-            type: dataTypes.STRING(20),
+        pass: {
+            type: dataTypes.STRING(70),
             allowNull: false
         },
-        phoneNumber:{
+        phone:{
             type: dataTypes.INTEGER(11)
         },
         rol: {
