@@ -3,12 +3,12 @@
 <div class="container-card">
     <div class="row">
         <!-- card1 -->
-        <% cardDB.forEach(product => { %>
+        <% products.forEach(product => { %>
             <a href="/products/detail/<%-product.id%> ">
                 <div class="col-md-4">
                     <div class="card">
                       <div class="product">
-                        <img src="/images/<%- product.image %> " alt="" class="rounded" width="160">
+                        <img src="/images/<%- product.productImages[0].image %> " alt="" class="rounded" width="160">
                         <h5><%- product.name %> </h5>
                         <!-- card info -->
                         <div class="info">
@@ -44,12 +44,12 @@
 <div class="container-card">
     <div class="row">
         <!-- card1 -->
-        <% ofert.forEach(product => { %>
+        <% products.forEach(product => { %>
             <a href="/products/detail/<%-product.id%> ">
                 <div class="col-md-4">
                     <div class="card">
                       <div class="product">
-                        <img src="/images/<%- product.image %> " alt="" class="rounded" width="160">
+                        <img src="/images/<%- product.productImages[0].image %> " alt="" class="rounded" width="160">
                         <h5><%- product.name %> </h5>
                         <!-- card info -->
                         <div class="info">
