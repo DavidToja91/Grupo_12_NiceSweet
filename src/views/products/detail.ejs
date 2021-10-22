@@ -13,13 +13,15 @@
     <link rel="stylesheet" href="/styles/productDetail.css">
     <link rel="stylesheet" href="/styles/footer.css">
     <script src="/Js/header.js" defer></script>
+    <script src= "/Js/detalleProducto.js" defer></script>
+    <script src="/Js/validator.js" defer></script>
     <title>Detalle del Producto</title>
 </head>
 <body>
   <%- include('../partials/header.ejs') %> 
     <main>
       <section>
-        <h6 id="titulo-chocolates">CHOCOLATES  ></h6>
+        <h6 id="titulo-chocolates"> NUESTROS PRODUCTOS </h6>
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4 p-3">
@@ -31,9 +33,9 @@
                 <p class="card-text"> <%- product.description %> </p>
                 <div class="boton">
                   <div class="boton-dos"> 
-                    <button type="button" value="-" class="minus">-</button>
-                <input type="number" id="cantidad" class="input-text" step="1" min="1" max="" name="quantity" value="1" title="Cantidad" size="4" placeholder="" inputmode="numeric">
-                <button type="button" value="+" class="plus">+</button>
+                    <button type="button" id="minus" class="minus">-</button>
+                <input type="number" id="count" class="input-text" readonly= "true"  inputmode="numeric">
+                <button type="button" id="plus" class="plus">+</button>
               </div>
                 <button type="button" class="agregar-al-carrito">AGREGAR AL CARRITO <i class="fas fa-shopping-cart"></i></button>
                 </div>
