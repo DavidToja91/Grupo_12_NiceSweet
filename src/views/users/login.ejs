@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    
 
 
     <title>!Inicia Sesión!</title>
@@ -47,25 +48,28 @@
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Correo electrónico <span
                                         class="text-danger">*</span></label>
-                                <input type="email" name="email" class="form-control"
+                                <input type="email" id="email" name="email" class="form-control"
                                     placeholder="Ingresa tu correo electrónico">
                                 <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %></small>
                                 <% } %>
+                                <span class="error-msg" id="emailErrors"></span>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
-                                <input type="password" name="pass" class="form-control"
+                                <input type="password" id="password" name="pass" class="form-control"
                                     placeholder="Ingresa una contraseña">
                                 <% if (locals.errors && errors.pass) { %>
                                 <small class="text-danger"><%= errors.pass.msg %></small>
                                 <% } %>
+                                <span class="error-msg" id="passErrors"></span>
                             </div>
                             <div class="form-group mb-5">
                                 <div class="form-check">
                                     <input class="form-check-input" id="check" type="checkbox" name="remember">
-                                    <label class="form-check-label text-muted">Recordar mis datos en este
-                                        dispositivo.</label>
+                                    <label class="form-check-label text-muted">Acepto los términos y condiciones
+                                        </label>
+                                        <span id="termsErrors"></span>
                                 </div>
                             </div>
                             <small class="text-danger"><%= (locals.errors && errors.custom && !errors.email && !errors.pass) ? errors.custom.msg : "" %> </small>
@@ -91,6 +95,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
         </script>
         <script src="/Js/header.js" defer></script>
+        <script src="/Js/loginValidator.js"></script>
 
     </main>
 </body>
