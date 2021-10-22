@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/footer.css">
+    <script src="/Js/validatorRegister.js" defer></script>
 
     <title>Inicia Sesión!</title>
 </head>
@@ -47,19 +48,21 @@
                         <div class="form-row mb-2">
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
-                                <input type="text" name="name" class="form-control" placeholder="Tu nombre" value="<%= locals.old && old.name %>">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Tu nombre" value="<%= locals.old && old.name %>">
                                 <% if (locals.errors && errors.name) { %>
                                 <small class="text-danger"><%= errors.name.msg %></small>
                                 <% } %>
-                                <%=  locals.old && old.name %> 
+                                <%=  locals.old && old.name %>
+                                <span class="error-msg" id="nameErrors"></span> 
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
-                                <input type="text" name="lastName" class="form-control" placeholder="Tu apellido" value="<%= locals.old && old.lastName %>">
+                                <input type="text" id="lastname" name="lastName" class="form-control" placeholder="Tu apellido" value="<%= locals.old && old.lastName %>">
                                 <% if (locals.errors && errors.lastName) { %>
                                 <small class="text-danger"><%= errors.lastName.msg %></small>
                                 <% } %>
                                 <%=  locals.old && old.lastName %> 
+                                <span class="error-msg" id="lastnameErrors"></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Teléfono<span class="text-danger">*</span></label>

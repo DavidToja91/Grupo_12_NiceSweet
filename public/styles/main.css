@@ -90,6 +90,8 @@ img, svg {
 }
 
 
+
+
 @media (min-width: 576px){
 .container {
   max-width: 540px;
@@ -107,3 +109,4 @@ img, svg {
   max-width: 960px;
   }
 }
+

@@ -244,7 +244,7 @@ module.exports= {
         })
         .catch(error => console.log(error))
     },
-    api: (req, res) => {
+    apiProduct: (req, res) => {
         Product.findAll({ include: [{association: "productImages"}, {association: "subcategory"}] })
         .then(product => res.status(200).json(product))
     }
