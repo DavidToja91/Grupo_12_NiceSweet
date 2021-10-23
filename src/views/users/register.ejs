@@ -50,7 +50,7 @@
                                 <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Tu nombre" value="<%= locals.old && old.name %>">
                                 <% if (locals.errors && errors.name) { %>
-                                <small class="text-danger"><%= errors.name.msg %></small>
+                                <span class="text-danger"><%= errors.name.msg %></span>
                                 <% } %>
                                 <%=  locals.old && old.name %>
                                 <span class="error-msg" id="nameErrors"></span> 
@@ -59,7 +59,7 @@
                                 <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
                                 <input type="text" id="lastname" name="lastName" class="form-control" placeholder="Tu apellido" value="<%= locals.old && old.lastName %>">
                                 <% if (locals.errors && errors.lastName) { %>
-                                <small class="text-danger"><%= errors.lastName.msg %></small>
+                                <span class="text-danger"><%= errors.lastName.msg %></span>
                                 <% } %>
                                 <%=  locals.old && old.lastName %> 
                                 <span class="error-msg" id="lastnameErrors"></span>
@@ -68,7 +68,7 @@
                                 <label class="font-weight-bold">Teléfono<span class="text-danger">*</span></label>
                                 <input type="number" name="phone" class="form-control" placeholder="Tu número" value="<%= locals.old && old.phone %>">
                                 <% if (locals.errors && errors.phone) { %>
-                                <small class="text-danger"><%= errors.phone.msg %></small>
+                                <span class="text-danger"><%= errors.phone.msg %></span>
                                 <% } %>
                             </div>
                         </div>
@@ -76,40 +76,45 @@
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Correo electrónico <span
                                     class="text-danger">*</span></label>
-                            <input type="email" name="email" class="form-control"
+                            <input type="email" id="email" name="email" class="form-control"
                                 placeholder="Ingresa tu correo electrónico">
                             <% if (locals.errors && errors.email) { %>
-                            <small class="text-danger"><%= errors.email.msg %></small>
+                            <span class="text-danger"><%= errors.email.msg %></span>
                             <% } %>
+                            <span class="error-msg" id="emailErrors"></span>
                         </div>
                         <div class="form-group mb-3">
                             <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
-                            <input type="password" name="pass1" class="form-control"
+                            <input type="password" id="pass" name="pass1" class="form-control"
                                 placeholder="Ingresa una contraseña">
                             <% if (locals.errors && errors.pass1) { %>
-                            <small class="text-danger"><%= errors.pass1.msg %></small>
+                            <span class="text-danger"><%= errors.pass1.msg %></span>
                             <% } %>
+                            <span class="error-msg" id="passErrors"></span>
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">Repite tu contraseña <span
                                         class="text-danger">*</span></label>
-                                <input type="password" name="pass2" class="form-control"
+                                <input type="password" id="pass2" name="pass2" class="form-control"
                                     placeholder="Repite la misma contraseña">
                                 <% if (locals.errors && errors.pass2) { %>
-                                <small class="text-danger"><%= errors.pass2.msg %></small>
+                                <span class="text-danger"><%= errors.pass2.msg %></span>
                                 <% } %>
+                                <span class="error-msg" id="pass2Errors"></span>
                             </div>
                             <div class="form- group mb-2 input-file">
                                 <label class="font-weight-bold">Agrega tu Foto</label>
-                                <input type="file" class="form-control" name="avatar">
+                                <input type="file" class="form-control" id="formFile" name="avatar">
+                                <span class="error-msg" id="fileErrors"></span>
                             </div>
 
                             <div class="form-group mb-5">
                                 <div class="form-ad-input_check">
-                                    <input type="checkbox" name="terms" id="check">
+                                    <input type="checkbox"  name="terms" id="check">
                                     <label for="check">Acepto los términos y condiciones</label>
                                     <% if (locals.errors && errors.terms) { %>
-                                    <small class="text-danger"><%= errors.terms.msg %> </small>
+                                    <span class="text-danger"><%= errors.terms.msg %> </span>
                                     <% } %>
+                                    <span class="error-msg" id="termsErrors"></span>
                                 </div>
                             </div>
 
