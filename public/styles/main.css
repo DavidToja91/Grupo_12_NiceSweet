@@ -41,6 +41,9 @@
 .card .product{
   padding-top: 10px;
 }
+.card .product img{
+  height: 160px;
+}
 
 img, svg {
   vertical-align: middle;
