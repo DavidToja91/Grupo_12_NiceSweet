@@ -110,10 +110,18 @@
 --------------------------------------------------------------------------------------------------------------------------------
                                 < * Eduardo A. Lucero * > : 
 
+    • Arreglos en adminController y productController, también en sus respectivas rutas.
+    • Nuevas vistas para los admin: index, addProduct, editProduct, addUser y editUser.
+    • Cambios en la extructura del json y respectivos controllers.
+    • Inplementación de cookies y bcrypt. Validaciones para registrarse, logearse y editar perfil.
+    • Middlewares: adminSession, uploadAvatar, userSession y userAdminCheck. Nueva validación para productos.
+    • Adecuación de formularios para recibir errores desde los controllers.
+    • Prueba de migración del json a base de datos, en userController.
 
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * Ignacio Marquez * > :
+
     • Armado de base de dato.
     • Implemetancion de ejs, partials de header, footer.
     • Modificaion de las card
@@ -123,7 +131,6 @@
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * David Toja * > :
-
                    
     • Implementacion de nuevas estructuras de Log-in y Register, haciendolos mas llamativos y "responsive" a las diferentes vistas.
     • Creación de Logo definitivo que representa la marca y el concepto de página. Incluye unas variaciones para agregar a diferentes vistas.
@@ -139,7 +146,7 @@
 
 
 *******************************************************************************************************************************
-*_______________________________// ( "Semana 13/8 al 20/8"(Cuarto Sprint)" ) //________________________________________________*
+*_______________________________// ( "Semana 17/9 al 1/10"(Sexto Sprint)" ) //________________________________________________*
 *******************************************************************************************************************************
 
 
@@ -148,12 +155,18 @@
 
 
 --------------------------------------------------------------------------------------------------------------------------------
-                                < * Eduardo A. Lucero * > : 
-
+                                < * Eduardo A. Lucero * > :
+    
+    • Corrección de errores en controllers, rutas, validators y vistas.
+    • Cambio en las opciones del header al estar o no logeado.
+    • Implementación de sequelize. Creación de los modelos correspondientes a nuestra base de datos.
+    • Adecuación de los controllers y validators para utilizar los datos de la db. Relaciones entre modelos. 
+    • Corrección de errores, guiados por Mati.
 
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * Ignacio Marquez * > :
+
     •Implementacion de identidad de usuario
     •Armado de carpetas y json de user
     •Comienzo de la vista de error
@@ -162,7 +175,6 @@
 --------------------------------------------------------------------------------------------------------------------------------
 
                                 < * David Toja * > :
-
                    
     • Imagen modificada haciendola mas adaptativa a la pantalla/vista requerida.
     • Creación de carpeta Middleware con archivo UploadFiles.js (utilización del Multer)
@@ -178,7 +190,7 @@
     • Implementar nuevos campos para los formularios.
     • Implementar los cambios en Trello.
     *******************************************************************************************************************************
-*_______________________________// ( "Semana 13/8 al 20/8"(Cuarto Sprint)" ) //________________________________________________*
+*_______________________________// ( "Semana 13/8 al 20/8"(Septimo Sprint)" ) //________________________________________________*
 *******************************************************************************************************************************
 
 
@@ -189,6 +201,8 @@
 --------------------------------------------------------------------------------------------------------------------------------
                                 < * Eduardo A. Lucero * > : 
 
+    ● Adecuación del index para mostrar los productos de la db.
+    ● Nuevo validator desde el front: validatorProducts.
 
 --------------------------------------------------------------------------------------------------------------------------------
 
