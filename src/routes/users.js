@@ -6,12 +6,13 @@ let registerValidator = require('../validations/registerValidator');
 let editProfileValidator = require('../validations/editProfileValidator');
 let upload = require('../middlewares/uploadAvatar');
 const userSession = require('../middlewares/userSession');
+const userSessionLogin = require('../middlewares/userSessionLogin')
 
 // Rutas
-router.get('/register', register);
+router.get('/register', userSessionLogin, register);
 router.post('/register', upload.single('avatar'), registerValidator, processRegister);
 
-router.get('/login', login);
+router.get('/login', userSessionLogin, login);
 router.post('/login', loginValidator,  processLogin);
 router.get('/logout', logout);
 
