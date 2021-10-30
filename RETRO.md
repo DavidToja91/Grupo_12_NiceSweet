@@ -55,4 +55,30 @@ _More of:_ * buscar incentivos en varias páginas, comunicar los avances obtenid
 _Keep doing:_ * buscar motivacion para terminar el proyecto, integrar conocimientos externos.
 _Less doing:_ * 
 _Stop doing:_ * No comunicarnos diariamente sobre los progresos individuales.
+______________________________________________________________________________________________________________________________
+******************************************************************************************************************************
+
+# Retrospectiva del Quinto Sprint: 
+
+En esta entrega nos encontramos con dificultades para encontrarnos como equipo, ya sea por motivos personales y de horarios. Además también tuvimos dificultades técnicas, por lo que precisamos ayuda de nuestros profesores para resolver algunas tareas requeridas en este sprint. Afortunadamente conseguimos terminar el sprint y entregarlo. 
+
+_Start doing:_ * Empezar antes con las tareas solicitadas en cada sprint, sino el tiempo es escaso.
+_Stop doing:_ * Hablar poco y/o no comentar las dificultades que aparecen con el equipo.
+
+______________________________________________________________________________________________________________________________
+******************************************************************************************************************************
+
+# Retrospectiva del Sexto Sprint: 
+
+Este sprint lo encaramos de otra manera, al empezarlo a término conseguimos adelantar las tareas conforme a la fecha de entrega. Las dificultades surgieron al no comunicarnos el nombre de las tablas y de los modelos, ya que provocó que nuestra base de datos deje de funcionar. Luego una funcionalidad en el CRUD también nos costó resolver, pero conseguimos terminarlo casi a tiempo.
+
+_Start doing:_ * Comentarnos detalladamente qué cambios hicimos en nuestro proyecto
+_Stop doing:_ * Dejar de hablar por varios días, es importante que tengamos una comunicación fluida y constante para evitar problemas en nuestra página
+______________________________________________________________________________________________________________________________
+******************************************************************************************************************************
+
+# Retrospectiva del Séptimo Sprint: 
+
+En este útimo sprint logramos como equipo dividirnos las tareas; al ser una de las entregas más breves y tener una clase dedicada para trabajar en la misma, nos dividimos el trabajo entre todxs llegando así a tiempo a la entrega.
+De ahora en adelante nos queda dividirnos las tareas pendientes para mejorar la funcionalidad de nuestra página y también su diseño. 
 
