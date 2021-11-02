@@ -2,7 +2,7 @@ function qs(element){
     return document.querySelector(element)
 }
 
-
+// addProduct
 window.addEventListener ('load', function(){
 
     let $nameProduct= qs('#name'),
@@ -37,7 +37,7 @@ window.addEventListener ('load', function(){
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
     regExImg = /^.*\.(jpg|png|jpeg|gif)$/;
 
-    //addProduct NOMBRE
+    // NOMBRE
 
     $nameProduct.addEventListener('blur', function(){
         console.log($nameProduct.value.trim())

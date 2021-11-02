@@ -14,6 +14,7 @@
                         <% if(locals.errors && errors.nameProduct) { %>
                             <small class="text-danger"><%= errors.nameProduct.msg %>  </small> 
                         <% } %>
+                        <span class="error-msg" id="nameProductErrors"></span>
                     </div>
                     <div class="col-12">
                         <label for="price" class="form-label">Precio</label>
@@ -22,6 +23,7 @@
                     <% if(locals.errors && errors.price) { %>
                         <small class="text-danger"><%= errors.price.msg %>  </small> 
                     <% } %>
+                        <span class="error-msg" id="priceErrors"></span>
                     <div class="col-12">
                         <label for="discount" class="form-label">Descuento</label>
                         <input type="number" class="form-control" id="discount" name="discount" value="<%= locals.old && old.discount%>">
@@ -33,6 +35,7 @@
                     <% if(locals.errors && errors.description) { %>
                         <small class="text-danger"><%= errors.description.msg %>  </small> 
                     <% } %>
+                        <span class="error-msg" id="descriptionErrors"></span>
                     <div class="col-12">
                         <select class="form-select" id="specificSizeSelect" name="category">
                           <option selected hidden value="">Categorias</option>
@@ -43,6 +46,7 @@
                         <% if(locals.errors && errors.category) { %>
                             <small class="text-danger"><%= errors.category.msg %>  </small> 
                         <% } %>
+                            <span class="error-msg" id="categoryErrors"></span>
                     </div>
                     <div class="col-12">
                         <select class="form-select" id="specificSizeSelect" name="subcategoryId">
@@ -54,6 +58,7 @@
                         <% if(locals.errors && errors.subcategoryId) { %>
                             <small class="text-danger"><%= errors.subcategoryId.msg %>  </small> 
                         <% } %>
+                            <span class="error-msg" id="subcategoryErrors"></span>
                     </div>
                     <div class="col-12">
                         <label for="inputImage" class="form-label">Imagen</label>
