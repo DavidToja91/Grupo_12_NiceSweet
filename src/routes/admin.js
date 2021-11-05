@@ -7,6 +7,8 @@ let {inicio,
     agregarProducto,
     editarFormulario,
     editarProducto, eliminarProducto,
+    checkDeleteProduct,
+    checkDeleteUser,
     users, addUser, editUser, deleteUser} = require('../controllers/adminController.js');
 let uploadFile = require('../middlewares/uploadFiles')
 let userAdminCheck = require('../middlewares/userAdminCheck')
@@ -31,6 +33,7 @@ router.post('/agregarProducto', uploadFile.array('image'), productsValidator, ag
 router.get('/editarProducto/:id', userSession, userAdminCheck, editarFormulario);
 router.put('/editarProducto/:id', uploadFile.array('image'), productsValidator, editarProducto);
 
+router.get('/eliminarProducto/:id', checkDeleteProduct)
 router.delete('/eliminarProducto/:id', userSession ,  userAdminCheck, eliminarProducto);
 
 /* GET : Muestra la lista con todos los usuarios */
@@ -46,6 +49,7 @@ router.get('/editUser/:id', userSession,  userAdminCheck, editUser);
 router.put('/editUser/:id', uploadFile.single('image'), editarProducto);
 
 /* DELETE: Elimina un producto */
+router.get('/eliminarUser/:id', checkDeleteUser)
 router.delete('/deleteUser/:id', deleteUser);
 
 

@@ -180,6 +180,16 @@ module.exports= {
         }
 
     },
+    checkDeleteProduct: (req, res) =>{
+        Product.findByPk(req.params.id, { include: [{association: "productImages"}, {association: "subcategory"}] })
+        
+        .then((product) =>{
+            res.render('admin/checkDeleteProduct', {
+                product
+            })
+        })
+
+    },
     eliminarProducto: (req, res) => {
         Product.destroy({
             where: {
@@ -231,6 +241,15 @@ module.exports= {
             res.redirect('/admin/users')
         })
         .catch(error => console.log(error))
+    },
+    checkDeleteUser: (req, res) =>{
+        Users.findByPk(req.params.id)
+
+        .then(user => {
+            res.render('admin/checkDeleteUser', {
+                user
+            })
+        })
     },
     deleteUser: (req, res) => {
 

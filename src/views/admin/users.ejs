@@ -14,7 +14,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nombre completo</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Categoría</th>
+                        <th scope="col">Rol</th>
                         <th scope="col">Imagen</th>
                         <th scope="col">Edición</th>
                     </tr>
@@ -25,8 +25,13 @@
                             <th scope="row"><%= user.id %></th>
                             <td><%= user.name + " " + user.lastName %></td>
                             <td><%= user.email %></td>
-                            <td><%= user.category %></td>
-                            <td><%= user.image %></td>
+                            <td> <% if (user.rol == 1){ %> 
+                                <%= "Admin"   %> 
+                                <% } else { %>
+                                <%= "Usuario"   %>   
+                                <%}  %> 
+                            </td>
+                            <td><%= user.avatar %></td>
                             <td>
                                 <a class="btn btn-success" href="/admin/editUser/<%- user.id %> ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -37,7 +42,7 @@
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                     </svg>
                                 </a>
-                                <form action="/admin/deleteUser/<%- user.id %>?_method=DELETE" method="post">
+                                <form action="/admin/eliminarUser/<%- user.id %>" method="GET">
                                     <button class="btn btn-danger" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
