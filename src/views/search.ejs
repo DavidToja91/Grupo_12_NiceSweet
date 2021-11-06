@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %> 
+<body>
+<%- include('partials/header.ejs') %> 
+        
+<!-- fin del header -->
+<main>
+        <h2 class="subtitle">Resultados de la búsqueda: <%= busqueda %></h2>
+        <%- include('partials/card.ejs')  %> 
+</main>
+<%- include('partials/footer.ejs') %> 
+</body>
+</html>

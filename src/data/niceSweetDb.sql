@@ -58,7 +58,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` (`subCategoryId`),
   CONSTRAINT `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `products_images` (
   PRIMARY KEY (`id`),
   KEY `products_images_FK` (`productId`),
   CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `users` (
   `rol` varchar(20) NOT NULL,
   `avatar` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,7 +182,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'prueba','adasdsa','prueba@gmail.com','$2a$10$WBy5CqWmCGOKR',123456789,'0','1634499584476_img_.png'),(6,'admin','admin','admin@gmail.com','$2a$10$JIyT8E8oQNIns0ef6i5pAO.jdUTWe07F/25bE17Gt03Q2mdNw5Usm',123456789,'0','default-image.png');
+INSERT INTO `users` VALUES (12,'admin','nice','admin@gmail.com','$2a$10$gl0hUFccoKl0RX.V2CDP1eCjlLjDesw3LUHNz5llIVNYOn2eXu476',123456789,'1','default-image.png'),(14,'prueba','nice','prueba@gmail.com','$2a$10$IOrRnOQ2j/Knyt/hqWeum.TwHQCucdc4qkbelyte5ZVspj7XkrF4i',1234564,'0','1635375455020_img_.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-19  0:07:07
+-- Dump completed on 2021-11-06  0:26:15

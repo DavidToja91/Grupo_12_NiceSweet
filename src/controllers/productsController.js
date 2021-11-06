@@ -29,5 +29,23 @@ module.exports = {
     cart: (req, res)=>{
 
     },
+    search: (req, res) => {
+        let busqueda = req.query.busqueda
+        Product.findAll({
+            where: {
+                nameProduct: {
+                    [Op.like]: `%${busqueda}%`
+                }
+            },
+            include: [{association: "productImages"}]
+        })
+        .then(products =>{
+            res.render('search', {
+                products, 
+                busqueda: req.query.busqueda
+            })
+        })
+     .catch(error => console.log(error))
+    }
 
 }; 
