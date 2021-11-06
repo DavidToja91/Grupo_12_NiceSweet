@@ -3,6 +3,7 @@ let router = express.Router();
 let {inicio,
     productos,
     apiProduct,
+    apiCategories,
     agregarFormulario,
     agregarProducto,
     editarFormulario,
@@ -21,7 +22,7 @@ router.get('/', userSession, userAdminCheck, inicio);
 /* GET : Muestra la lista con todos los productos */
 router.get('/products', userSession, userAdminCheck, productos);
 router.get('/api', userSession, userAdminCheck, apiProduct)
-
+router.get('/api/2', userSession, userAdminCheck, apiCategories)
 
 /* GET: Create Product*/
 router.get('/agregarProducto/',userSession, userAdminCheck, agregarFormulario); /*Agrega un producto nuevo al formulario */

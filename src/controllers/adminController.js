@@ -141,6 +141,7 @@ module.exports= {
             })
 
         })
+        .catch(error => console.log(error))
     },
     editarProducto: (req, res)=>{
         let errors = validationResult(req)
@@ -176,6 +177,7 @@ module.exports= {
                     old : req.body 
                 })
             })
+            .catch(error => console.log(error))
 
         }
 
@@ -188,6 +190,7 @@ module.exports= {
                 product
             })
         })
+        .catch(error => console.log(error))
 
     },
     eliminarProducto: (req, res) => {
@@ -206,7 +209,8 @@ module.exports= {
         Users.findAll()
         .then(getUsers =>{
             res.render('admin/users', {getUsers, title: "Usuarios"})
-        })   
+        }) 
+        .catch(error => console.log(error))  
     },
     addUser: (req, res) => {
         res.render('admin/addUser', {
@@ -222,6 +226,7 @@ module.exports= {
                 title: "Editar usuario"
             })
         })
+        .catch(error => console.log(error))
     },
     proccessUser: (req, res) => {
         const {name, lastName, email, category, image} = req.body;
@@ -250,6 +255,7 @@ module.exports= {
                 user
             })
         })
+        .catch(error => console.log(error))
     },
     deleteUser: (req, res) => {
 
@@ -266,6 +272,13 @@ module.exports= {
     apiProduct: (req, res) => {
         Product.findAll({ include: [{association: "productImages"}, {association: "subcategory"}] })
         .then(product => res.status(200).json(product))
+        .catch(error => console.log(error))
+    },
+    apiCategories: (req, res) =>{
+        db.Categories.findAll({ include: [{ association: "subcategories"}]})
+        .then(cat => res.status(200).json(cat))
+        .catch(error => console.log(error))
     }
+    
 }
 

@@ -52,3 +52,23 @@
     text-align: center;
     margin: 15px 0 40px;
   }
+
+  .categoriesConteiner{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .categoriesConteiner .categories {
+    margin: 0 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: rgb(223 223 223);
+  }
+
+  @media screen and (min-width: 1024px){
+    .categoriesConteiner .categories {
+      font-size: 20px;
+    }
+  }

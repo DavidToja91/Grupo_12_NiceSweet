@@ -5,12 +5,7 @@
     <%- include('../partials/header') %>
     <main>
       <!-- Conteiner de todos los productos -->
-      <h6 id="titulo-chocolates">Todos los productos</h6>
-      <div class="categoriesConteiner">
-      <% categories[0].subcategories.forEach(subC => { %> 
-          <a href="/products/categories/<%= subC.id %> "><p class="categories"><%= subC.nameSubcategory %> </p></a>
-      <% })  %> 
-    </div>
+      <h6 id="titulo-chocolates"><%= subcategories.nameSubcategory.toUpperCase() %> </h6>
 
 <div class="container-card">
   <div class="row">
