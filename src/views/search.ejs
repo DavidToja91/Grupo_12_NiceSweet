@@ -7,7 +7,42 @@
 <!-- fin del header -->
 <main>
         <h2 class="subtitle">Resultados de la búsqueda: <%= busqueda %></h2>
-        <%- include('partials/card.ejs')  %> 
+        <div class="container-card">
+                <div class="row">
+                    <!-- card1 -->
+                    <% products.forEach(product => { %>
+                        <a href="/products/detail/<%-product.id%> ">
+                            <div class="col-md-4">
+                                <div class="card">
+                                  <div class="product">
+                                    <img src="/images/<%- product.productImages[0].image %> " alt="" class="rounded" width="160">
+                                    <h5><%- product.name %> </h5>
+                                    <!-- card info -->
+                                    <div class="info">
+                                         <span class="text1"><%-product.description  %>  </span> 
+                                    </div>
+                                     <div class="cost">
+                                        <span>$<%-product.price  %> </span>
+                                        <div class="star">
+                                            <i class="fa fa-star"></i>                                    
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                        </a>
+                                <!-- card info end -->
+                            </div>
+                                <!-- button for cards -->
+                            <div class="button-card cursor shoe">
+                                <span class="text-uppercase">Agregar al carrito</span>
+                            </div>
+                        </div>
+                    </div>
+                        
+                   <% }); %> 
+                   
 </main>
 <%- include('partials/footer.ejs') %> 
 </body>
