@@ -11,7 +11,7 @@ window.addEventListener('load',function(){
     $lastnameErrors = qs('#lastnameErrors'),
     $email = qs('#email'),
     $emailErrors = qs('#emailErrors'),
-    $pass = qs('#pass'),
+    $pass = qs('#pass1'),
     $passErrors = qs('#passErrors'),
     $pass2 = qs('#pass2'),
     $pass2Errors = qs('#pass2Errors'),
@@ -100,17 +100,17 @@ window.addEventListener('load',function(){
     //password
     $pass.addEventListener('blur', function(){
         switch (true) {
-            case !$pass.value.trim():
+            case !$pass1.value.trim():
                 $passErrors.innerHTML = 'El campo contraseña es obligatorio'
-                $pass.classList.add('is-invalid')
+                $pass1.classList.add('is-invalid')
                 break;
-            case !regExPass.test($pass.value):
+            case !regExPass.test($pass1.value):
                 $passErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
-                $pass.classList.add('is-invalid')
+                $pass1.classList.add('is-invalid')
                 break;    
             default:
-                $pass.classList.remove("is-invalid");
-                $pass.classList.add('is-valid')
+                $pass1.classList.remove("is-invalid");
+                $pass1.classList.add('is-valid')
                 $passErrors.innerHTML = ""
                 break;
         }

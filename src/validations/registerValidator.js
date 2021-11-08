@@ -20,8 +20,8 @@ module.exports =[
     .notEmpty()
     .withMessage("El número telefónico es requerido").bail()
     .isNumeric()
-    .islength({
-        min:11,
+    .isLength({
+        min:10,
         max:15
     })
     .withMessage('Solo números, por favor'),

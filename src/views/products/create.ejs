@@ -2,83 +2,85 @@
 <html lang="es">
 <%- include('../partials/head') %>
 <%- include('../partials/bootstrap') %>
-    <body>
-        <%- include('../partials/header') %>
-            <main>
-                <!-- productCreateForm -->
-                <div class="container my-5">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 bg-teal-light border border-info rounded p-4">
-                            <h2 class="mb-5">Nuevo producto</h2>
 
-                            <form method="POST" action="/products/create" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-md-6 my-1">
-                                        <div class="form-group">
-                                            <label><b>Nombre:</b></label>
-                                            <input type="text" name="name" class="form-control">
-                                            <% if (locals.errors && errors.name) { %>
-                                                <small class="text-danger"><%= errors.name.msg %></small>
-                                            <% } %>
-                                            <span class="error-msg" id="nameErrors"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 my-1">
-                                        <div class="form-group">
-                                            <label><b>Precio:</b></label>
-                                            <input type="number" name="price" class="form-control">
-                                            <% if (locals.errors && errors.price) { %>
-                                                <small class="text-danger"><%= errors.price.msg %></small>
-                                            <% } %>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 my-1">
-                                        <div class="form-group">
-                                            <label><b>Descuento:</b></label>
-                                            <input type="number" name="discount" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 my-1">
-                                        <div class="form-group">
-                                            <label><b>Imagen:</b></label>
-                                            <input class="form-control" type="file" name="image">
-                                            <span class="error-msg" id="imageErrors"></span> 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 my-1">
-                                        <div class="form-group">
-                                            <label><b>Categoría:</b></label>                                           
-                                            <select name="category" class="form-select">
-                                                <option value="0"></option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 my-1">
-                                        <div class="form-group">
-                                            <label class="col-12"><b>Subcategoría:</b></label>
-                                            <select name="subcategory" class="form-select">
-                                                <option value="0"></option>
-                                            </select>
-                                        </div>
-                                    </div>          
-                                    <div class="col-md-12 my-3">
-                                        <div class="form-group">
-                                            <label><b>Descripción:</b></label>
-                                            <textarea type="text" name="description" class="form-control"></textarea>
-                                            <span class="error-msg" id="descriptionErrors"></span> 
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center my-3 mt-4">
-                                        <button class="btn btn-teal text-light">Guardar</button>
-                                    </div>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <!-- productCreateForm -->
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 bg-teal-light border border-info rounded p-4">
+                    <h2 class="mb-5">Nuevo producto</h2>
+
+                    <form method="POST" action="/products/create" enctype="multipart/form-data" id="form">
+                        <div class="row">
+                            <div class="col-md-6 my-1">
+                                <div class="form-group">
+                                    <label><b>Nombre:</b></label>
+                                    <input type="text" name="name" class="form-control" id="name">
+                                    <% if (locals.errors && errors.name) { %>
+                                    <small class="text-danger"><%= errors.name.msg %></small>
+                                    <% } %>
+                                    <span class="error-msg" id="nameErrors"></span>
                                 </div>
-                            </form>
-                            
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <div class="form-group">
+                                    <label><b>Precio:</b></label>
+                                    <input type="number" name="price" class="form-control" id="price">
+                                    <% if (locals.errors && errors.price) { %>
+                                    <small class="text-danger"><%= errors.price.msg %></small>
+                                    <% } %>
+                                    <span class="error-msg" id="priceErrors"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <div class="form-group">
+                                    <label><b>Descuento:</b></label>
+                                    <input type="number" name="discount" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <div class="form-group">
+                                    <label><b>Imagen:</b></label>
+                                    <input class="form-control" type="file" name="image" id="image">
+                                    <span class="error-msg" id="imageErrors"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <div class="form-group">
+                                    <label><b>Categoría:</b></label>
+                                    <select name="category" class="form-select">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-1">
+                                <div class="form-group">
+                                    <label class="col-12"><b>Subcategoría:</b></label>
+                                    <select name="subcategory" class="form-select">
+                                        <option value="0"></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 my-3">
+                                <div class="form-group">
+                                    <label><b>Descripción:</b></label>
+                                    <textarea type="text" name="description" class="form-control" id="description"></textarea>
+                                    <span class="error-msg" id="descriptionErrors"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center my-3 mt-4">
+                                <button class="btn btn-teal text-light" id="btn">Guardar</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
-            </main>
-            <%- include('../partials/footer') %>
-    </body>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
 
 </html>

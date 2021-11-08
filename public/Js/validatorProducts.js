@@ -3,7 +3,8 @@ function qs(element){
 }
 
 window.addEventListener('load',function(){
-    let $inputName = qs('#name'),
+    let $form =qs('#form')
+    $inputName = qs('#name'),
     $nameErrors = qs('#nameErrors'),
     $inputDescription = qs('#description'),
     $descriptionErrors = qs('#descriptionErrors'),
@@ -11,6 +12,12 @@ window.addEventListener('load',function(){
     $imageErrors = qs('#imageErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExImg = /^.*\.(jpg|png|jpeg|gif)$/;
+
+    $form.addEventListener('submit', function(e){
+        e.preventDefault()
+    })
+
+
     
     $inputName.addEventListener('blur', function(){
         console.log($inputName.value.trim())
