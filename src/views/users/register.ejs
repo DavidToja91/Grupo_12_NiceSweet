@@ -43,30 +43,33 @@
                     </div>
                     <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p>
 
-                    <form action="/users/register" method="POST" enctype="multipart/form-data">
+                    <form action="/users/register" method="POST" enctype="multipart/form-data" id="form">
 
                         <div class="form-row mb-2">
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Tu nombre" value="<%= locals.old && old.name %>">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Tu nombre"
+                                    value="<%= locals.old && old.name %>">
                                 <% if (locals.errors && errors.name) { %>
                                 <span class="text-danger"><%= errors.name.msg %></span>
                                 <% } %>
                                 <%=  locals.old && old.name %>
-                                <span class="error-msg" id="nameErrors"></span> 
+                                <span class="error-msg" id="nameErrors"></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
-                                <input type="text" id="lastname" name="lastName" class="form-control" placeholder="Tu apellido" value="<%= locals.old && old.lastName %>">
+                                <input type="text" id="lastname" name="lastName" class="form-control"
+                                    placeholder="Tu apellido" value="<%= locals.old && old.lastName %>">
                                 <% if (locals.errors && errors.lastName) { %>
                                 <span class="text-danger"><%= errors.lastName.msg %></span>
                                 <% } %>
-                                <%=  locals.old && old.lastName %> 
+                                <%=  locals.old && old.lastName %>
                                 <span class="error-msg" id="lastnameErrors"></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-bold">Teléfono<span class="text-danger">*</span></label>
-                                <input type="number" name="phone" class="form-control" placeholder="Tu número" value="<%= locals.old && old.phone %>">
+                                <input type="number" name="phone" class="form-control" placeholder="Tu número"
+                                    value="<%= locals.old && old.phone %>">
                                 <% if (locals.errors && errors.phone) { %>
                                 <span class="text-danger"><%= errors.phone.msg %></span>
                                 <% } %>
@@ -109,7 +112,7 @@
 
                             <div class="form-group mb-5">
                                 <div class="form-ad-input_check">
-                                    <input type="checkbox"  name="terms" id="check">
+                                    <input type="checkbox" name="terms" id="check">
                                     <label for="check">Acepto los términos y condiciones</label>
                                     <% if (locals.errors && errors.terms) { %>
                                     <span class="text-danger"><%= errors.terms.msg %> </span>

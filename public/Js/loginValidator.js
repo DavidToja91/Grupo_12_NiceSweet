@@ -3,7 +3,7 @@ function qs (element){
 }
 
 window.addEventListener('load', function(){
-
+    let $form = qs('#form')
     let $email = qs('#email')
     let $emailErrors = qs('#emailErrors')
     let $password = qs('#password')
@@ -12,6 +12,10 @@ window.addEventListener('load', function(){
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
     let $terms = qs('#check')
     let $termsErrors = qs('#termsErrors')
+
+    $form.addEventListener('submit', function(e){
+        e.preventDefault()
+    })
 
     $email.addEventListener('blur', function(){
         switch (true) {

@@ -4,7 +4,8 @@ function qs(element){
 
 
 window.addEventListener('load',function(){
-    let $inputName = qs('#name'),
+    let $form = qs('#form')
+    $inputName = qs('#name'),
     $nameErrors = qs('#nameErrors'),
     $inputLastname = qs('#lastname'),
     $lastnameErrors = qs('#lastnameErrors'),
@@ -22,6 +23,13 @@ window.addEventListener('load',function(){
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,12}$/;
+
+    //FORMULARIO 
+    $form.addEventListener('submit', function(e){
+        e.preventDefault()
+    })
+
+
 
     //Nombre
     $inputName.addEventListener('blur', function(){
