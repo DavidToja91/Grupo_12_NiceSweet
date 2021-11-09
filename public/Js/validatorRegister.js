@@ -4,14 +4,13 @@ function qs(element){
 
 
 window.addEventListener('load',function(){
-    let $form = qs('#form')
-    $inputName = qs('#name'),
+    let $inputName = qs('#name'),
     $nameErrors = qs('#nameErrors'),
     $inputLastname = qs('#lastname'),
     $lastnameErrors = qs('#lastnameErrors'),
     $email = qs('#email'),
     $emailErrors = qs('#emailErrors'),
-    $pass = qs('#pass1'),
+    $pass = qs('#pass'),
     $passErrors = qs('#passErrors'),
     $pass2 = qs('#pass2'),
     $pass2Errors = qs('#pass2Errors'),
@@ -23,13 +22,6 @@ window.addEventListener('load',function(){
     regExDNI = /^[0-9]{7,8}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,12}$/;
-
-    //FORMULARIO 
-    $form.addEventListener('submit', function(e){
-        e.preventDefault()
-    })
-
-
 
     //Nombre
     $inputName.addEventListener('blur', function(){
@@ -100,17 +92,17 @@ window.addEventListener('load',function(){
     //password
     $pass.addEventListener('blur', function(){
         switch (true) {
-            case !$pass1.value.trim():
+            case !$pass.value.trim():
                 $passErrors.innerHTML = 'El campo contraseña es obligatorio'
-                $pass1.classList.add('is-invalid')
+                $pass.classList.add('is-invalid')
                 break;
-            case !regExPass.test($pass1.value):
+            case !regExPass.test($pass.value):
                 $passErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
-                $pass1.classList.add('is-invalid')
+                $pass.classList.add('is-invalid')
                 break;    
             default:
-                $pass1.classList.remove("is-invalid");
-                $pass1.classList.add('is-valid')
+                $pass.classList.remove("is-invalid");
+                $pass.classList.add('is-valid')
                 $passErrors.innerHTML = ""
                 break;
         }
