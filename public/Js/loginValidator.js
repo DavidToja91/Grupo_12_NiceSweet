@@ -14,7 +14,7 @@ window.addEventListener('load', function(){
     let $termsErrors = qs('#termsErrors')
 
     $form.addEventListener('submit', function(e){
-        e.preventDefault()
+        /* e.preventDefault() */
     })
 
     $email.addEventListener('blur', function(){
