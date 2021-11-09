@@ -4,7 +4,8 @@ function qs(element){
 
 
 window.addEventListener('load',function(){
-    let $inputName = qs('#name'),
+    let $form =qs ('#form'),
+    $inputName = qs('#name'),
     $nameErrors = qs('#nameErrors'),
     $inputLastname = qs('#lastname'),
     $lastnameErrors = qs('#lastnameErrors'),
@@ -161,6 +162,12 @@ window.addEventListener('load',function(){
                 $file.classList.remove('is-invalid')
             }
         }
+
+        //form 
+
+        $form.addEventListener('submit', function(e){
+            e.preventDefault()
+        })
     })
 
 })
