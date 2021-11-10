@@ -1,82 +1,82 @@
 /* Carousel container */
 
 .carousel-container {
-    position: relative;
-    margin: 20px auto 10px;
-  }
-  
-  
-  .slides {
-    display: none;
-  } 
-  
-  .slides img {
-    width: 100%;
-    max-height: 470px;
-  }
-  
-  .dots {
-    text-align: center;
-  }
-  
-    
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: var(--dark-blue);
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  
-  .next {
-    right: 0;
-  }
-  
-  
-  .prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
+  position: relative;
+  margin: 20px auto 10px;
+  max-width: 1450px;
+}
+
+
+.slides {
+  display: none;
+} 
+
+.slides img {
+  width: 100%;
+  max-height: 470px;
+}
+
+.dots {
+  text-align: center;
+}
 
   
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .dot-active, .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Fade animation */
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-  }
-  
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot-active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fade animation */
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+}

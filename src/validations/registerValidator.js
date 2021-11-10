@@ -20,11 +20,12 @@ module.exports =[
     .notEmpty()
     .withMessage("El número telefónico es requerido").bail()
     .isNumeric()
+    .withMessage('Solo números, por favor')
     .isLength({
-        min:10,
-        max:15
+        min:7,
+        max: 20
     })
-    .withMessage('Solo números, por favor'),
+    .withMessage('Debe tener al menos 7 caracteres'),
 
     body('email').custom(value => {
         return User.findOne({

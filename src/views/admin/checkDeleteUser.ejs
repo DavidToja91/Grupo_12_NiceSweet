@@ -38,7 +38,7 @@
                     <h2>¿Seguro que desea eliminar a <%= user.name %> <%=  user.lastName %>   ?</h2>
                     <td>
 
-                        <form action="/admin/eliminarUser/<%- user.id %>?_method=DELETE" method="post">
+                        <form action="/admin/deleteUser/<%- user.id %>?_method=DELETE" method="post">
                             <button class="btn btn-danger" type="submit">
                                     Eliminar Usuario
                                     <path

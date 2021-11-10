@@ -1,74 +1,77 @@
 /* Estilos generales */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   
-  body{
-    background-color: #ebebeb;
-  }
-  
-  a {
-    color: black;
-    text-decoration: none;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  .btn {
-    width: fit-content;
-    width: -moz-fit-content;
-    padding: 10px 20px;
-    color: white;
-    font-family: var(--font_baloo);
-    font-weight: bold;
-    border-radius: 1rem;
-  }
-  
-  .btn-primary {
-    width: fit-content;
-    width: -moz-fit-content;
-    background: var(--primary);
-    transition: all 1s ease;
-  }
-  
-  .btn-primary:hover {
-    background: linear-gradient(90deg, white, var(--primary)) ;
-    color: var(--primary)    
-  }
-  
-  .mg-10 {
-    margin: 10px 0;
-    text-align: center;
-    font-size: 17px;
-  }
+}
 
-  .subtitle{
-    text-align: center;
-    margin: 15px 0 40px;
-  }
+body{
+  background-color: #ebebeb;
+}
 
-  .categoriesConteiner{
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-  }
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  width: fit-content;
+  width: -moz-fit-content;
+  padding: 10px 20px;
+  color: white;
+  font-family: var(--font_baloo);
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+.btn-primary {
+  width: fit-content;
+  width: -moz-fit-content;
+  background: var(--primary);
+  transition: all 1s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, white, var(--primary)) ;
+  color: var(--primary)    
+}
+
+.mg-10 {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 17px;
+}
+
+.subtitle{
+  text-align: center;
+  margin: 15px 0 40px;
+}
+
+.categoriesConteiner{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+.categoriesConteiner .categories {
+  margin: 0 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  background-color: rgb(223 223 223);
+}
+
+@media screen and (min-width: 1024px){
   .categoriesConteiner .categories {
-    margin: 0 15px;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 15px;
-    background-color: rgb(223 223 223);
+    font-size: 20px;
   }
-
-  @media screen and (min-width: 1024px){
-    .categoriesConteiner .categories {
-      font-size: 20px;
-    }
+  .mg-10 {
+  font-size: 25px;
   }
+}
