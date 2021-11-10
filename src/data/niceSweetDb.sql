@@ -173,7 +173,7 @@ CREATE TABLE `users` (
   `rol` varchar(20) NOT NULL,
   `avatar` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,7 +182,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (12,'admin','nice','admin@gmail.com','$2a$10$gl0hUFccoKl0RX.V2CDP1eCjlLjDesw3LUHNz5llIVNYOn2eXu476',123456789,'1','default-image.png'),(14,'prueba','nice','prueba@gmail.com','$2a$10$IOrRnOQ2j/Knyt/hqWeum.TwHQCucdc4qkbelyte5ZVspj7XkrF4i',1234564,'0','1635375455020_img_.jpg');
+INSERT INTO `users` VALUES (12,'admin','nice','admin@gmail.com','$2a$10$gl0hUFccoKl0RX.V2CDP1eCjlLjDesw3LUHNz5llIVNYOn2eXu476',123456789,'1','default-image.png'),(14,'prueba','nice','prueba@gmail.com','$2a$10$IOrRnOQ2j/Knyt/hqWeum.TwHQCucdc4qkbelyte5ZVspj7XkrF4i',1234564,'0','1635375455020_img_.jpg'),(18,'ignacio','prueba','prueba3@gmail.com','$2a$10$GNSCAFhvV9nGrJpN2UMWiOyDcy1yWzjxqoi7ZoL9SKnWwjhVbV1ci',123456789,'0','default-image.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-06  0:26:15
+-- Dump completed on 2021-11-09 21:55:37
