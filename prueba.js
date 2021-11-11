@@ -1,0 +1,2 @@
+Categoria.findAll()
+.then

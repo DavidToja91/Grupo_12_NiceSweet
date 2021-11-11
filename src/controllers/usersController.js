@@ -111,14 +111,15 @@ module.exports = {
         if (errors.isEmpty()) {
 
             let { name, lastName, phone } = req.body;
-            
+            let avatar = req.file && req.file.filename;
+            req.session.user.avatar = avatar
             User.update({
                 name,
                 lastName,
                 phone,
-                avatar: req.file && req.file.filename,
+                avatar,
             }, { where: { id: req.params.id } })
-            .then(() => res.redirect("/users/profile"));
+            .then((user) => {res.redirect('/users/profile'), {session: req.session}})
 
         } else {
             res.render("users/edit", {
