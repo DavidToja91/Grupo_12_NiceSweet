@@ -163,11 +163,7 @@ window.addEventListener('load',function(){
             }
         }
 
-        //form 
-
-        $form.addEventListener('submit', function(e){
-            e.preventDefault()
-        })
+        
     })
 
 })
