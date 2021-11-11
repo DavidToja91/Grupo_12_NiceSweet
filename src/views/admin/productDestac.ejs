@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<%- include('../partials/bootstrap') %>
+    <body>
+    <%- include('../partials/header.ejs') %>
+        <main class="container">
+            <h3 class="text-center">Productos Destacados</h3>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre del producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Subcategoría</th>
+                        <th scope="col">Descuento</th>
+                        <th scope="col">Edición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% getDestacados.forEach(product=> { %>
+                        <tr>
+                            <th scope="row"><%= product.id %></th>
+                            <td><%= product.nameProduct %></td>
+                            <td><%= product.price %></td>
+                            <td><%= product.category %></td>
+                            <td><%= product.subcategory %></td>
+                            <td><%= product.discount %></td>
+                            <td>
+                                <form  action="/admin/deleteDestacar/<%- product.id %>?_method=PUT" method="post">
+                                    <button type="submit" class="btn btn-danger">
+                                            Quitar
+                                            <path
+                                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                            <path fill-rule="evenodd"
+                                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                        </svg>
+                                    </button>
+                                    </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+
+
+            <h3 class="text-center">Productos No Destacados</h3>
+            <table class="table table-success table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre del producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Subcategoría</th>
+                        <th scope="col">Descuento</th>
+                        <th scope="col">Edición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% getProducts.forEach(product=> { %>
+                        <tr>
+                            <th scope="row"><%= product.id %></th>
+                            <td><%= product.nameProduct %></td>
+                            <td><%= product.price %></td>
+                            <td><%= product.category %></td>
+                            <td><%= product.subcategory %></td>
+                            <td><%= product.discount %></td>
+                            <td>
+                                <form  action="/admin/destarcar/<%- product.id %>?_method=PUT" method="post">
+                                <button type="submit" class="btn btn-success">
+                                        Destacar
+                                        <path
+                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd"
+                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                    </svg>
+                                </button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
+</html>

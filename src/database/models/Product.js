@@ -25,8 +25,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-/*          created_at: dataTypes.TIMESTAMP,
-         updated_at: dataTypes.TIMESTAMP, */
+        destacado: {
+            type: dataTypes.INTEGER(2).UNSIGNED,
+            allowNull: false
+        }
     };
     let config = {
         tableName: "products",

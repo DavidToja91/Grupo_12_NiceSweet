@@ -6,23 +6,27 @@ const Product = db.Products;
 
 module.exports = {
     home: (req, res) => {
-        /* let cardDB = getProducts.filter(product => product.id <= 8)
-        let ofert = getProducts.filter(product => product.id >= 9) */
-        Product.findAll({
-            include: [{
-                association: "productImages"
-            }]
+        let promiseDestacado = Product.findAll({
+            where: {
+                destacado: +1
+            },
+            include: [{association: "productImages"}]
         })
-        .then(products =>{
+        let promiseProducts = Product.findAll({include: [{association: "productImages"}]})
+        console.log(promiseDestacado)
+        Promise.all([promiseDestacado, promiseProducts])
+
+       .then(([destacados, products]) =>{
             res.render('home', {
                 products,
+                destacados,
                 title: "HomePage",
                 session: req.session
             })
-        })
+        }) 
     },
     contact: (req, res) => {        
-        res.render('contact', { title: "contacto",})
+        res.render('contact', { title: "contacto", session: req.session})
     }
     
 };

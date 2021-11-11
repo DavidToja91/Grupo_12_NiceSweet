@@ -5,8 +5,13 @@
     <body>
     <%- include('../partials/header.ejs') %>
         <main class="container">
-            <div class="p-3 text-end">
-                <a class="btn btn-info" href="/admin/agregarProducto">AGREGAR PRODUCTO</a>
+            <div class="d-flex justify-content-between row ">
+                <div class="p-3 text-end col-md-6 mb-4" >
+                    <a class="btn btn-info" href="/admin/agregarProducto">AGREGAR</a>
+                </div>
+                <div class="p-3 text-end col-md-6 mb-4">
+                    <a class="btn btn-info" href="/admin/destacarProducto">DESTACAR</a>
+                </div>
             </div>
             <table class="table table-success table-striped">
                 <thead>

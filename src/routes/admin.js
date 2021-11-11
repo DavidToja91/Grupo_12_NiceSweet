@@ -8,6 +8,9 @@ let {inicio,
     agregarProducto,
     editarFormulario,
     editarProducto, eliminarProducto,
+    productDestac,
+    Destac,
+    deleteDestac,
     checkDeleteProduct,
     checkDeleteUser,
     users, addUser, editUser, deleteUser} = require('../controllers/adminController.js');
@@ -34,8 +37,12 @@ router.post('/agregarProducto', uploadFile.array('image'), productsValidator, ag
 router.get('/editarProducto/:id', userSession, userAdminCheck, editarFormulario);
 router.put('/editarProducto/:id', uploadFile.array('image'), productsValidator, editarProducto);
 
-router.get('/eliminarProducto/:id', checkDeleteProduct)
+router.get('/eliminarProducto/:id', userSession, userAdminCheck, checkDeleteProduct)
 router.delete('/eliminarProducto/:id', userSession ,  userAdminCheck, eliminarProducto);
+
+router.get('/destacarProducto', userSession, userAdminCheck, productDestac)
+router.put('/destarcar/:id', userSession, userAdminCheck, Destac)
+router.put('/deleteDestacar/:id', userSession, userAdminCheck, deleteDestac)
 
 /* GET : Muestra la lista con todos los usuarios */
 router.get('/users' , userSession, userAdminCheck,  users);

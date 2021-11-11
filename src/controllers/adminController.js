@@ -118,6 +118,44 @@ module.exports= {
         }
   
     },
+    productDestac :(req, res) =>{
+        let allProducts = Product.findAll({ where :{destacado: 0}, include: [{association: "productImages"}]})
+        let allNoProducts = Product.findAll({ where: {destacado: 1}, include: [{association: "productImages"}]})
+        Promise.all([allProducts, allNoProducts])
+        
+        .then(([getProducts, getDestacados]) =>{
+            res.render('admin/productDestac', {getProducts, getDestacados, title: "Productos Destacados"})
+        })
+        .catch(error => console.log(error))
+    },
+    Destac: (req,res) =>{
+        let destacado = 1
+        Product.update({
+            destacado
+        }, {
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(() =>{
+            res.redirect('/admin/destacarProducto')
+        })
+        .catch(error => console.log(error))
+    },
+    deleteDestac: (req, res) => {
+        let destacado = 0
+        Product.update({
+            destacado
+        }, {
+            where: {
+                id: +req.params.id
+            }
+        })
+        .then(() =>{
+            res.redirect('/admin/destacarProducto')
+        })
+        .catch(error => console.log(error))
+    },
     editarFormulario : (req, res) => {
         let promProduct = Product.findByPk(req.params.id)
         let promCategory = db.Categories.findAll({
