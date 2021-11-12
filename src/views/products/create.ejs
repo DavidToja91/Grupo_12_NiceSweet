@@ -3,6 +3,7 @@
 <%- include('../partials/head') %>
 <%- include('../partials/bootstrap') %>
 <script src="/Js/validatorProducts.js" defer></script>
+
 <body>
     <%- include('../partials/header') %>
     <main>
@@ -17,7 +18,7 @@
                             <div class="col-md-6 my-1">
                                 <div class="form-group">
                                     <label><b>Nombre:</b></label>
-                                    <input type="text" name="name" class="form-control" id="name">
+                                    <input type="text" name="name" id="nameCreate" class="form-control" id="name">
                                     <% if (locals.errors && errors.name) { %>
                                     <small class="text-danger"><%= errors.name.msg %></small>
                                     <% } %>
@@ -37,7 +38,7 @@
                             <div class="col-md-6 my-1">
                                 <div class="form-group">
                                     <label><b>Descuento:</b></label>
-                                    <input type="number" name="discount" class="form-control">
+                                    <input type="number" id="discount" name="discount" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6 my-1">
@@ -50,7 +51,7 @@
                             <div class="col-md-6 my-1">
                                 <div class="form-group">
                                     <label><b>Categoría:</b></label>
-                                    <select name="category" class="form-select">
+                                    <select id="category" name="category" class="form-select">
                                         <option value="0"></option>
                                     </select>
                                 </div>
@@ -66,7 +67,8 @@
                             <div class="col-md-12 my-3">
                                 <div class="form-group">
                                     <label><b>Descripción:</b></label>
-                                    <textarea type="text" name="description" class="form-control" id="description"></textarea>
+                                    <textarea type="text" name="description" class="form-control"
+                                        id="description"></textarea>
                                     <span class="error-msg" id="descriptionErrors"></span>
                                 </div>
                             </div>
