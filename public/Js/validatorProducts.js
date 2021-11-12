@@ -13,6 +13,7 @@ window.addEventListener('load',function(){
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExImg = /^.*\.(jpg|png|jpeg|gif)$/;
 
+    // nombre
     $inputName.addEventListener('blur', function(){
         console.log($inputName.value.trim());
         switch (true) {
@@ -36,6 +37,7 @@ window.addEventListener('load',function(){
         }
     });
 
+    // descripción
     $inputDescription.addEventListener('blur', function(){
         console.log($inputDescription.value.trim());
         switch (true) {
@@ -51,6 +53,7 @@ window.addEventListener('load',function(){
         }
     });
 
+    // imagen
     $inputImage.addEventListener('blur', function(){
         console.log($inputImage.value.trim());
         switch (true) {
