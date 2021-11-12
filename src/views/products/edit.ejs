@@ -11,7 +11,7 @@
                     <div class="row justify-content-center">
                         <div class="col-md-8 bg-teal-light border border-info rounded p-4">
                             <h2 class="mb-5">Editar producto</h2>
-                            <form method="POST" action="/products/create<%= product.id%>?method_PUT" method="POST" enctype="multipart/form-data">
+                            <form method="POST" action="/products/create<%= product.id%>?method_PUT" method="POST" enctype="multipart/form-data" id="form">
                                 <div class="row">
                                     <div class="col-md-6 my-1">
                                         <div class="form-group">
@@ -71,6 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-center my-3 mt-4">
+                                        <small class="text-danger" id="submitErrors"></small>
                                         <button class="btn btn-teal text-light">Guardar</button>
                                     </div>
                                 </div>

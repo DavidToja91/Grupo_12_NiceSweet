@@ -157,7 +157,7 @@ window.addEventListener('load', function () {
     $image.addEventListener('blur', function () {
         console.log($Image.value.trim())
         switch (true) {
-            case !regExImg.test($Image.value):
+            case !regExImg.test($image.value):
                 $imageErrors.innerHTML = 'Sólo se permiten imágenes (.jpg, .jpeg, .png, .gif)';
                 $inputImage.classList.add('is-invalid');
                 break;
@@ -174,6 +174,7 @@ window.addEventListener('load', function () {
         let error = false;
         let formElements = this.elements;
         console.log(formElements);
+
         for (let index = 0; index < formElements.length - 1; index++) {
             if (
                 formElements[index].value === "" ||
@@ -190,4 +191,4 @@ window.addEventListener('load', function () {
             $form.submit();
         }
     });
-})
+});

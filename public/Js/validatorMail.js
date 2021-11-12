@@ -34,6 +34,7 @@ window.addEventListener('load', function(){
         let error = false;
         let formElements = this.elements;
         console.log(formElements);
+        
         for (let index = 0; index < formElements.length - 1; index++) {
             if (
                 formElements[index].value === "" ||

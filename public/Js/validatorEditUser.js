@@ -2,18 +2,18 @@ function qs(element){
     return document.querySelector(element);
 }
 
-window.addEventListener('load', function(){
-    let $name =qs('#name'),
-    $nameErrors =qs('#nameErrors'),
-    $lastName =qs('#lastName'),
-    $lastnameErrors =qs('#lastNameErrors'),
-    $phoneNumber =qs('#phoneNumber'),
-    $phoneNumberErrors =qs('#phoneNumberErrors'),
-    $btn =qs('#btn'),
+window.addEventListener('load', function() {
+    let $form = qs('#btn'),
+    $name = qs('#name'),
+    $nameErrors = qs('#nameErrors'),
+    $lastName = qs('#lastName'),
+    $lastnameErrors = qs('#lastNameErrors'),
+    $phoneNumber = qs('#phoneNumber'),
+    $phoneNumberErrors = qs('#phoneNumberErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
 
     //Name
-    $name.addEventListener('blur', function(){
+    $name.addEventListener('blur', function() {
         console.log($name.value.trim());
         switch (true) {
             case !$name.value.trim():
@@ -37,7 +37,7 @@ window.addEventListener('load', function(){
     });
 
     //Last name
-    $lastName.addEventListener('blur', function(){
+    $lastName.addEventListener('blur', function() {
         console.log($lastName.value.trim());
         switch (true) {
             case !$lastName.value.trim():
@@ -61,7 +61,7 @@ window.addEventListener('load', function(){
     })
 
     //PhoneNumber
-    $phoneNumber.addEventListener('blur', function(){
+    $phoneNumber.addEventListener('blur', function() {
         console.log($phoneNumber.value.trim());
         switch (true) {
             case !$phoneNumber.value.trim():
@@ -80,11 +80,12 @@ window.addEventListener('load', function(){
         }
     });
 
-    $btn.addEventListener("submit", function (e) {
+    $form.addEventListener("submit", function (e) {
         e.preventDefault();
         let error = false;
         let formElements = this.elements;
         console.log(formElements);
+
         for (let index = 0; index < formElements.length - 1; index++) {
             if (
                 formElements[index].value === "" ||
