@@ -1,8 +1,8 @@
-function qs (element){
+function qs(element) {
     return document.querySelector(element)
 }
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     let $form = qs('#form')
     let $email = qs('#email')
     let $emailErrors = qs('#emailErrors')
@@ -13,11 +13,7 @@ window.addEventListener('load', function(){
     let $terms = qs('#check')
     let $termsErrors = qs('#termsErrors')
 
-    $form.addEventListener('submit', function(e){
-        /* e.preventDefault() */
-    })
-
-    $email.addEventListener('blur', function(){
+    $email.addEventListener('blur', function () {
         switch (true) {
             case !$email.value.trim():
                 $emailErrors.innerHTML = 'El campo email es obligatorio'
@@ -26,14 +22,16 @@ window.addEventListener('load', function(){
             case !regExEmail.test($email.value):
                 $emailErrors.innerHTML = 'Debe ingresar un email válido'
                 $email.classList.add('is-invalid')
-                break;    
+                break;
             default:
                 $email.classList.remove("is-invalid");
                 $email.classList.add('is-valid')
                 $emailErrors.innerHTML = ""
                 break;
         }
-    $password.addEventListener('blur', function(){
+    })
+
+    $password.addEventListener('blur', function () {
         switch (true) {
             case !$password.value.trim():
                 $passErrors.innerHTML = 'El campo contraseña es obligatorio'
@@ -42,30 +40,41 @@ window.addEventListener('load', function(){
             case !regExPass.test($password.value):
                 $passErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
                 $password.classList.add('is-invalid')
-                break;    
+                break;
             default:
                 $password.classList.remove("is-invalid");
                 $password.classList.add('is-valid')
                 $passErrors.innerHTML = ""
                 break;
         }
-     $terms.addEventListener('click', function(){
+
+        $terms.addEventListener('click', function () {
             $terms.value = 'on'
             $terms.classList.toggle('is-valid')
             $terms.classList.remove('is-invalid')
             $termsErrors.innerHTML = ''
         })
     })
-            
 
-   
+    $form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let error = false;
+        let formElements = this.elements;
+        console.log(formElements)
+        for (let index = 0; index < formElements.length - 1; index++) {
+            if (
+                formElements[index].value === "" ||
+                formElements[index].classList.contains('is-invalid')
+            ) {
+                formElements[index].classList.add('is-invalid');
+                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
 
-    })
-
-
-
-
-
-
-
+        if (!error) {
+            console.log('Todo bien');
+            $form.submit()
+        }
+    });
 })

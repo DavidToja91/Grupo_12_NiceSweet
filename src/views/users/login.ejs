@@ -73,6 +73,7 @@
                                 </div>
                             </div>
                             <small class="text-danger"><%= (locals.errors && errors.custom && !errors.email && !errors.pass) ? errors.custom.msg : "" %> </small>
+                            <small class="text-danger" id="submitErrors"></small>
                             <button class="btn btn-primary width-100" type="submit">Ingresar</button>
                             <a href="/users/register" class="userLink">Aún no tengo cuenta</a>
                         </form>
@@ -94,7 +95,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
         </script>
-        <script src="/Js/header.js" defer></script>
         <script src="/Js/loginValidator.js"></script>
 
     </main>
