@@ -34,6 +34,10 @@ module.exports = (sequelize, dataTypes) => {
         avatar:{
             type: dataTypes.STRING(50),
             allowNull: false
+        },
+        portada:{
+            type: dataTypes.STRING(50),
+            allowNull: true
         }
     };
     let config = {

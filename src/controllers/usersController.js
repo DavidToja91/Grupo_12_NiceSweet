@@ -68,6 +68,7 @@ module.exports = {
                   email: user.email,
                   avatar: user.avatar,
                   rol: user.rol,
+                  portada: user.portada
                 };
         
                 if (req.body.remember) {

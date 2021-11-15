@@ -59,7 +59,7 @@
     <!-- Login/register/admin version desktop -->
     <% if (locals.user) { %>
         <div class="user-contenedor">
-            <p class="menu-inicio"><a href="/users/profile"><%= locals.user.name %> </a></p>
+            <p class="menu-inicio nameProfile"><a href="/users/profile"><%= locals.user.name %> </a></p>
             <div class="circulo" onclick="dropLogin()">
                 <img src="/images/users/<%= user.avatar %>" alt="">
             </div>
