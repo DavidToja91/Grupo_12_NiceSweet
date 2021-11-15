@@ -2,7 +2,7 @@
 /* Capturo los elementos del DOM */
 let navBar = document.getElementById("navigation-bar-mobile");
 let searchBar = document.getElementById("search");
-let menuLogin = document.getElementById("login-register")
+let menuLogin = document.getElementById("login-registro")
 
 function dropMenu(){    
     let subcategoryMenu = document.querySelector(".active");
@@ -41,9 +41,9 @@ function dropSubCategoryMenu (id) {
 
  if(window.scrollY >= 100){
      console.log(window.scrollY )
-    document.querySelector(".main-header").classList.add("header-opacity")
+    document.querySelector(".header-menu").classList.add("header-opacity")
 }else {
-    document.querySelector(".main-header").classList.remove("header-opacity")
+    document.querySelector(".header-menu").classList.remove("header-opacity")
      
 }
 
