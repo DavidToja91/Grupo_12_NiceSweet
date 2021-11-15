@@ -115,16 +115,16 @@ window.addEventListener('load',function(){
             case !$pass2.value.trim():
                 $pass2Errors.innerHTML = 'Reingresa la contraseña';
                 $pass2.classList.add('is-invalid');
-            break;
+                break;
             case $pass2.value !== $pass.value:
                 $pass2Errors.innerHTML = 'las contraseñas no coinciden';
                 $pass2.classList.add('is-invalid');
-            break;             
+                break;             
             default:
                 $pass2.classList.remove('is-invalid');
                 $pass2.classList.add('is-valid');
                 $pass2Errors.innerHTML = "";
-            break;
+                break;
         }
     });
 
@@ -137,10 +137,10 @@ window.addEventListener('load',function(){
     });
 
     //Img
-    $file.addEventListener('change',
-    function fileValidation() {
+    $file.addEventListener('change', function fileValidation() {
         let filePath = $file.value, //Capturo el valor del input
             allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+
         if (!allowefExtensions.exec(filePath)) { //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
             $file.value = '';
@@ -166,6 +166,7 @@ window.addEventListener('load',function(){
         let error = false;
         let formElements = this.elements;
         console.log(formElements)
+
         for (let index = 0; index < formElements.length - 1; index++) {
             if (
                 formElements[index].value === "" ||

@@ -9,7 +9,7 @@
             </h3>
             <div class="container col-md-4">
                 <form class="row g-3" action="/admin/editarProducto/<%= product.id%>?_method=PUT" method="POST"
-                    enctype="multipart/form-data">
+                    enctype="multipart/form-data" id="form">
                     <div class="col-12">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" value="<%= locals.old ? old.nameProduct : product.nameProduct %>" id="name" name="nameProduct" class="form-control">
@@ -40,7 +40,8 @@
                         <input type="file" class="form-control" id="image" name="image" value="<%= product.image %>">
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-info">EDITAR</button>
+                        <small class="text-danger" id="submitErrors"></small>
+                        <button type="submit" class="btn btn-info" id="btn">EDITAR</button>
                     </div>
                 </form>
             </div>

@@ -7,7 +7,7 @@
         <main class="container">
             <h3 class="text-center">Agregar nuevo producto</h3>
             <div class="container col-md-4">
-                <form class="row g-3" action="/admin/agregarProducto/"   method="POST" enctype="multipart/form-data">
+                <form class="row g-3" action="/admin/agregarProducto/"   method="POST" enctype="multipart/form-data" id="form">
                     <div class="col-12">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="name" name="nameProduct" value="<%= locals.old && old.nameProduct %>">
@@ -68,6 +68,7 @@
                         <% } %>
                     </div>
                     <div class="col-12">
+                        <small class="text-danger" id="submitErrors"></small>
                         <button type="submit" class="btn btn-info">AGREGAR</button>
                     </div>
                 </form>
