@@ -175,6 +175,7 @@ module.exports= {
             }
             return res.render("admin/editProduct",{
                 product,
+                category,
                 session: req.session,
             })
 
@@ -182,13 +183,14 @@ module.exports= {
         .catch(error => console.log(error))
     },
     editarProducto: (req, res)=>{
-        let errors = validationResult(req)
+        let errors = validationResult(req);
+
         if(errors.isEmpty()){
             const {
                 nameProduct,
                 price,
                 discount,
-                description
+                description,
             } = req.body
             Product.update({
                 nameProduct,
@@ -210,13 +212,14 @@ module.exports= {
             .then((product)=> { 
                 res.render('admin/editProduct', {
                     product,
+                    categories,
+                    subcategories,
                     session: req.session,
                     errors : errors.mapped(),
                     old : req.body 
                 })
             })
             .catch(error => console.log(error))
-
         }
 
     },
@@ -267,12 +270,13 @@ module.exports= {
         .catch(error => console.log(error))
     },
     proccessUser: (req, res) => {
-        const {name, lastName, email, category, image} = req.body;
+        const {name, lastName, email, phone, category, image} = req.body;
 
         Users.update({
             name,
             lastName,
             email,
+            phone,
             image: image? image : "default-image.png",
             category
         }, {
