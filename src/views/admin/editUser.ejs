@@ -28,24 +28,24 @@
                     <div class="col-12">
                         <label for="subcategory" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <small id="emailErrors" class="text-danger"><%= errors.email.msg %></small>
+                        <% } %>
                     </div>
                     <div class="col-12">
-                        <input type="number" id="phoneNumber"name="phone" placeholder="Telefono" value="<%= locals.old? old.phone : user.phone %>">
+                        <label for="subcategory" class="form-label">Telefono</label>
+                        <input type="number" class="form-control" id="phoneNumber" name="phone" placeholder="Telefono" value="<%= locals.old? old.phone : user.phone %>">
                         <% if (locals.errors && errors.phone) { %>
                             <small id="phoneNumberErrors" class="text-danger"><%= errors.phone.msg %></small>
-                        <% } %>          
+                        <% } %>
                     </div>
                     <div class="col-12">
                         <label for="category" class="form-label">Categoría</label>
-                        <input type="text" class="form-control" name="category" id="category"
-                            value="<%= user.category %>">
+                        <input type="text" class="form-control" name="category" id="category" value="<%= user.category %>">
                     </div>
                     <div class="col-12">
                         <label for="image" class="form-label">Imagen</label>
                         <input type="file" class="form-control" id="image" name="image" value="<%= user.image %>">
-                        <% if (locals.errors && errors.avatar) { %>
-                            <small class="text-danger"><%= errors.avatar.msg %></small>
-                        <% } %>
                     </div>
                     <div class="col-12">
                         <small class="text-danger" id="submitErrors"></small>
