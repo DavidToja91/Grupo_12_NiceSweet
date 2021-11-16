@@ -42,7 +42,6 @@ module.exports= {
                 categories,
                 subcategories,
                 session: req.session
-                
             })
         })
         .catch(err => console.log(err))
