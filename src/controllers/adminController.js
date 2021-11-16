@@ -275,18 +275,18 @@ module.exports = {
             errors.push(image);
         }
         if (errors.isEmpty()) {
-            let { name, lastName, email, pass1, phone, image} = req.body;
+            let { name, lastName, phone, email, pass1} = req.body;
 
             Users.create({
                 name,
                 lastName,
+                phone,
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
-                phone,
-                image: image ? image : "default-image.png",
+                avatar: req.file? req.file.filename : "default-image.png",
                 rol: 0,
             }).then(() => {
-                res.redirect("admin/users");
+                res.redirect("users");
             });
         } else {
             res.render("admin/addUser", {
