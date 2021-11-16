@@ -2,6 +2,7 @@
 <html lang="es">
 <%- include('../partials/head') %>
 <%- include('../partials/bootstrap') %>
+<script src="/Js/validatorEditUser.js" defer></script>
     <body>
     <%- include('../partials/header.ejs') %>
         <main class="container">
@@ -13,20 +14,34 @@
                     <div class="col-12">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" value="<%= user.name %>" id="name" name="name" class="form-control">
+                        <% if (locals.errors && errors.name) { %>
+                            <small id="nameErrors" class="text-danger"><%= errors.name.msg %></small>
+                        <% } %>
                     </div>
                     <div class="col-12">
                         <label for="price" class="form-label">Apellido</label>
                         <input type="text" class="form-control" name="lastName" id="lastName" value="<%= user.lastName %>">
+                        <% if (locals.errors && errors.lastName) { %>
+                            <small class="text-danger" id="lastNameErrors"><%= errors.lastName.msg %></small>
+                        <% } %>
                     </div>
                     <div class="col-12">
                         <label for="subcategory" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email"
-                            value="<%= user.email %>">
+                        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <small id="emailErrors" class="text-danger"><%= errors.email.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="col-12">
+                        <label for="subcategory" class="form-label">Telefono</label>
+                        <input type="number" class="form-control" id="phoneNumber" name="phone" placeholder="Telefono" value="<%= locals.old? old.phone : user.phone %>">
+                        <% if (locals.errors && errors.phone) { %>
+                            <small id="phoneNumberErrors" class="text-danger"><%= errors.phone.msg %></small>
+                        <% } %>
                     </div>
                     <div class="col-12">
                         <label for="category" class="form-label">Categoría</label>
-                        <input type="text" class="form-control" name="category" id="category"
-                            value="<%= user.category %>">
+                        <input type="text" class="form-control" name="category" id="category" value="<%= user.category %>">
                     </div>
                     <div class="col-12">
                         <label for="image" class="form-label">Imagen</label>

@@ -11,32 +11,54 @@
                 <form class="row g-3" action="/admin/editarProducto/<%= product.id%>?_method=PUT" method="POST"
                     enctype="multipart/form-data" id="form">
                     <div class="col-12">
-                        <label for="name" class="form-label">Nombre</label>
+                        <label for="name" class="form-label"><b>Nombre</b></label>
                         <input type="text" value="<%= locals.old ? old.nameProduct : product.nameProduct %>" id="name" name="nameProduct" class="form-control">
-                    <% if(locals.errors && errors.nameProduct) { %>
-                        <small class="text-danger"><%= errors.nameProduct.msg %> </small>
-                    <% } %>
+                        <% if(locals.errors && errors.nameProduct) { %>
+                            <small class="text-danger"><%= errors.nameProduct.msg %> </small>
+                        <% } %>
                     </div>
                     <div class="col-12">
-                        <label for="price" class="form-label">Precio</label>
+                        <label for="price" class="form-label"><b>Precio</b></label>
                         <input type="number" class="form-control" name="price" id="price" value="<%= locals.old ? old.price : product.price %>">
-                    <% if(locals.errors && errors.price) { %> 
-                        <small class="text-danger"><%= errors.price.msg %> </small>
-                    <% } %> 
+                        <% if(locals.errors && errors.price) { %> 
+                            <small class="text-danger"><%= errors.price.msg %> </small>
+                        <% } %> 
                     </div>
                     <div class="col-12">
-                        <label for="discount" class="form-label">Descuento</label>
+                        <label for="discount" class="form-label"><b>Descuento</b></label>
                         <input type="number" class="form-control" name="discount" id="discount" value="<%= locals.old ? old.discount : product.discount %>">
                     </div>
-                    <div class="col-12">
-                        <label for="description" class="form-label">Descripción</label>
-                        <input type="text" class="form-control" name="description" id="description" value="<%= locals.old ? old.description : product.description %>">
-                    <% if(locals.errors && errors.description) { %>
-                        <small class="text-danger"><%= errors.description.msg %>  </small> 
-                    <% } %> 
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label><b>Categoría:</b></label>
+                            <select id="category" name="category" class="form-select">
+                                <option value="0"><%- subcategories.id %></option>
+                            </select>
+                            <% if(locals.errors && errors.price) { %> 
+                                <small class="text-danger"><%= errors.price.msg %> </small>
+                            <% } %>
+                        </div>a
+                    </div>
+                    <div class="col-md-6 my-1">
+                        <div class="form-group">
+                            <label class="col-12"><b>Subcategoría:</b></label>
+                            <select name="subcategory" class="form-select">
+                                <option value="0"><% product.subcategory %></option>
+                            </select>
+                            <% if(locals.errors && errors.subcategory) { %> 
+                                <small class="text-danger"><%= errors.price.msg %> </small>
+                            <% } %>
+                        </div>
                     </div>
                     <div class="col-12">
-                        <label for="image" class="form-label">Imagen</label>
+                        <label for="description" class="form-label"><b>Descripción</b></label>
+                        <input type="text" class="form-control" name="description" id="description" value="<%= locals.old ? old.description : product.description %>">
+                        <% if(locals.errors && errors.description) { %>
+                            <small class="text-danger"><%= errors.description.msg %>  </small> 
+                        <% } %> 
+                    </div>
+                    <div class="col-12">
+                        <label for="image" class="form-label"><b>Imagen</b></label>
                         <input type="file" class="form-control" id="image" name="image" value="<%= product.image %>">
                     </div>
                     <div class="col-12">
@@ -46,6 +68,7 @@
                 </form>
             </div>
         </main>
+        <!-- <script src="/Js/validatorEditProducts.js"></script> -->
         <%- include('../partials/footer') %>
     </body>
 </html>
