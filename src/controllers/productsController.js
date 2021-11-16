@@ -18,13 +18,11 @@ module.exports = {
         
     },
     detail: (req, res) => {
-        Product.findByPk(req.params.id, {
-            include: [{
-                association: "productImages"
-            }]
-        })
-        .then(product =>{
-            res.render('products/detail.ejs', {product})
+        let oneProduct = Product.findByPk(req.params.id, {include: [{association: "productImages"}]})
+        let products = Product.findAll({include: [{association: "productImages"}]})
+        Promise.all([oneProduct, products])
+        .then(([oneProduct, products]) => {
+            return res.render('products/detail.ejs', {oneProduct, products})
         })
     },
     cart: (req, res)=>{
