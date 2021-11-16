@@ -11,6 +11,10 @@ li{
 ul{
         font-family: 'Times New Roman', Times, serif
 }
+
+.nameProfile{
+    padding-top: 4px;
+}
 header {
     position: sticky;
     top: 0;

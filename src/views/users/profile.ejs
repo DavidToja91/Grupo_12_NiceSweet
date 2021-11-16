@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('../partials/head') %>
-<%- include('../partials/bootstrap') %>
-    <body>
-        <%- include('../partials/header') %>
-            <main>
-                <!-- productCreateForm -->
-                <div class="container my-5">
-                    <div class="row justify-content-center bg-steel-light border border-secondary rounded p-4">
-                        <div class="col-md-10">
-                            <h2 class="text-center mb-5">Usuario</h2>
-                            
-                            <div class="d-flex justify-content-between row">
-                                <div class="col-md-3 pb-4">
-                                    <img class="img-fluid bg-teal-light border rounded-circle" src="/images/users/<%= user.avatar %>" alt="">
-                                </div>
-                                <div class="col-md-7 container my-1">
-                                    <div class="row my-1">
-                                        <div class="col-md-6 my-1">
-                                            <p>Nombre: <%= user.name %></p>
-                                        </div>
-                                        <div class="col-md-6 my-1">
-                                            <p>Apellido: <%= user.lastName %></p>
-                                        </div>
-                                        <div class="col-md-6 my-1">
-                                            <p>Email: <%= user.email %></p>
-                                        </div>
-                                        <div class="col-md-6 my-1">
-                                            <p>Teléfono: <%= user.phone %></p> 
-                                        </div>
-                                        <div class="col-12 text-center my-3 mt-4">
-                                            <a href="/users/edit/<%= user.id %>" class="btn btn-teal text-light">EDITAR</a>
-                                            <a href="/" class="btn btn-grape text-light">VOLVER</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+<%- include('../partials/head.ejs') %> 
+<link rel="stylesheet" href="/styles/editProfile.css">  
+<body>
+<%- include('../partials/header.ejs') %> 
+        
+<!-- fin del header -->
+<main>
+    <form action="">
+        <section class="perfil-usuario">
+            <div class="contenedor-perfil">
+                <div id="img-preview2">
+                </div>
+                <div id="portadaId" class="portada-perfil" style="background-image: url('/images/<%= user.portada%>');">
+
+                    <div class="sombra"></div>
+                    <div class="avatar-perfil">
+                        <div class="img-container" id="img-preview">
+                        </div>
+                        <img src="/images/users/<%= user.avatar %> "  alt="img">
+                        <div class="cambiar-foto" id="div_file">
+                                <i class="fas fa-camera"></i> 
+                                <input id="btn_enviar" type="file" name="avatar" >
                         </div>
                     </div>
+                    <div class="datos-perfil">
+                        <h4 class="titulo-usuario"><%= user.name.toUpperCase() %> </h4>
+                    </div>
+                    <div class="opcciones-perfil">
+                        <input type="file" name="portada" id="btn_enviar2" class="file-select src-file1" >
+                        <button type="submit">Guardar Cambios</button>
+                    </div>
                 </div>
-            </main>
-            <%- include('../partials/footer') %>
-    </body>
-
+        </section>
+        <span id="fileErrors"></span>
+    </form>
+    
+    <div class="menu-perfil">
+        <h3>Informacion Personal</h3>
+        <ul>
+            <li>NOMBRE: <%= user.name %> </li>
+            <li>APELLIDO: <%= user.lastName %> </li>
+            <li>MAIL: <%= user.email %></li>
+            <li>CELULAR: <%= user.phone %></li>
+            <li>PROVINCIA: ------</li>
+            <li>LLOCALIDAD: ------</li>
+        </ul>
+    </div>
+    
+    <script src="/Js/perfileJs.js"></script>
+    <!-- <script src="/Js/perfileJs2.js"></script> -->
+</main>
+<%- include('../partials/footer.ejs') %> 
+</body>
 </html>
