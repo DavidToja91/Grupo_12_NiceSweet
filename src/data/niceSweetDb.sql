@@ -68,7 +68,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (28,'Chocolate Cofler Block',220,'Chocolate Cofler block con maní de 170 gr.',10,1,NULL,NULL,'1'),(29,'Alfajor MiniTorta Aguila',110,'Alfajor de dulce de leche y brownie 72gr.',15,2,NULL,NULL,'1'),(30,'Chocolate Aguila 100gr',125,'Chocolate en barra Aguila para taza 100 Gr.',20,1,NULL,NULL,'1'),(31,'Chocolate Arcor ',50,'Chocolate Arcor Negro 25gr',5,1,NULL,NULL,'1'),(32,'Chocolate Arcor Con Leche (Blanco)',50,'Chocolate Arcor blanco 25gr',5,1,NULL,NULL,'1'),(33,'Chocolate Cofler Aireado',220,'Chocolate Cofler Aireado con almendras 27gr',10,1,NULL,NULL,'1'),(34,'Alfajor Tita',48,'Alfajor TITA de 36gr',7,2,NULL,NULL,'1'),(35,'Alfajor B&N',95,'Alfajor B&N 70gr',5,2,NULL,NULL,'1'),(36,'Chocolate Bonafide',150,'Chocolate Bonafide 60% cacao 100gr',10,1,NULL,NULL,'0'),(37,'Bon O Bon',40,'Bombón relleno con maní 15gr',5,3,NULL,NULL,'0'),(38,'Chocolate Milka Leger',240,'Chocolate Arcor con maní de 25gr',15,1,NULL,NULL,'0'),(39,'Donuts Bonafide',120,'Donuts Bonafide 78gr',5,1,NULL,NULL,'0'),(40,'Dos Corazones',90,'Bombón Dos Corazones 26gr',5,3,NULL,NULL,'0'),(41,'Bombones Ferrero Rocher',640,'Bombones Ferrero Rocher 8unidades',17,3,NULL,NULL,'0'),(42,'Kinder Sorpresa',180,'Kinder Sorpresa 20gr',10,1,NULL,NULL,'0');
+INSERT INTO `products` VALUES (28,'Chocolate Cofler Block',220,'Chocolate Cofler block con manÃ­ de 170 gr.',10,1,NULL,NULL,'1'),(29,'Alfajor MiniTorta Aguila',110,'Alfajor de dulce de leche y brownie 72gr.',15,2,NULL,NULL,'1'),(30,'Chocolate Aguila 100gr',125,'Chocolate en barra Aguila para taza 100 Gr.',20,1,NULL,NULL,'1'),(31,'Chocolate Arcor ',50,'Chocolate Arcor Negro 25gr',5,1,NULL,NULL,'1'),(32,'Chocolate Arcor Con Leche (Blanco)',50,'Chocolate Arcor blanco 25gr',5,1,NULL,NULL,'1'),(33,'Chocolate Cofler Aireado',220,'Chocolate Cofler Aireado con almendras 27gr',10,1,NULL,NULL,'1'),(34,'Alfajor Tita',48,'Alfajor TITA de 36gr',7,2,NULL,NULL,'1'),(35,'Alfajor B&N',95,'Alfajor B&N 70gr',5,2,NULL,NULL,'1'),(36,'Chocolate Bonafide',150,'Chocolate Bonafide 60% cacao 100gr',10,1,NULL,NULL,'0'),(37,'Bon O Bon',40,'BombÃ³n relleno con manÃ­ 15gr',5,3,NULL,NULL,'0'),(38,'Chocolate Milka Leger',240,'Chocolate Arcor con manÃ­ de 25gr',15,1,NULL,NULL,'0'),(39,'Donuts Bonafide',120,'Donuts Bonafide 78gr',5,1,NULL,NULL,'0'),(40,'Dos Corazones',90,'BombÃ³n Dos Corazones 26gr',5,3,NULL,NULL,'0'),(41,'Bombones Ferrero Rocher',640,'Bombones Ferrero Rocher 8unidades',17,3,NULL,NULL,'0'),(42,'Kinder Sorpresa',180,'Kinder Sorpresa 20gr',10,1,NULL,NULL,'0');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,6 +173,7 @@ CREATE TABLE `users` (
   `phone` int(11) DEFAULT NULL,
   `rol` varchar(20) NOT NULL,
   `avatar` varchar(50) DEFAULT NULL,
+  `portada` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -183,7 +184,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (12,'admin','nice','admin@gmail.com','$2a$10$gl0hUFccoKl0RX.V2CDP1eCjlLjDesw3LUHNz5llIVNYOn2eXu476',123456789,'1','default-image.png'),(14,'prueba','nice','prueba@gmail.com','$2a$10$IOrRnOQ2j/Knyt/hqWeum.TwHQCucdc4qkbelyte5ZVspj7XkrF4i',1234564,'0','1635375455020_img_.jpg'),(18,'ignacio','prueba','prueba3@gmail.com','$2a$10$GNSCAFhvV9nGrJpN2UMWiOyDcy1yWzjxqoi7ZoL9SKnWwjhVbV1ci',123456789,'0','default-image.png');
+INSERT INTO `users` VALUES (12,'admin','nice','admin@gmail.com','$2a$10$gl0hUFccoKl0RX.V2CDP1eCjlLjDesw3LUHNz5llIVNYOn2eXu476',123456789,'1','1636979661448_img_.jpg','1636123355699_img_.jpg'),(14,'prueba','nice','prueba@gmail.com','$2a$10$IOrRnOQ2j/Knyt/hqWeum.TwHQCucdc4qkbelyte5ZVspj7XkrF4i',1234564,'0','1635375455020_img_.jpg','1636123355699_img_jpg'),(18,'ignacio','prueba','prueba3@gmail.com','$2a$10$GNSCAFhvV9nGrJpN2UMWiOyDcy1yWzjxqoi7ZoL9SKnWwjhVbV1ci',123456789,'0','default-image.png','1636123355699_img_.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-11  1:36:26
+-- Dump completed on 2021-11-15 18:24:09

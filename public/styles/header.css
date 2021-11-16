@@ -1,5 +1,20 @@
 /* Maquetado mobile first (a partir de pantalla de 320)*/
+p{
+    margin-bottom: 0;
+}
+a{
+    font-family:'Times New Roman', Times, serif
+}
+li{
+    font-family: 'Times New Roman', Times, serif
+}
+ul{
+        font-family: 'Times New Roman', Times, serif
+}
 
+.nameProfile{
+    padding-top: 4px;
+}
 header {
     position: sticky;
     top: 0;
@@ -7,12 +22,12 @@ header {
     z-index: 999;
 }
 
-.main-header a {
+.header-menu a {
     color: black;
     text-decoration: none;
 }
 
-.main-header {
+.header-menu {
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -28,39 +43,39 @@ header {
     z-index: 999;
 }
 
-.main-header .navigation-bar {
+.header-menu .navigation-bar {
     display: none;
 }
 
-.main-header .user-icons-desktop {
+.header-menu .user-contenedor {
      display: none;
 }
 
-.main-header .burguer-menu-icon{
+.header-menu .burguer-menu-icon{
     font-size: 24px;
     order: -1; 
 }
 
-.main-header .logo {
+.header-menu .logo-header {
     height: 70px;
     width: 230px;
     order: 1;
 }  
 
-.main-header .logo img {
+.header-menu .logo-header img {
     width: 100%;
 }
 
-.main-header .search-icon {
+.header-menu .search-icon {
     font-size: 24px;
     order: 2;
 }
 
-.main-header .search-icon i{
+.header-menu .search-icon i{
     cursor: pointer;
 }
 
-.main-header .search-form-desktop {
+.header-menu .search-form-desktop {
     display: none;
 }
 
@@ -109,27 +124,27 @@ header {
 /* Finaliza botón y barra de búsqueda mobile */
 
 /* Botón y menú desplegable mobile */
-.main-header .navigation-bar {
+.header-menu .navigation-bar {
     order: 4;
     padding: 15px;
     width: 100%;
 }
 
-.main-header .navigation-bar ul.menu li {
+.header-menu .navigation-bar ul.menu li {
     padding: 10px 0;
 }
 
-.main-header .navigation-bar .user-icons-mobile {
+.header-menu .navigation-bar .user-icons-mobile {
     display: flex;
     justify-content: flex-end;
 }
 
-.main-header .navigation-bar .user-icons-mobile i{
+.header-menu .navigation-bar .user-icons-mobile i{
     font-size: 24px;
     margin-left: 10px;
 }
 
-.main-header .navigation-bar#navigation-bar-desktop {
+.header-menu .navigation-bar#navigation-bar-desktop {
     display: none;
 }
 
@@ -172,6 +187,10 @@ header {
     color: red;
   }
   
+  .li-desplegable{
+    font-family: var(--font_poppins);
+}
+
 /* MEDIA QUERIES */
 /* Tablet */
 @media (min-width: 768px){
@@ -187,70 +206,71 @@ header {
 /* Escritorio */
 @media screen and (min-width: 992px) {
 
-    .main-header {
+    .header-menu {
         height: 100px;
         padding: 10px 30px;
     }
 
-    .main-header {
+    .header-menu {
         flex-wrap: nowrap;
     }
 
-    .main-header .navigation-bar {
+    .header-menu .navigation-bar {
         display: inherit;
         order: 1;
         width: 40%;
     }
 
-    .main-header .navigation-bar .menu {
+    .header-menu .navigation-bar .menu-contenedor {
         display: flex;
         align-items: center;
         flex-grow: 1;
         justify-content: space-around;
         font-size: 12px;
+        margin-bottom: 0;
     }
 
         
-    .main-header .navigation-bar#navigation-bar-desktop {
+    .header-menu .navigation-bar#navigation-bar-desktop {
         display:inherit;
     }
 
     
-    .main-header .navigation-bar#navigation-bar-mobile {
+    .header-menu .navigation-bar#navigation-bar-mobile {
         display: none;
     }
 
-   .main-header .burguer-menu-icon{
+   .header-menu .burguer-menu-icon{
         display: none;
     }    
 
-   .main-header .logo {
+   .header-menu .logo-header {
         height: 68px;
         width: 262px;
         order: 0;
     }
     
-    .main-header .search-icon {
+    .header-menu .search-icon {
         display: none;
     }
 
     
-    .main-header .search-form-desktop {
+    .header-menu .search-form-desktop {
         display: inherit;
         order: 3;
     }
     
-    .main-header .navigation-bar .user-icons-mobile {
+    .header-menu .navigation-bar .user-icons-mobile {
         display: none;
     }
     
-    .main-header .logo {
+    .header-menu .logo-header {
         height: 68px;
         width: 262px;
         order: 0;
     }
 
-    .main-header .user-icons-desktop {  
+    .header-menu .user-contenedor {  
         display: flex;
         font-size: 20px;
         order: 4;
@@ -259,7 +279,7 @@ header {
         margin-right: 15px ;
     }
 
-    .main-header .user-icons-desktop i {
+    .header-menu .user-contenedor i {
         margin-left: 10px;
     }
     .menu-inicio{
@@ -278,7 +298,7 @@ header {
         border-radius: 100%;
     }
 
-    .main-header .menu-usuario{
+    .header-menu .menu-usuario{
         display: none;
         border: 1px solid black;
         position: absolute;
@@ -288,7 +308,7 @@ header {
         border-radius: 15px;
         background-color: white;
     }
-    .main-header .menu-usuario p{
+    .header-menu .menu-usuario p{
         text-align: center;
         font-size: 18px;
        
@@ -297,7 +317,7 @@ header {
 }
 
 @media screen and (min-width: 1150px){
-    .main-header .navigation-bar .menu {
+    .header-menu .navigation-bar .menu-contenedor {
         font-size: 20px;
     }
 
@@ -305,6 +325,7 @@ header {
         margin-right: 10px;;
         padding-right: 12px;
     }
+
 }
 
 
