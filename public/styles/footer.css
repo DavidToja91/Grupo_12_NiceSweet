@@ -122,7 +122,11 @@ footer .button {
   /* When the input field gets focus, change its width to 100% */
   input[type=text]:focus {width: 100%;}
 
-  .fade img {max-height: 320px;}
+  .fade img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }
   
 @media(min-width: 1024px) {

@@ -58,7 +58,7 @@ CREATE TABLE `products` (
   `destacado` varchar(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` (`subCategoryId`),
-  CONSTRAINT `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_e7ffebf7-251f-467a-884a-21ad62d6676e` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

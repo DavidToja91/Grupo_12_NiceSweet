@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
                 $pass.classList.add('is-invalid');
                 break;
             case !regExPass.test($password.value):
-                $passErrors.innerHTML = 'La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número';
+                $passErrors.innerHTML = 'Contraseña incorrecta';
                 $password.classList.add('is-invalid');
                 break;
             default:
