@@ -314,10 +314,12 @@ h4{
 }
 
 .imagen-producto{
-  height: 45%;
-  width: 45%;
-  margin: 10px
+ width: 30%;
+  margin: 5px
+}
 
+.contenedor-descripcion{
+  margin : 5%
 }
 
 .contenedor-contador{
