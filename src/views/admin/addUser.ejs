@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+<%- include('../partials/bootstrap') %>
+    <body>
+    <%- include('../partials/header.ejs') %>
+        <main class="container">
+            <h3 class="text-center">Agregar nuevo usuario</h3>
+            <div class="container col-md-4">
+                <form class="row g-3" action="/admin/addUser/" method="POST" enctype="multipart/form-data" id="form">
+                    <div class="col-12">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="nameProduct" value="<%= locals.old && old.name %>">
+                        <% if(locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.name.msg %>  </small> 
+                        <% } %>
+                        <span class="error-msg" id="nameErrors"></span>
+                    </div>
+                    <div class="col-12">
+                        <label for="price" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="lastName" id="lastName" value="<%= locals.aold && old.lastName %>">
+                        <% if (locals.errors && errors.lastName) { %>
+                            <small class="text-danger" id="lastNameErrors"><%= errors.lastName.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= locals.old && old.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger" id="emailErrors"><%= errors.email.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="col-12">
+                        <label for="pass" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="pass1" name="pass">
+                        <% if (locals.errors && errors.pass) { %>
+                            <small class="text-danger" id="emailErrors"><%= errors.pass.msg %></small>
+                        <% } %>
+                    </div>
+                    <div class="col-12">
+                        <label for="subcategory" class="form-label">Phone</label>
+                        <input type="number" class="form-control" id="phone" name="phone" value="<%= locals.old && old.phone %>">
+                        <% if (locals.errors && errors.phone) { %>
+                            <small class="text-danger" id="emailErrors"><%= errors.phone.msg %></small>
+                        <% } %>
+                    </div>
+                    <% if(locals.errors && errors.description) { %>
+                        <small class="text-danger"><%= errors.description.msg %>  </small> 
+                    <% } %>
+                        <span class="error-msg" id="descriptionErrors"></span>
+                    <!-- <div class="col-12">
+                        <select class="form-select" id="specificSizeSelect" name="category">
+                          <option selected hidden value="">Categorias</option>
+                         < categories.forEach(category => { %>
+                            <option value="<- category.id %>" <= locals.old && old.category == category.id ? "selected" : "" %> ><- category.nameCategory %></option>
+                         < }) %>
+                        </select>
+                        < if(locals.errors && errors.category) { %>
+                            <small class="text-danger"><= errors.category.msg %>  </small> 
+                        < } %>
+                            <span class="error-msg" id="categoryErrors"></span>
+                    </div>
+                    <div class="col-12">
+                        <select class="form-select" id="specificSizeSelect" name="subcategoryId">
+                          <option selected hidden value="">Subcategorias</option>
+                         < subcategories.forEach(subcategory => { %>
+                            <option value="<- subcategory.id%>" <= locals.old && old.subcategory == subcategory.nameSubcategory ? "selected" : "" %>><- subcategory.nameSubcategory %></option>
+                         < }) %>
+                        </select>
+                        < if(locals.errors && errors.subcategoryId) { %>
+                            <small class="text-danger"><= errors.subcategoryId.msg %>  </small> 
+                        < } %>
+                            <span class="error-msg" id="subcategoryErrors"></span>
+                    </div> -->
+                    <div class="col-12">
+                        <label for="inputImage" class="form-label">Imagen</label>
+                        <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
+                        <% if (locals.errors && errors.image) { %>
+                            <small class="text-danger"><%= errors.image.msg %> </small>
+                        <% } %>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-danger" id="submitErrors"></small>
+                        <button type="submit" class="btn btn-info">AGREGAR</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
+</html>

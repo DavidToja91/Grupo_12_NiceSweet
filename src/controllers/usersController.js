@@ -3,6 +3,7 @@ const bcrypt= require('bcryptjs');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const { productos } = require('./adminController');
 
 const User = db.Users;
 
@@ -93,9 +94,24 @@ module.exports = {
         .then(user => {
               res.render("users/profile", {
                 user,
-                session: req.session
+                session: req.session,
+                
               });
         });
+    
+    },
+    saveProfile: (req, res) =>{
+        let avatar
+        let portada
+        if(req.files.avatar){
+            avatar = req.files.avatar[0].filename
+        }if (req.files.portada){
+            portada = req.files.portada[0].filename
+        }
+        
+        User.update({avatar, portada}, {where: {id: req.params.id}})
+        .then(() => {res.redirect('/users/profile'), {session: req.session}}) 
+
     },
     editProfile: (req, res) => {
         User.findByPk(req.params.id)

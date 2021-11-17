@@ -13,10 +13,12 @@ let {inicio,
     deleteDestac,
     checkDeleteProduct,
     checkDeleteUser,
-    users, addUser, editUser, deleteUser} = require('../controllers/adminController.js');
+    users, formUser, addUser, editUser, proccessUser, deleteUser} = require('../controllers/adminController.js');
 let uploadFile = require('../middlewares/uploadFiles')
 let userAdminCheck = require('../middlewares/userAdminCheck')
 let productsValidator = require('../validations/productsValidator')
+let registerValidator = require('../validations/registerValidator');
+let editProfileValidator = require('../validations/editProfileValidator');
 const userSession = require('../middlewares/userSession')
 
 /* GET: Index para el admin */
@@ -45,16 +47,17 @@ router.put('/destarcar/:id', userSession, userAdminCheck, Destac)
 router.put('/deleteDestacar/:id', userSession, userAdminCheck, deleteDestac)
 
 /* GET : Muestra la lista con todos los usuarios */
-router.get('/users' , userSession, userAdminCheck,  users);
+router.get('/users' , userSession, userAdminCheck, users);
 
 /*POST : Formulario para capturar los datos recibidos */
-router.post('/addUser' , uploadFile.single('image'), addUser); /*Envía los datos del formulario */
+router.get('/addUser', formUser);
+router.post('/addUser' , uploadFile.single('image'), registerValidator, addUser); /*Envía los datos del formulario */
 // uploadFile.single('image')
 
 /* GET: formulario de edición de usuario */
-router.get('/editUser/:id', userSession,  userAdminCheck, editUser);
+router.get('/editUser/:id', userSession, userAdminCheck, editUser);
 /* PUT : recibe los datos de edición */ 
-router.put('/editUser/:id', uploadFile.single('image'), editarProducto);
+router.put('/editUser/:id', uploadFile.single('image'), editProfileValidator, proccessUser);
 
 /* DELETE: Elimina un producto */
 router.get('/eliminarUser/:id', checkDeleteUser)

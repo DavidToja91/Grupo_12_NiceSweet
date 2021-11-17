@@ -7,12 +7,12 @@
         
 <!-- fin del header -->
 <main>
-    <form action="">
+    <form action="/users/save/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <section class="perfil-usuario">
             <div class="contenedor-perfil">
                 <div id="img-preview2">
                 </div>
-                <div id="portadaId" class="portada-perfil" style="background-image: url('/images/<%= user.portada%>');">
+                <div id="portadaId" class="portada-perfil" style="background-image: url('/images/users/<%= user.portada%>');">
 
                     <div class="sombra"></div>
                     <div class="avatar-perfil">
@@ -21,11 +21,11 @@
                         <img src="/images/users/<%= user.avatar %> "  alt="img">
                         <div class="cambiar-foto" id="div_file">
                                 <i class="fas fa-camera"></i> 
-                                <input id="btn_enviar" type="file" name="avatar" >
+                                <input id="btn_enviar" type="file" name="avatar" multiple>
                         </div>
                     </div>
                     <div class="datos-perfil">
-                        <h4 class="titulo-usuario"><%= user.name.toUpperCase() %> </h4>
+                        <h4 class="titulo-usuario"><%= user.name.toUpperCase() %></h4>
                     </div>
                     <div class="opcciones-perfil">
                         <input type="file" name="portada" id="btn_enviar2" class="file-select src-file1" >
@@ -44,7 +44,7 @@
             <li>MAIL: <%= user.email %></li>
             <li>CELULAR: <%= user.phone %></li>
             <li>PROVINCIA: ------</li>
-            <li>LLOCALIDAD: ------</li>
+            <li>LOCALIDAD: ------</li>
         </ul>
     </div>
     
