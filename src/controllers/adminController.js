@@ -47,17 +47,7 @@ module.exports = {
 
                 })
             })
-<<<<<<< HEAD
-            res.render('admin/addProduct', {
-                categories,
-                subcategories,
-                session: req.session
-            })
-        })
-        .catch(err => console.log(err))
-=======
             .catch(err => console.log(err))
->>>>>>> 2036f47015b32258dee9e8ecd5495350441a871e
     },
     agregarProducto: (req, res) => {
         let errors = validationResult(req)
@@ -317,7 +307,30 @@ module.exports = {
             .catch(error => console.log(error))
     },
     proccessUser: (req, res) => {
-        const { name, lastName, email, phone, category, image } = req.body;
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+
+            let { name, lastName, phone } = req.body;
+            /* let avatar = req.file && req.file.filename;
+            req.session.user.avatar = avatar */
+            Users.update({
+                name,
+                lastName,
+                phone,
+                avatar: req.file? req.file.filename : "default-image.png",
+            }, { where: { id: req.params.id } })
+            .then(() => {res.redirect('/admin/users'), {session: req.session}})
+
+        } else {
+            res.render("admin/editUser", {
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session,
+            });
+        }
+
+        /* const { name, lastName, email, phone, category, image } = req.body;
 
         Users.update({
             name,
@@ -334,7 +347,7 @@ module.exports = {
             .then(() => {
                 res.redirect('admin/users')
             })
-            .catch(error => console.log(error))
+            .catch(error => console.log(error)) */
     },
     checkDeleteUser: (req, res) => {
         Users.findByPk(req.params.id)

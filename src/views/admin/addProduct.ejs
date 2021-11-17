@@ -2,6 +2,7 @@
 <html lang="es">
 <%- include('../partials/head') %>
 <%- include('../partials/bootstrap') %>
+<script src="/Js/productsValidator.js" defer></script>
     <body>
     <%- include('../partials/header.ejs') %>
         <main class="container">
@@ -36,30 +37,30 @@
                         <small class="text-danger"><%= errors.description.msg %>  </small> 
                     <% } %>
                         <span class="error-msg" id="descriptionErrors"></span>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <select class="form-select" id="specificSizeSelect" name="category">
                           <option selected hidden value="">Categorias</option>
-                         <% categories.forEach(category => { %>
-                            <option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : "" %> ><%- category.nameCategory %></option>
-                         <% }) %>
+                         < categories.forEach(category => { %>
+                            <option value="<- category.id %>" <= locals.old && old.category == category.id ? "selected" : "" %> ><- category.nameCategory %></option>
+                         < }) %>
                         </select>
-                        <% if(locals.errors && errors.category) { %>
-                            <small class="text-danger"><%= errors.category.msg %>  </small> 
-                        <% } %>
+                        < if(locals.errors && errors.category) { %>
+                            <small class="text-danger"><= errors.category.msg %>  </small> 
+                        < } %>
                             <span class="error-msg" id="categoryErrors"></span>
                     </div>
                     <div class="col-12">
                         <select class="form-select" id="specificSizeSelect" name="subcategoryId">
                           <option selected hidden value="">Subcategorias</option>
-                         <% subcategories.forEach(subcategory => { %>
-                            <option value="<%- subcategory.id%>" <%= locals.old && old.subcategory == subcategory.nameSubcategory ? "selected" : "" %>><%- subcategory.nameSubcategory %></option>
-                         <% }) %>
+                         < subcategories.forEach(subcategory => { %>
+                            <option value="<- subcategory.id%>" <= locals.old && old.subcategory == subcategory.nameSubcategory ? "selected" : "" %>><- subcategory.nameSubcategory %></option>
+                         < }) %>
                         </select>
-                        <% if(locals.errors && errors.subcategoryId) { %>
-                            <small class="text-danger"><%= errors.subcategoryId.msg %>  </small> 
-                        <% } %>
+                        < if(locals.errors && errors.subcategoryId) { %>
+                            <small class="text-danger"><= errors.subcategoryId.msg %>  </small> 
+                        < } %>
                             <span class="error-msg" id="subcategoryErrors"></span>
-                    </div>
+                    </div> -->
                     <div class="col-12">
                         <label for="inputImage" class="form-label">Imagen</label>
                         <input type="file" name="image" class="form-control" aria-label="file example" id="inputImage" multiple>
