@@ -34,9 +34,10 @@
     <!-- Lista con los elementos del menú (categorías) -->
         <ul class="menu-contenedor">
             <li class="menu-desplegable li-desplegable" onclick="dropSubCategoryMenu(`choco`)">
-                Golosinas
+                <a href="/products">Golosinas</a>
                 <i class="fas fa-chevron-down" ></i>
             </li>
+            
             <li class="menu-desplegable li-desplegable"><a href="">Promociones</a></li>
             <li class="menu-desplegable li-desplegable"><a href="">Nosotros</a></li>
             <li><a href="/contact">Contacto</a></li>
@@ -63,6 +64,7 @@
             <div class="circulo" onclick="dropLogin()">
                 <img src="/images/users/<%= user.avatar %>" alt="">
             </div>
+            <a href="/products/cart"><i class="fas fa-shopping-cart icono-cart"></i></a>
             <div class="menu-usuario" id="login-registro">
                 <a href="/users/profile"><p>Perfil</p></a>
                 <% if(locals.user.rol == "1") {%> 

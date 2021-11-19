@@ -26,7 +26,7 @@ module.exports = {
         })
     },
     cart: (req, res)=>{
-
+        res.render('products/cart.ejs')
     },
     search: (req, res) => {
         let busqueda = req.query.busqueda
