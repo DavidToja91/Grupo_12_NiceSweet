@@ -39,6 +39,7 @@ module.exports = {
             include: [{association: "productImages"}]
         })
         .then(products =>{
+            
             res.render('search', {
                 products, 
                 busqueda: req.query.busqueda
