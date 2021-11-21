@@ -315,26 +315,25 @@ header {
     }
     .header-menu .menu-usuario p{
         text-align: center;
-        font-size: 18px;
-       
+        font-size: 18px;    
     }
 
 }
 @media screen and (min-width: 1125px){
-    .menu-registro{
-        padding-top: 6px;
+    .menu-registro {
+        margin-top: 2px;
     }
 }
 @media screen and (min-width: 1150px){
-    .menu-registro{
+    .menu-registro {
         padding-top: 0;
     }
-
 
     .header-menu .navigation-bar .menu-contenedor {
         font-size: 20px;
     }
-    *{
+
+    * {
         font-size: 18px;
     }
 
@@ -345,11 +344,8 @@ header {
 
 }
 
-
-
 #titulo-chocolates{
     font-size: 27px;
     padding: 10px;
     text-align: center;
   }
-

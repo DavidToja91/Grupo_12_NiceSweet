@@ -17,6 +17,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
+                        <th scope="col">Imagen</th>
                         <th scope="col">Nombre del producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Categoría</th>
@@ -29,6 +30,7 @@
                     <% getProducts.forEach(product=> { %>
                         <tr>
                             <th scope="row"><%= product.id %></th>
+                            <td><img class="circulo" src="/images/<%= product.image %>" alt="img"></td>
                             <td><%= product.nameProduct %></td>
                             <td><%= product.price %></td>
                             <td><%= product.category %></td>

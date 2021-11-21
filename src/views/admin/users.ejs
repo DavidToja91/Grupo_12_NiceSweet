@@ -6,17 +6,18 @@
     <%- include('../partials/header.ejs') %>
         <main class="container">
             <div class="p-3 text-end">
+                <a class="btn btn-teal text-light"><-</button>
                 <a class="btn btn-info" href="/admin/addUser">AGREGAR USUARIO</a>
             </div>
             <table class="table table-success table-striped">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
+                        <th scope="col">Avatar</th>
                         <th scope="col">Nombre completo</th>
                         <th scope="col">Email</th>
                         <th scope="col">Tel</th>
                         <th scope="col">Rol</th>
-                        <th scope="col">Imagen</th>
                         <th scope="col">Edición</th>
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                     <% getUsers.forEach(user => { %>
                         <tr>
                             <th scope="row"><%= user.id %></th>
+                            <td><img class="circulo" src="/images/users/<%= user.avatar %>" alt="img"></td>
                             <td><%= user.name + " " + user.lastName %></td>
                             <td><%= user.email %></td>
                             <td><%= user.phone %> </td>
@@ -33,7 +35,6 @@
                                 <%= "Usuario"   %>   
                                 <%}  %> 
                             </td>
-                            <td><%= user.avatar %></td>
                             <td>
                                 <a class="btn btn-success" href="/admin/editUser/<%- user.id %> ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

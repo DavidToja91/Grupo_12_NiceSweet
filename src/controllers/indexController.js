@@ -27,7 +27,8 @@ module.exports = {
     },
     contact: (req, res) => {        
         res.render('contact', { title: "contacto", session: req.session})
-    }, 
-   
-
+    },
+    us: (req, res) => {        
+        res.render('us', { title: "nosotros", session: req.session})
     }
+}
