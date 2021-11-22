@@ -5,19 +5,16 @@
     <body>
     <%- include('../partials/header.ejs') %>
         <main class="container">
-            <div class="d-flex justify-content-between row ">
-                <div class="p-3 text-end col-md-6 mb-4" >
-                    <a class="btn btn-info" href="/admin/agregarProducto">AGREGAR</a>
-                </div>
-                <div class="p-3 text-end col-md-6 mb-4">
-                    <a class="btn btn-info" href="/admin/destacarProducto">DESTACAR</a>
-                </div>
+            <div class="d-flex justify-content-center m-2 text-end">
+                <a class="btn btn-teal btn-sm text-light me-1" href="/admin"><i class="fa fa-reply"></i></button>
+                <a class="btn btn-info btn-sm me-1 ms-1" href="/admin/agregarProducto">AGREGAR</a>
+                <a class="btn btn-info btn-sm ms-1" href="/admin/destacarProducto">DESTACAR</a>
             </div>
             <table class="table table-success table-striped">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Imagen</th>
+                        <!-- <th scope="col">Imagen</th> -->
                         <th scope="col">Nombre del producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Categoría</th>
@@ -30,14 +27,14 @@
                     <% getProducts.forEach(product=> { %>
                         <tr>
                             <th scope="row"><%= product.id %></th>
-                            <td><img class="circulo" src="/images/<%= product.image %>" alt="img"></td>
+                            <!-- <td><img class="circulo" src="/images/<= product.image %>" alt="img"></td> -->
                             <td><%= product.nameProduct %></td>
                             <td><%= product.price %></td>
                             <td><%= product.category %></td>
                             <td><%= product.subcategory %></td>
                             <td><%= product.discount %></td>
                             <td>
-                                <a class="btn btn-success" href="/admin/editarProducto/<%- product.id %> ">
+                                <a class="btn btn-success btn-sm" href="/admin/editarProducto/<%- product.id %> ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
@@ -47,7 +44,7 @@
                                     </svg>
                                 </a>
                                 <form action="/admin/eliminarProducto/<%- product.id %>" method="GET">
-                                    <button class="btn btn-danger" type="submit">
+                                    <button class="btn btn-danger btn-sm" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                             <path

@@ -42,7 +42,12 @@ footer .redes i {
   font-size: 24px;
   margin-right: 10px;
   border-radius: 18px;
-}  
+} 
+
+footer .redes .blue:hover { color: blue; }
+footer .redes .lblue:hover { color: lightskyblue; }
+footer .redes .pink:hover { color: hotpink; }
+footer .redes .red:hover { color: red; }
 
 footer .term {
   background-color: #cac1c1;
