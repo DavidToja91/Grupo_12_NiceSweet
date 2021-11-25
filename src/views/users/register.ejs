@@ -64,7 +64,7 @@
                                 <span class="error-msg" id="lastnameErrors"></span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="font-weight-bold">Teléfono<span class="text-danger">*</span></label>
+                                <label class="font-weight-bold">Teléfono<span class="text-danger"></span></label>
                                 <input type="number" name="phone" class="form-control" placeholder="Tu número" value="<%= locals.old && old.phone %>">
                                 <% if (locals.errors && errors.phone) { %>
                                 <span class="text-danger"><%= errors.phone.msg %></span>

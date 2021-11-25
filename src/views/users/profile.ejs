@@ -6,7 +6,7 @@
 <%- include('../partials/header.ejs') %> 
         
 <!-- fin del header -->
-<main>
+<main class="main-editUser">
     <form action="/users/save/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <section class="perfil-usuario">
             <div class="contenedor-perfil">

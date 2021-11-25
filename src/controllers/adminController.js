@@ -73,6 +73,7 @@ module.exports = {
                 category,
                 subcategoryId,
                 description,
+                destacado:0
             })
                 .then(product => {
                     if (arrayImages.length > 0) {

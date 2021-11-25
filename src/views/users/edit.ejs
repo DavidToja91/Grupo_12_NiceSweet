@@ -16,7 +16,7 @@
                                     <img class="img-fluid bg-teal-light border rounded-circle" src="/images/users/<%= user.avatar %>" alt="">
                                 </div>
                                 <div class="col-md-7 container my-1">
-                                    <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
+                                    <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form" >
                                         <div class="row my-1">
                                             <div class="col-md-6 my-1">
                                                 <input type="text" name="name" id="name" placeholder="Nombre" value="<%= locals.old? old.name : user.name %>">

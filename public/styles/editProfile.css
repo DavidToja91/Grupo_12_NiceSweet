@@ -1,5 +1,15 @@
-main{
+:root{
+    --color-lightBlue: #73a1dd ;
+
+}
+.main-editUser{
+    
+    background-image: url(../images/backChoco.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
+    
+
 }
 .perfil-usuario {
     background: linear-gradient(#dfeaec, transparent);
@@ -107,7 +117,7 @@ main{
     text-overflow: ellipsis;
 }
 .perfil-usuario .bio-usuario {
-    font-size: 1em;
+    font-size: 5px;
     margin-bottom: .75rem;
 }
 .perfil-usuario .lista-perfil {
@@ -134,30 +144,34 @@ main{
     cursor: pointer;
 }
 .menu-perfil{
+    background-color: var(--color-lightBlue);
     border: 1px solid black;
     border-radius: 5px;
     display:inline-block;
     justify-content: center;
-    width: 800px;
-    height: 315px;
-    background-color: #ffffff4d;
+    width:75%;
+    height: 450px;
+    margin-bottom: 40px;
     margin-top: 30px;
 }
 
 .menu-perfil h3{
+    font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-weight: bold;
-    padding: 15px 0;
+    font-size: 150%;
+    font-weight: 700!important;
+    color: white;
+    padding: 27px 0;
     border-bottom: 1px solid black;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 .menu-perfil ul{
     text-align: initial;
     border-radius: 8px
 }
 .menu-perfil ul li{
-    padding: 0 0 20px 10px;
-    font-size: 1.2rem;
+    padding: 0 0 20px 36px;
+    font-size: 21px;
     transition: all ease-in 100ms;
     cursor: pointer;
     color: inherit;
