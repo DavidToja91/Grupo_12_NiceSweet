@@ -6,6 +6,8 @@
         
 <!-- fin del header -->
 <main>
+
+    <% if (products.length > 0) { %>
         <h2 class="subtitle">Resultados de la búsqueda: <%= busqueda %></h2>
         <div class="container-card">
                 <div class="row">
@@ -42,6 +44,11 @@
                     </div>
                         
                    <% }); %> 
+                   <% }else{%>
+                <h2 class="subtitle">No hay resultados de la búsqueda de <%- busqueda %></h2>
+            <% } %>
+
+
                    
 </main>
 <%- include('partials/footer.ejs') %> 

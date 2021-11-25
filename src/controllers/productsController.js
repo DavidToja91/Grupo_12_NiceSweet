@@ -26,7 +26,7 @@ module.exports = {
         })
     },
     cart: (req, res)=>{
-
+        res.render('products/cart.ejs')
     },
     search: (req, res) => {
         let busqueda = req.query.busqueda
@@ -39,6 +39,7 @@ module.exports = {
             include: [{association: "productImages"}]
         })
         .then(products =>{
+            
             res.render('search', {
                 products, 
                 busqueda: req.query.busqueda

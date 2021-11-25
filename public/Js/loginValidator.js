@@ -38,7 +38,11 @@ window.addEventListener('load', function () {
                 $pass.classList.add('is-invalid');
                 break;
             case !regExPass.test($password.value):
+<<<<<<< HEAD
                 $passErrors.innerHTML = 'Debe ingresar una contraseña valida';
+=======
+                $passErrors.innerHTML = 'Contraseña incorrecta';
+>>>>>>> 841ab1439b99ae132796727f72b5e5a7849a7f79
                 $password.classList.add('is-invalid');
                 break;
             default:

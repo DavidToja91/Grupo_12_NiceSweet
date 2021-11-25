@@ -12,10 +12,6 @@ window.addEventListener('load',function(){
     $emailErrors = qs('#emailErrors'),
     $pass = qs('#pass'),
     $passErrors = qs('#passErrors'),
-    $pass2 = qs('#pass2'),
-    $pass2Errors = qs('#pass2Errors'),
-    $terms = qs('#check'),
-    $termsErrors = qs('#termsErrors'),
     $file = qs('#formFile'),
     $fileErrors = qs('#fileErrors'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
@@ -107,33 +103,6 @@ window.addEventListener('load',function(){
                 $passErrors.innerHTML = "";
                 break;
         }
-    });
-
-    //password 2
-    $pass2.addEventListener('blur', function(){
-        switch (true) {
-            case !$pass2.value.trim():
-                $pass2Errors.innerHTML = 'Reingresa la contraseña';
-                $pass2.classList.add('is-invalid');
-                break;
-            case $pass2.value !== $pass.value:
-                $pass2Errors.innerHTML = 'las contraseñas no coinciden';
-                $pass2.classList.add('is-invalid');
-                break;             
-            default:
-                $pass2.classList.remove('is-invalid');
-                $pass2.classList.add('is-valid');
-                $pass2Errors.innerHTML = "";
-                break;
-        }
-    });
-
-    //Terminos y Condiciones
-    $terms.addEventListener('click',()=>{
-        $terms.value = "on";
-        $terms.classList.toggle('is-valid');
-        $terms.classList.remove('is-invalid');
-        $termsErrors.innerHTML = "";
     });
 
     //Img

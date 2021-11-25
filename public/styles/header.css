@@ -1,4 +1,7 @@
 /* Maquetado mobile first (a partir de pantalla de 320)*/
+*{
+    font-size: 13px;
+}
 p{
     margin-bottom: 0;
 }
@@ -191,6 +194,18 @@ header {
     font-family: var(--font_poppins);
 }
 
+.circulo{
+    height: 35px;
+    width: 35px;
+    border-radius: 100%;
+}
+
+.circulo > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
 /* MEDIA QUERIES */
 /* Tablet */
 @media (min-width: 768px){
@@ -205,7 +220,9 @@ header {
 
 /* Escritorio */
 @media screen and (min-width: 992px) {
-
+    .menu-registro{
+        padding-top: 13px;
+    }
     .header-menu {
         height: 100px;
         padding: 10px 30px;
@@ -287,16 +304,17 @@ header {
         font-size: 20px;
     }
     
-    .circulo{
+    /* .circulo{
         height: 35px;
         width: 35px;
         border-radius: 100%;
     }
+
     .circulo > img{
         width: 100%;
         height: 100%;
         border-radius: 100%;
-    }
+    } */
 
     .header-menu .menu-usuario{
         display: none;
@@ -310,15 +328,26 @@ header {
     }
     .header-menu .menu-usuario p{
         text-align: center;
-        font-size: 18px;
-       
+        font-size: 18px;    
     }
 
 }
-
+@media screen and (min-width: 1125px){
+    .menu-registro {
+        margin-top: 2px;
+    }
+}
 @media screen and (min-width: 1150px){
+    .menu-registro {
+        padding-top: 0;
+    }
+
     .header-menu .navigation-bar .menu-contenedor {
         font-size: 20px;
+    }
+
+    * {
+        font-size: 18px;
     }
 
     .menu-inicio{
@@ -328,11 +357,8 @@ header {
 
 }
 
-
-
 #titulo-chocolates{
     font-size: 27px;
     padding: 10px;
     text-align: center;
   }
-

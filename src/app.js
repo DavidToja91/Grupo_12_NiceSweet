@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var adminRouter = require('./routes/admin');
+/* var apiRouter = require('./routes/apiRoutes.js'); */
 const localsCheck = require('./middlewares/localsCheck')
 
 var app = express();
@@ -39,6 +40,7 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter); // register - login - profile - CRUD de info personal para usuarios
 app.use('/products', productsRouter); // list - detail - cart - CRUD de productos para usuarios
 app.use('/admin', adminRouter); // index - CRUD de info personal para admin - CRUD de productos para admin
+/* app.use('/api', apiRouter); */ // APIs
 
 /* app.use((req, res, next) => {
   res.status(404).render('error');

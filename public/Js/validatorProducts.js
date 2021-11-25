@@ -77,7 +77,8 @@ window.addEventListener('load',function(){
         
         for (let index = 0; index < formElements.length - 1; index++) {
             if (
-                formElements[index].value === "" ||
+                formElements[index].value === "" &&
+                formElements[index].name !== "image" ||
                 formElements[index].classList.contains('is-invalid')
             ) {
                 formElements[index].classList.add('is-invalid');

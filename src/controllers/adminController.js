@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator')
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const bcrypt= require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 const Product = db.Products;
 const Users = db.Users;
@@ -73,7 +73,11 @@ module.exports = {
                 category,
                 subcategoryId,
                 description,
+<<<<<<< HEAD
                 destacado:0
+=======
+                destacado: 0
+>>>>>>> 841ab1439b99ae132796727f72b5e5a7849a7f79
             })
                 .then(product => {
                     if (arrayImages.length > 0) {
@@ -168,20 +172,18 @@ module.exports = {
         })
         Promise.all([promProduct, promCategory])
             .then(([product, categories]) => {
-                categories => {
-                    let subcategories = []
-                    categories.forEach(category => {
-                        category.subcategories.forEach(subcategory => {
-                            subcategories.push(subcategory)
-                        })
+                let subcategories = []
+                categories.forEach(category => {
+                    category.subcategories.forEach(subcategory => {
+                        subcategories.push(subcategory)
                     })
-                }
-                return res.render("admin/editProduct", {
+                })
+                res.render("admin/editProduct", {
                     product,
-                    category,
+                    categories,
+                    subcategories,
                     session: req.session,
                 })
-
             })
             .catch(error => console.log(error))
     },
@@ -194,12 +196,16 @@ module.exports = {
                 price,
                 discount,
                 description,
+                category, 
+                subcategoryId
             } = req.body
             Product.update({
                 nameProduct,
                 price,
                 discount,
-                description
+                description,
+                category, 
+                subcategoryId
             }, {
                 where: {
                     id: +req.params.id
@@ -211,9 +217,21 @@ module.exports = {
                 .catch(error => console.log(error))
         }
         else {
-            Product.findByPk(req.params.id)
-                .then((product) => {
-                    res.render('admin/editProduct', {
+            let promProduct = Product.findByPk(req.params.id)
+            let promCategory = db.Categories.findAll({
+                include: [{
+                    association: "subcategories"
+                }]
+            })
+            Promise.all([promProduct, promCategory])
+                .then(([product, categories]) => {
+                    let subcategories = []
+                    categories.forEach(category => {
+                        category.subcategories.forEach(subcategory => {
+                            subcategories.push(subcategory)
+                        })
+                    })
+                    res.render("admin/editProduct", {
                         product,
                         categories,
                         subcategories,
@@ -224,7 +242,6 @@ module.exports = {
                 })
                 .catch(error => console.log(error))
         }
-
     },
     checkDeleteProduct: (req, res) => {
         Product.findByPk(req.params.id, { include: [{ association: "productImages" }, { association: "subcategory" }] })
@@ -276,7 +293,7 @@ module.exports = {
             errors.push(image);
         }
         if (errors.isEmpty()) {
-            let { name, lastName, phone, email, pass1} = req.body;
+            let { name, lastName, phone, email, pass1 } = req.body;
 
             Users.create({
                 name,
@@ -284,7 +301,7 @@ module.exports = {
                 phone,
                 email,
                 pass: bcrypt.hashSync(pass1, 10),
-                avatar: req.file? req.file.filename : "default-image.png",
+                avatar: req.file ? req.file.filename : "default-image.png",
                 rol: 0,
             }).then(() => {
                 res.redirect("users");
@@ -319,9 +336,9 @@ module.exports = {
                 name,
                 lastName,
                 phone,
-                avatar: req.file? req.file.filename : "default-image.png",
+                avatar: req.file ? req.file.filename : "default-image.png",
             }, { where: { id: req.params.id } })
-            .then(() => {res.redirect('/admin/users'), {session: req.session}})
+                .then(() => { res.redirect('/admin/users'), { session: req.session } })
 
         } else {
             res.render("admin/editUser", {
